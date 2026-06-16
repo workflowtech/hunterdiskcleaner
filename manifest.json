@@ -1,6 +1,6 @@
 {
-  "Version": "0.1.1",
-  "DownloadUrl": "https://raw.githubusercontent.com/workflowtech/hunterdiskcleaner/main/HunterCleaner_Update.tmp",
-  "ReleaseNotes": "• Novo design do painel de Opções;\n• Suporte inicial para seleção inteligente de idiomas;\n• Melhorias na velocidade de varredura.",
-  "IsMandatory": false
+  "version": "0.1.1",
+  "releaseNotes": "Ajuste na arquitetura de deploy e empacotamento modular via ZIP.",
+  "isMandatory": false,
+  "downloadUrl": "https://github.com/workflowtech/hunterdiskcleaner/releases/download/v0.1.1/HunterDiskCleaner.zip"
 }
