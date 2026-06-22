@@ -1,6 +1,6 @@
 {
-  "version": "0.1.0",
-  "releaseNotes": "Ajuste na arquitetura de deploy e empacotamento modular via ZIP.",
+  "version": "0.5.1",
+  "releaseNotes": "Stable Beta release featuring a refined scanning engine and memory optimizations.",
   "isMandatory": false,
-  "downloadUrl": "https://github.com/workflowtech/hunterdiskcleaner/releases/download/v0.1.1/HunterDiskCleaner.zip"
+  "downloadUrl": "https://github.com/workflowtech/hunterdiskcleaner/releases/download/v0.5.1/HunterUpdate.zip"
 }
