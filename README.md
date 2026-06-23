@@ -1,10 +1,18 @@
 # 🎯 Hunter Disk Cleaner
 
 <p align="center">
-  <img src="https://img.shields.io/github/v/release/workflowtech/hunterdiskcleaner?style=for-the-badge&color=00ADB5" alt="Latest Release">
-  <img src="https://img.shields.io/github/downloads/workflowtech/hunterdiskcleaner/total?style=for-the-badge&color=1A1A1A" alt="Total Downloads">
-  <img src="https://img.shields.io/badge/Platform-Windows-00ADB5?style=for-the-badge&logo=windows&logoColor=white" alt="Platform Windows">
-  <img src="https://img.shields.io/badge/License-Commercial%20%2F%20Freemium-1A1A1A?style=for-the-badge" alt="License">
+  <a href="https://github.com/workflowtech/hunterdiskcleaner/releases">
+    <img src="https://img.shields.io/github/v/release/workflowtech/hunterdiskcleaner?style=for-the-badge&color=00ADB5" alt="Latest Release">
+  </a>
+  <a href="https://github.com/workflowtech/hunterdiskcleaner/releases/download/latest/HunterDiskCleaner_Setup.exe">
+    <img src="https://img.shields.io/github/downloads/workflowtech/hunterdiskcleaner/total?style=for-the-badge&color=1A1A1A" alt="Total Downloads">
+  </a>
+  <a href="https://github.com/workflowtech/hunterdiskcleaner">
+    <img src="https://img.shields.io/badge/Platform-Windows-00ADB5?style=for-the-badge&logo=windows&logoColor=white" alt="Platform Windows">
+  </a>
+  <a href="https://github.com/workflowtech/hunterdiskcleaner">
+    <img src="https://img.shields.io/badge/License-Commercial%20%2F%20Freemium-1A1A1A?style=for-the-badge" alt="License">
+  </a>
 </p>
 
 ---
