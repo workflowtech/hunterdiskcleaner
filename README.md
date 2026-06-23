@@ -1,2 +1,68 @@
-# hunterdiskcleaner
-A modern, fast, and easy-to-use disk cleaner for Windows. Safely hunt down and remove hidden junk files to free up your computer storage instantly.
+# 🎯 Hunter Disk Cleaner
+
+<p align="center">
+  <img src="https://img.shields.io/github/v/release/workflowtech/hunterdiskcleaner?style=for-the-badge&color=00ADB5" alt="Latest Release">
+  <img src="https://img.shields.io/github/downloads/workflowtech/hunterdiskcleaner/total?style=for-the-badge&color=222831" alt="Total Downloads">
+  <img src="https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge&logo=windows" alt="Platform Windows">
+  <img src="https://img.shields.io/badge/License-Commercial%20%2F%20Freemium-brightgreen?style=for-the-badge" alt="License">
+</p>
+
+---
+
+## 📖 Overview
+
+**Hunter Disk Cleaner** is a modern, blazing-fast, and lightweight disk cleanup utility for Windows. Safely hunt down and remove hidden junk files to free up your computer storage instantly.
+
+Unlike traditional opaque cleaners, Hunter features a **unified transparency interface** that shows you exactly what is being analyzed and gives you full control over your data, ensuring you know exactly how much space you can clean without any hidden surprises.
+
+---
+
+## ✨ Features
+
+* **⚡ High-Speed Scanning:** Multi-threaded engine optimized to scan critical Windows junk zones in seconds.
+* **🌐 Dynamic Localization:** Full native support for multiple languages (including English and Portuguese).
+* **🔄 Auto-Update Engine:** Built-in seamless updates directly integrated with GitHub Releases.
+* **🛡️ Safety First:** Carefully curated trash zones to ensure system stability—no accidental deletion of important personal files.
+* **💎 Clean UI/UX:** Dark-themed modern WPF interface designed for clarity and ease of use.
+
+---
+
+## 🏁 Free vs. PRO Version
+
+We believe in **absolute transparency**. The application clearly displays how much space can be recovered so you are always in the loop.
+
+| Feature | Free Edition | PRO Edition |
+| :--- | :---: | :---: |
+| Core Windows Junk Removal (Temp, Log files) | ✅ | ✅ |
+| Real-time Selection & Potential Purge Counter | ✅ | ✅ |
+| Multi-language Support | ✅ | ✅ |
+| Integrated Auto-Updates | ✅ | ✅ |
+| Advanced Trash Zones (Browser Cache, System Leftovers) | 🔒 View Only | ✅ |
+| One-Click Total Optimization | ❌ | ✅ |
+| Priority Support & Updates | ❌ | ✅ |
+
+### 🔑 Get your PRO License
+For now, a **PRO license key** can be requested directly via email. Please contact us at **myworkflowtech@gmail.com** to acquire your license and unlock the full potential of Hunter Disk Cleaner.
+
+---
+
+## 🚀 Installation & Updates
+
+Hunter Disk Cleaner features an autonomous update pipeline:
+1. Download the latest installer from the [Releases](https://github.com/workflowtech/hunterdiskcleaner/releases) section.
+2. Run the application.
+3. When a new version is published, the app will automatically notify you and seamlessly apply the update.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Language:** C#
+* **Framework:** .NET / WPF (Windows Presentation Foundation)
+* **Deployment:** GitHub Releases Integration for Manifest-driven updates.
+
+---
+
+<p align="center">
+  Hunter Disk Cleaner is built with continuous improvement (Kaizen) mindsets. Safely hunting junk, pixel by pixel.
+</p>
