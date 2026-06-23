@@ -2,9 +2,9 @@
 
 <p align="center">
   <img src="https://img.shields.io/github/v/release/workflowtech/hunterdiskcleaner?style=for-the-badge&color=00ADB5" alt="Latest Release">
-  <img src="https://img.shields.io/github/downloads/workflowtech/hunterdiskcleaner/total?style=for-the-badge&color=222831" alt="Total Downloads">
-  <img src="https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge&logo=windows" alt="Platform Windows">
-  <img src="https://img.shields.io/badge/License-Commercial%20%2F%20Freemium-brightgreen?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/github/downloads/workflowtech/hunterdiskcleaner/total?style=for-the-badge&color=1A1A1A" alt="Total Downloads">
+  <img src="https://img.shields.io/badge/Platform-Windows-00ADB5?style=for-the-badge&logo=windows&logoColor=white" alt="Platform Windows">
+  <img src="https://img.shields.io/badge/License-Commercial%20%2F%20Freemium-1A1A1A?style=for-the-badge" alt="License">
 </p>
 
 ---
@@ -49,8 +49,8 @@ For now, a **PRO license key** can be requested directly via email. Please conta
 ## 🚀 Installation & Updates
 
 Hunter Disk Cleaner features an autonomous update pipeline:
-1. Download the latest installer from the [Releases](https://github.com/workflowtech/hunterdiskcleaner/releases) section.
-2. Run the application.
+1. **[Click here to download the latest stable version (HunterDiskCleaner_Setup.exe)](https://github.com/workflowtech/hunterdiskcleaner/releases/download/latest/HunterDiskCleaner_Setup.exe)**
+2. Run the installer and launch the application.
 3. When a new version is published, the app will automatically notify you and seamlessly apply the update.
 
 ---
