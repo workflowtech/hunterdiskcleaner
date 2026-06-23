@@ -57,7 +57,7 @@ For now, a **PRO license key** can be requested directly via email. Please conta
 ## 🚀 Installation & Updates
 
 Hunter Disk Cleaner features an autonomous update pipeline:
-1. **[Click here to download the latest stable version (HunterDiskCleaner_Setup.exe)](https://github.com/workflowtech/hunterdiskcleaner/releases/download/latest/HunterDiskCleaner_Setup.exe)**
+1. **[Click here to download the latest stable version (HunterDiskCleaner_Setup.exe)]([[https://github.com/workflowtech/hunterdiskcleaner/releases/download/latest/HunterDiskCleaner_Setup.exe](https://github.com/workflowtech/hunterdiskcleaner/releases)](https://github.com/workflowtech/hunterdiskcleaner/releases))**
 2. Run the installer and launch the application.
 3. When a new version is published, the app will automatically notify you and seamlessly apply the update.
 
