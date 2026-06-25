@@ -1,6 +1,6 @@
 {
-  "version": "0.7.1",
-  "releaseNotes": "Stable Beta release featuring a refined scanning engine and memory optimizations.",
+  "version": "0.8.0",
+  "releaseNotes": "Stable beta version with new languages ​​and improvements.",
   "isMandatory": false,
-  "downloadUrl": "https://github.com/workflowtech/hunterdiskcleaner/releases/download/v0.7.1/HunterUpdate.zip"
+  "downloadUrl": "https://github.com/workflowtech/hunterdiskcleaner/releases/download/v0.8.0/HunterUpdate.zip"
 }
