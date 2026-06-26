@@ -28,10 +28,21 @@ Unlike traditional opaque cleaners, Hunter features a **unified transparency int
 ## ✨ Features
 
 * **⚡ High-Speed Scanning:** Multi-threaded engine optimized to scan critical Windows junk zones in seconds.
-* **🌐 Dynamic Localization:** Full native support for multiple languages (including English and Portuguese).
+* **🌐 Dynamic Localization:** Full native, real-time language switching supporting key international markets without restarting the app.
 * **🔄 Auto-Update Engine:** Built-in seamless updates directly integrated with GitHub Releases.
 * **🛡️ Safety First:** Carefully curated trash zones to ensure system stability—no accidental deletion of important personal files.
 * **💎 Clean UI/UX:** Dark-themed modern WPF interface designed for clarity and ease of use.
+
+---
+
+## 🌐 Supported Languages (Localization)
+
+Hunter Disk Cleaner is built for a global audience. The interface can be dynamically changed on the fly through the options menu:
+
+* 🇺🇸 **English** (Full Native Support & Core Fallback)
+* 🇧🇷 **Português** (Suporte Nativo)
+* 🇯🇵 **日本語** (フルネイティブサポート)
+* 🇰🇷 **한국어** (네이티브 지원)
 
 ---
 
@@ -43,7 +54,7 @@ We believe in **absolute transparency**. The application clearly displays how mu
 | :--- | :---: | :---: |
 | Core Windows Junk Removal (Temp, Log files) | ✅ | ✅ |
 | Real-time Selection & Potential Purge Counter | ✅ | ✅ |
-| Multi-language Support | ✅ | ✅ |
+| Multi-language Support & Dynamic Switching | ✅ | ✅ |
 | Integrated Auto-Updates | ✅ | ✅ |
 | Advanced Trash Zones (Browser Cache, System Leftovers) | 🔒 View Only | ✅ |
 | One-Click Total Optimization | ❌ | ✅ |
@@ -65,8 +76,9 @@ Hunter Disk Cleaner features an autonomous update pipeline:
 
 ## 🛠️ Tech Stack
 
-* **Language:** C#
-* **Framework:** .NET / WPF (Windows Presentation Foundation)
+* **Language:** C# (.NET Core)
+* **Framework:** WPF (Windows Presentation Foundation) with MVVM Architecture
+* **Localization:** Dynamic XAML ResourceDictionaries (`MergedDictionaries`)
 * **Deployment:** GitHub Releases Integration for Manifest-driven updates.
 
 ---
