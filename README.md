@@ -39,19 +39,22 @@ Unlike traditional opaque cleaners, Hunter features a **unified transparency int
 
 Hunter Disk Cleaner is built for a global audience. The interface adapts instantly to major global markets and can be dynamically changed on the fly through the options menu:
 
-* 🇺🇸 **English** (`en-US` - Full Native Support & Core Fallback)
-* 🇧🇷 **Português** (`pt-BR` - Suporte Nativo)
-* 🇩🇪 **Deutsch** (`de-DE` - Volle Native Unterstützung)
-* 🇫🇷 **Français** (`fr-FR` - Support Natif Complet)
-* 🇮🇹 **Italiano** (`it-IT` - Supporto Nativo Completo)
-* 🇮🇩 **Bahasa Indonesia** (`id-ID` - Dukungan Asli Penuh)
-* 🇻🇳 **Tiếng Việt** (`vi-VN` - Hỗ trợ Bản địa Đầy đủ)
-* 🇷🇺 **Русский** (`ru-RU` - Полная локальная поддержка)
-* 🇨🇳 **简体中文** (`zh-CN` - 深度清理 - 完整本地化支持)
-* 🇹🇼 **繁體中文** (`zh-TW` - 深度清理 - 完整在地化支援)
-* 🇯🇵 **日本語** (`ja-JP` - フルネイティブサポート)
-* 🇰🇷 **한국어** (`ko-KR` - 네이티브 지원)
-* 🇸🇦 **العربية** (`ar-SA` - دعم محلي كامل - RTL Compatible)
+* 🇺🇸 **English** (`en-US` - Core Fallback)
+* 🇬🇧 **English (UK)** (`en-GB`)
+* 🇧🇷 **Português (BR)** (`pt-BR`)
+* 🇵🇹 **Português (PT)** (`pt-PT`)
+* 🇪🇸 **Español** (`es-ES`)
+* 🇩🇪 **Deutsch** (`de-DE`)
+* 🇫🇷 **Français** (`fr-FR`)
+* 🇮🇹 **Italiano** (`it-IT`)
+* 🇮🇩 **Bahasa Indonesia** (`id-ID`)
+* 🇻🇳 **Tiếng Việt** (`vi-VN`)
+* 🇷🇺 **Русский** (`ru-RU`)
+* 🇨🇳 **简体中文** (`zh-CN`)
+* 🇹🇼 **繁體中文** (`zh-TW`)
+* 🇯🇵 **日本語** (`ja-JP`)
+* 🇰🇷 **한국어** (`ko-KR`)
+* 🇸🇦 **العربية** (`ar-SA` - RTL Compatible)
 
 ---
 
@@ -80,16 +83,7 @@ Hunter Disk Cleaner features an autonomous update pipeline:
 1. **[Click here to go to the Releases page and download the latest version](https://github.com/workflowtech/hunterdiskcleaner/releases)**
 2. Run the installer and launch the application.
 3. When a new version is published, the app will automatically notify you and seamlessly apply the update.
-
----
-
-## 🛠️ Tech Stack
-
-* **Language:** C# (.NET Core)
-* **Framework:** WPF (Windows Presentation Foundation) with MVVM Architecture
-* **Localization:** Dynamic XAML ResourceDictionaries (`MergedDictionaries`)
-* **Deployment:** GitHub Releases Integration for Manifest-driven updates.
-
+   
 ---
 
 <p align="center">
