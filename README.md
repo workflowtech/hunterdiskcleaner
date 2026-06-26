@@ -37,12 +37,21 @@ Unlike traditional opaque cleaners, Hunter features a **unified transparency int
 
 ## 🌐 Supported Languages (Localization)
 
-Hunter Disk Cleaner is built for a global audience. The interface can be dynamically changed on the fly through the options menu:
+Hunter Disk Cleaner is built for a global audience. The interface adapts instantly to major global markets and can be dynamically changed on the fly through the options menu:
 
-* 🇺🇸 **English** (Full Native Support & Core Fallback)
-* 🇧🇷 **Português** (Suporte Nativo)
-* 🇯🇵 **日本語** (フルネイティブサポート)
-* 🇰🇷 **한국어** (네이티브 지원)
+* 🇺🇸 **English** (`en-US` - Full Native Support & Core Fallback)
+* 🇧🇷 **Português** (`pt-BR` - Suporte Nativo)
+* 🇩🇪 **Deutsch** (`de-DE` - Volle Native Unterstützung)
+* 🇫🇷 **Français** (`fr-FR` - Support Natif Complet)
+* 🇮🇹 **Italiano** (`it-IT` - Supporto Nativo Completo)
+* 🇮🇩 **Bahasa Indonesia** (`id-ID` - Dukungan Asli Penuh)
+* 🇻🇳 **Tiếng Việt** (`vi-VN` - Hỗ trợ Bản địa Đầy đủ)
+* 🇷🇺 **Русский** (`ru-RU` - Полная локальная поддержка)
+* 🇨🇳 **简体中文** (`zh-CN` - 深度清理 - 完整本地化支持)
+* 🇹🇼 **繁體中文** (`zh-TW` - 深度清理 - 完整在地化支援)
+* 🇯🇵 **日本語** (`ja-JP` - フルネイティブサポート)
+* 🇰🇷 **한국어** (`ko-KR` - 네이티브 지원)
+* 🇸🇦 **العربية** (`ar-SA` - دعم محلي كامل - RTL Compatible)
 
 ---
 
