@@ -86,7 +86,8 @@
 
         input[type="text"],
         input[type="email"],
-        select {
+        select,
+        textarea {
             width: 100%;
             padding: 12px 16px;
             border-radius: 8px;
@@ -95,9 +96,15 @@
             color: var(--text-main);
             font-size: 1rem;
             transition: border-color 0.2s ease;
+            font-family: inherit;
         }
 
-        input:focus, select:focus {
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--accent-color);
             box-shadow: 0 0 8px rgba(44, 228, 209, 0.2);
@@ -176,9 +183,14 @@
             <label for="purpose">Inquiry Purpose</label>
             <select id="purpose" required>
                 <option value="Beta Tester Activation">Requesting PRO Beta License Key</option>
-                <option value="Technical Support / License Reset">Technical Support / License Reset</option>
-                <option value="Partnership / Other">Partnerships / General Inquiries</option>
+                <option value="License Renewal Request">License Renewal / Validation</option>
             </select>
+        </div>
+
+        <!-- NOVO CAMPO ADICIONADO: Observações (Opcional) -->
+        <div class="form-group">
+            <label for="notes">Comments / Notes (Optional)</label>
+            <textarea id="notes" placeholder="Any extra information or feedback you'd like to share with us..."></textarea>
         </div>
 
         <button type="submit" class="btn-submit" id="submitBtn">Submit Request</button>
@@ -201,7 +213,6 @@ async function submitForm(event) {
     const proForm = document.getElementById('proForm');
     const successBox = document.getElementById('successBox');
     
-    // Desativar o botão para evitar cliques duplos (Muda de processamento)
     submitBtn.disabled = true;
     submitBtn.innerText = "Processing...";
 
@@ -209,10 +220,10 @@ async function submitForm(event) {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
         hwid: document.getElementById('hwid').value,
-        purpose: document.getElementById('purpose').value
+        purpose: document.getElementById('purpose').value,
+        notes: document.getElementById('notes').value // Captura o valor do campo opcional
     };
 
-    // SUBSTiTUI esta URL abaixo pela URL que a Cloudflare gerou para o teu Worker
     const workerUrl = "https://hunter-form-pro.geandertkind.workers.dev";
 
     try {
@@ -225,7 +236,6 @@ async function submitForm(event) {
         });
 
         if (response.ok) {
-            // Oculta o formulário e exibe o feedback visual de sucesso na tela
             proForm.style.display = 'none';
             successBox.style.display = 'block';
         } else {
