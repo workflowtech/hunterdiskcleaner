@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="banner.png" alt="Hunter Disk Cleaner Logo" width="140" height="140">
+  <img src="banner.png">
 </p>
 
 ---
