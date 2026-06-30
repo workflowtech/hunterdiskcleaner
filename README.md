@@ -2,7 +2,45 @@
   <img src="App.png" alt="Hunter Disk Cleaner Logo" width="140" height="140">
 </p>
 
-<h1 align="center">Hunter Disk Cleaner</h1>
+<p align="center">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 110" width="100%" height="110">
+    <style>
+      .main-title {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        font-weight: 900;
+        font-size: 40px;
+        fill: #2CE4D1;
+        letter-spacing: 2px;
+      }
+      .sub-title {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        fill: #8A929E;
+        letter-spacing: 0.5px;
+      }
+    </style>
+    <text x="50%" y="50" text-anchor="middle" class="main-title">HUNTER DISK CLEANER</text>
+    <text x="50%" y="88" text-anchor="middle" class="sub-title">Deep system cleanup and safe cache optimization</text>
+  </svg>
+</p>
+
+<p align="center">
+  <a href="https://github.com/workflowtech/hunterdiskcleaner/releases">
+    <img src="https://img.shields.io/github/v/release/workflowtech/hunterdiskcleaner?include_prereleases&style=for-the-badge&color=2CE4D1" alt="Latest Release">
+  </a>
+  <a href="https://github.com/workflowtech/hunterdiskcleaner/releases">
+    <img src="https://img.shields.io/github/downloads/workflowtech/hunterdiskcleaner/total?style=for-the-badge&color=0F1522" alt="Total Downloads">
+  </a>
+  <a href="https://github.com/workflowtech/hunterdiskcleaner">
+    <img src="https://img.shields.io/badge/Platform-Windows-2CE4D1?style=for-the-badge&logo=windows&logoColor=white" alt="Platform Windows">
+  </a>
+  <a href="https://github.com/workflowtech/hunterdiskcleaner">
+    <img src="https://img.shields.io/badge/License-Commercial%20%2F%20Freemium-0F1522?style=for-the-badge" alt="License">
+  </a>
+</p>
+
+---
 
 <p align="center">
   <a href="https://github.com/workflowtech/hunterdiskcleaner/releases">
