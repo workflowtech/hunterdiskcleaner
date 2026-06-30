@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get PRO License - Hunter Disk Cleaner</title>
+    <style>
+        :root {
+            --bg-color: #0F1522;
+            --card-bg: #161F32;
+            --accent-color: #2CE4D1;
+            --text-main: #FFFFFF;
+            --text-muted: #8A929E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            border-radius: 18px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        p.description {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        form {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(44, 228, 209, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(15, 21, 34, 0.6);
+            color: var(--text-main);
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 8px rgba(44, 228, 209, 0.2);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--accent-color);
+            color: #000000;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #24bdaf;
+            box-shadow: 0 0 15px rgba(44, 228, 209, 0.4);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="App.png" alt="Hunter Disk Cleaner Logo" class="logo">
+        <h1>Hunter Disk Cleaner PRO</h1>
+        <p class="description">Please fill in the details below to request or link your professional license during the Beta phase.</p>
+    </header>
+
+    <!-- Formulário local sem action externa -->
+    <form id="proForm" onsubmit="sendLocalMail(event)">
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="e.g. John Doe" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Activation Email</label>
+            <input type="email" id="email" placeholder="your@email.com" required>
+            <small style="color: var(--text-muted); font-size: 0.8rem; display: block; margin-top: 4px;">This email will be linked directly to your software license key.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="purpose">Inquiry Purpose</label>
+            <select id="purpose" required>
+                <option value="Requesting PRO Beta License">I want to test the PRO version (Beta Tester)</option>
+                <option value="FastSpring Onboarding Support">Commercial support / FastSpring inquiry</option>
+                <option value="Partnership / Other">Partnerships / Other requests</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn-submit">Generate Mail Request</button>
+    </form>
+
+    <a href="index.html" class="back-link">← Back to Main Page</a>
+</div>
+
+<script>
+function sendLocalMail(event) {
+    event.preventDefault(); // Impede o recarregamento da página
+    
+  
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const purpose = document.getElementById('purpose').value;
+    
+    const destination = "contact@hunterdiskcleaner.com";
+    const subject = encodeURIComponent(`[PRO License] - ${purpose}`);
+    
+    
+    let bodyText = `Hello Hunter Disk Cleaner Team,\n\n`;
+    bodyText += `Here are my details for the PRO license inquiry:\n\n`;
+    bodyText += `• Name: ${name}\n`;
+    bodyText += `• Activation Email: ${email}\n`;
+    bodyText += `• Purpose: ${purpose}\n\n`;
+    bodyText += `Sent via hunterdiskcleaner.com local form.`;
+    
+    const body = encodeURIComponent(bodyText);
+    
+    
+    window.location.href = `mailto:${destination}?subject=${subject}&body=${body}`;
+}
+</script>
+
+</body>
+</html>
