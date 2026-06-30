@@ -138,10 +138,9 @@
     <header>
         <img src="App.png" alt="Hunter Disk Cleaner Logo" class="logo">
         <h1>Hunter Disk Cleaner PRO</h1>
-        <p class="description">Please fill in the details below to request or link your professional license during the Beta phase.</p>
+        <p class="description">Please fill in the details below to request your professional license key during the Beta testing phase.</p>
     </header>
 
-    <!-- Formulário local sem action externa -->
     <form id="proForm" onsubmit="sendLocalMail(event)">
         <div class="form-group">
             <label for="name">Full Name</label>
@@ -151,15 +150,21 @@
         <div class="form-group">
             <label for="email">Activation Email</label>
             <input type="email" id="email" placeholder="your@email.com" required>
-            <small style="color: var(--text-muted); font-size: 0.8rem; display: block; margin-top: 4px;">This email will be linked directly to your software license key.</small>
+            <small style="color: var(--text-muted); font-size: 0.8rem; display: block; margin-top: 4px;">This email will be linked directly to your software license validation.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="hwid">Hardware ID (HWID)</label>
+            <input type="text" id="hwid" placeholder="Copy and paste your HWID from the App" required>
+            <small style="color: var(--text-muted); font-size: 0.8rem; display: block; margin-top: 4px;">You can find your unique HWID inside the Hunter Disk Cleaner application settings.</small>
         </div>
 
         <div class="form-group">
             <label for="purpose">Inquiry Purpose</label>
             <select id="purpose" required>
-                <option value="Requesting PRO Beta License">I want to test the PRO version (Beta Tester)</option>
-                <option value="FastSpring Onboarding Support">Commercial support / FastSpring inquiry</option>
-                <option value="Partnership / Other">Partnerships / Other requests</option>
+                <option value="Beta Tester Activation">Requesting PRO Beta License Key</option>
+                <option value="Technical Support / License Reset">Technical Support / License Reset</option>
+                <option value="Partnership / Other">Partnerships / General Inquiries</option>
             </select>
         </div>
 
@@ -171,26 +176,25 @@
 
 <script>
 function sendLocalMail(event) {
-    event.preventDefault(); // Impede o recarregamento da página
+    event.preventDefault();
     
-  
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
+    const hwid = document.getElementById('hwid').value;
     const purpose = document.getElementById('purpose').value;
     
     const destination = "contact@hunterdiskcleaner.com";
-    const subject = encodeURIComponent(`[PRO License] - ${purpose}`);
-    
+    const subject = encodeURIComponent(`[PRO License Request] - ${purpose}`);
     
     let bodyText = `Hello Hunter Disk Cleaner Team,\n\n`;
-    bodyText += `Here are my details for the PRO license inquiry:\n\n`;
+    bodyText += `Here are my details for the PRO license activation:\n\n`;
     bodyText += `• Name: ${name}\n`;
     bodyText += `• Activation Email: ${email}\n`;
+    bodyText += `• Hardware ID (HWID): ${hwid}\n`;
     bodyText += `• Purpose: ${purpose}\n\n`;
     bodyText += `Sent via hunterdiskcleaner.com local form.`;
     
     const body = encodeURIComponent(bodyText);
-    
     
     window.location.href = `mailto:${destination}?subject=${subject}&body=${body}`;
 }
