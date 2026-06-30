@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="App_2.png" alt="Hunter Disk Cleaner Logo" width="140" height="140">
+</p>
+
 <h1 align="center">🎯 Hunter Disk Cleaner</h1>
 
 <p align="center">
