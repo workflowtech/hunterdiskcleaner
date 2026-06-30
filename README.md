@@ -82,7 +82,7 @@ To unlock the full potential of Hunter Disk Cleaner, you can request your PRO li
 
 * 🌐 **Official Website:** [hunterdiskcleaner.com](https://hunterdiskcleaner.com)
 * 🔑 **PRO License Request:** [Request via Web Form](https://hunterdiskcleaner.com/pro.html)
-* ✉️ **Contact & Support:** [Open a Support Ticket](https://hunterdiskcleaner.com/contact.html) or contact us directly at **myworkflowtech@gmail.com**
+* ✉️ **Contact & Support:** [Open a Support Ticket](https://hunterdiskcleaner.com/contact.html) or contact us directly at **contact@hunterdiskcleaner.com**
 
 ---
 
