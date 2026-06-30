@@ -1,8 +1,25 @@
 <p align="center">
   <img src="App.png" alt="Hunter Disk Cleaner Logo" width="140" height="140">
 </p>
+ 
+<p align="center">
+  <img src="banner.png" alt="Hunter Disk Cleaner Banner" width="100%">
+</p>
 
-<h1 align="center">Hunter Disk Cleaner</h1>
+<p align="center">
+  <a href="https://github.com/workflowtech/hunterdiskcleaner/releases">
+    <img src="https://img.shields.io/github/v/release/workflowtech/hunterdiskcleaner?include_prereleases&style=for-the-badge&color=2CE4D1" alt="Latest Release">
+  </a>
+  <a href="https://github.com/workflowtech/hunterdiskcleaner/releases">
+    <img src="https://img.shields.io/github/downloads/workflowtech/hunterdiskcleaner/total?style=for-the-badge&color=0F1522" alt="Total Downloads">
+  </a>
+  <a href="https://github.com/workflowtech/hunterdiskcleaner">
+    <img src="https://img.shields.io/badge/Platform-Windows-2CE4D1?style=for-the-badge&logo=windows&logoColor=white" alt="Platform Windows">
+  </a>
+  <a href="https://github.com/workflowtech/hunterdiskcleaner">
+    <img src="https://img.shields.io/badge/License-Commercial%20%2F%20Freemium-0F1522?style=for-the-badge" alt="License">
+  </a>
+</p>
 
 ---
 
