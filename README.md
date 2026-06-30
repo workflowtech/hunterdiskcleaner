@@ -1,17 +1,21 @@
-# 🎯 Hunter Disk Cleaner
+<p align="center">
+  <img src="App_2.png" alt="Hunter Disk Cleaner Logo" width="140" height="140">
+</p>
+
+<h1 align="center">🎯 Hunter Disk Cleaner</h1>
 
 <p align="center">
   <a href="https://github.com/workflowtech/hunterdiskcleaner/releases">
-    <img src="https://img.shields.io/github/v/release/workflowtech/hunterdiskcleaner?include_prereleases&style=for-the-badge&color=00ADB5" alt="Latest Release">
+    <img src="https://img.shields.io/github/v/release/workflowtech/hunterdiskcleaner?include_prereleases&style=for-the-badge&color=2CE4D1" alt="Latest Release">
   </a>
   <a href="https://github.com/workflowtech/hunterdiskcleaner/releases">
-    <img src="https://img.shields.io/github/downloads/workflowtech/hunterdiskcleaner/total?style=for-the-badge&color=1A1A1A" alt="Total Downloads">
+    <img src="https://img.shields.io/github/downloads/workflowtech/hunterdiskcleaner/total?style=for-the-badge&color=0F1522" alt="Total Downloads">
   </a>
   <a href="https://github.com/workflowtech/hunterdiskcleaner">
-    <img src="https://img.shields.io/badge/Platform-Windows-00ADB5?style=for-the-badge&logo=windows&logoColor=white" alt="Platform Windows">
+    <img src="https://img.shields.io/badge/Platform-Windows-2CE4D1?style=for-the-badge&logo=windows&logoColor=white" alt="Platform Windows">
   </a>
   <a href="https://github.com/workflowtech/hunterdiskcleaner">
-    <img src="https://img.shields.io/badge/License-Commercial%20%2F%20Freemium-1A1A1A?style=for-the-badge" alt="License">
+    <img src="https://img.shields.io/badge/License-Commercial%20%2F%20Freemium-0F1522?style=for-the-badge" alt="License">
   </a>
 </p>
 
@@ -83,9 +87,9 @@ Hunter Disk Cleaner features an autonomous update pipeline:
 1. **[Click here to go to the Releases page and download the latest version](https://github.com/workflowtech/hunterdiskcleaner/releases)**
 2. Run the installer and launch the application.
 3. When a new version is published, the app will automatically notify you and seamlessly apply the update.
-   
+    
 ---
 
 <p align="center">
-  Hunter Disk Cleaner is built with continuous improvement (Kaizen) mindsets. Safely hunting junk, pixel by pixel.
+  <i>Hunter Disk Cleaner is built with continuous improvement (Kaizen) mindsets. Safely hunting junk, pixel by pixel.</i>
 </p>
