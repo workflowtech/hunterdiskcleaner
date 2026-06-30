@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Support - Hunter Disk Cleaner</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        :root {
+            --bg-color: #0F1522;
+            --card-bg: #161F32;
+            --accent-color: #2CE4D1;
+            --text-main: #FFFFFF;
+            --text-muted: #8A929E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            border-radius: 18px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        p.description {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        form, .status-box {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(44, 228, 209, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .status-box {
+            display: none;
+            text-align: center;
+            padding: 40px 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(15, 21, 34, 0.6);
+            color: var(--text-main);
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 8px rgba(44, 228, 209, 0.2);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--accent-color);
+            color: #000000;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #24bdaf;
+            box-shadow: 0 0 15px rgba(44, 228, 209, 0.4);
+        }
+
+        .btn-submit:disabled {
+            background-color: var(--text-muted);
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="App.png" alt="Hunter Disk Cleaner Logo" class="logo">
+        <h1>Contact & Support</h1>
+        <p class="description">Have a question, need technical assistance, or want to discuss a partnership? Drop us a message below.</p>
+    </header>
+
+    <form id="contactForm" onsubmit="submitContactForm(event)">
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="e.g. Jane Doe" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" placeholder="name@example.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="purpose">Inquiry Reason</label>
+            <select id="purpose" required>
+                <option value="Technical Support">Technical Support / Bug Report</option>
+                <option value="Commercial Inquiry">Commercial / Business Partnerships</option>
+                <option value="General Question">General Inquiries</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Message</label>
+            <textarea id="notes" placeholder="Please write your detailed message or feedback here..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">Send Message</button>
+    </form>
+
+    <div id="successBox" class="status-box">
+        <h2 style="color: var(--accent-color); margin-bottom: 15px;">✓ Message Sent!</h2>
+        <p style="color: #E2E8F0; margin-bottom: 20px;">Thank you for reaching out. Your message has been sent directly to the Hunter Disk Cleaner support team. We will get back to you as soon as possible.</p>
+        <a href="index.html" class="btn-submit" style="display: inline-block; text-align: center; text-decoration: none; width: auto; padding: 10px 30px;">Back to Home</a>
+    </div>
+
+    <a href="index.html" class="back-link">← Back to Main Page</a>
+</div>
+
+<script>
+async function submitContactForm(event) {
+    event.preventDefault();
+    
+    const submitBtn = document.getElementById('submitBtn');
+    const contactForm = document.getElementById('contactForm');
+    const successBox = document.getElementById('successBox');
+    
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Sending...";
+
+    const payload = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        hwid: "N/A", // Como é contato geral, preenchemos automaticamente com Não Aplicável
+        purpose: document.getElementById('purpose').value,
+        notes: document.getElementById('notes').value
+    };
+
+    const workerUrl = "https://hunter-form-pro.geandertkind.workers.dev";
+
+    try {
+        const response = await fetch(workerUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+            contactForm.style.display = 'none';
+            successBox.style.display = 'block';
+        } else {
+            alert("Oops! Something went wrong on the server. Please try again later.");
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Send Message";
+        }
+    } catch (error) {
+        alert("Network error. Could not connect to the support server.");
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Send Message";
+    }
+}
+</script>
+
+</body>
+</html>
