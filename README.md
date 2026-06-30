@@ -49,7 +49,7 @@ Hunter Disk Cleaner is built for a global audience. The interface adapts instant
 * 🇵🇹 **Português (PT)** (`pt-PT`)
 * 🇪🇸 **Español** (`es-ES`)
 * 🇩🇪 **Deutsch** (`de-DE`)
-* 🇫🇷 **Français** (`fr-FR`)
+* 🇫睿 **Français** (`fr-FR`)
 * 🇮🇹 **Italiano** (`it-IT`)
 * 🇮🇩 **Bahasa Indonesia** (`id-ID`)
 * 🇻🇳 **Tiếng Việt** (`vi-VN`)
@@ -76,8 +76,13 @@ We believe in **absolute transparency**. The application clearly displays how mu
 | One-Click Total Optimization | ❌ | ✅ |
 | Priority Support & Updates | ❌ | ✅ |
 
-### 🔑 Get your PRO License
-For now, a **PRO license key** can be requested directly via email. Please contact us at **myworkflowtech@gmail.com** to acquire your license and unlock the full potential of Hunter Disk Cleaner.
+### 🔑 Get your PRO License & Support
+
+To unlock the full potential of Hunter Disk Cleaner, you can request your PRO license activation or get technical assistance through our official channels:
+
+* 🌐 **Official Website:** [hunterdiskcleaner.com](https://hunterdiskcleaner.com)
+* 🔑 **PRO License Request:** [Request via Web Form](https://hunterdiskcleaner.com/pro.html)
+* ✉️ **Contact & Support:** [Open a Support Ticket](https://hunterdiskcleaner.com/contact.html) or contact us directly at **myworkflowtech@gmail.com**
 
 ---
 
