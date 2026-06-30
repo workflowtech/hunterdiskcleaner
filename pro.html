@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get PRO License - Hunter Disk Cleaner</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         :root {
             --bg-color: #0F1522;
@@ -55,12 +56,18 @@
             font-size: 1rem;
         }
 
-        form {
+        form, .status-box {
             background-color: var(--card-bg);
             padding: 30px;
             border-radius: 16px;
             border: 1px solid rgba(44, 228, 209, 0.1);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .status-box {
+            display: none;
+            text-align: center;
+            padding: 40px 30px;
         }
 
         .form-group {
@@ -117,6 +124,12 @@
             box-shadow: 0 0 15px rgba(44, 228, 209, 0.4);
         }
 
+        .btn-submit:disabled {
+            background-color: var(--text-muted);
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
         .back-link {
             display: block;
             text-align: center;
@@ -141,7 +154,7 @@
         <p class="description">Please fill in the details below to request your professional license key during the Beta testing phase.</p>
     </header>
 
-    <form id="proForm" onsubmit="sendLocalMail(event)">
+    <form id="proForm" onsubmit="submitForm(event)">
         <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" placeholder="e.g. John Doe" required>
@@ -168,35 +181,63 @@
             </select>
         </div>
 
-        <button type="submit" class="btn-submit">Generate Mail Request</button>
+        <button type="submit" class="btn-submit" id="submitBtn">Submit Request</button>
     </form>
+
+    <div id="successBox" class="status-box">
+        <h2 style="color: var(--accent-color); margin-bottom: 15px;">✓ Request Received!</h2>
+        <p style="color: #E2E8F0; margin-bottom: 20px;">Thank you for contributing to our Beta phase. Your application data and HWID have been submitted directly to our development team. We will review it shortly.</p>
+        <a href="index.html" class="btn-submit" style="display: inline-block; text-align: center; text-decoration: none; width: auto; padding: 10px 30px;">Back to Home</a>
+    </div>
 
     <a href="index.html" class="back-link">← Back to Main Page</a>
 </div>
 
 <script>
-function sendLocalMail(event) {
+async function submitForm(event) {
     event.preventDefault();
     
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const hwid = document.getElementById('hwid').value;
-    const purpose = document.getElementById('purpose').value;
+    const submitBtn = document.getElementById('submitBtn');
+    const proForm = document.getElementById('proForm');
+    const successBox = document.getElementById('successBox');
     
-    const destination = "contact@hunterdiskcleaner.com";
-    const subject = encodeURIComponent(`[PRO License Request] - ${purpose}`);
-    
-    let bodyText = `Hello Hunter Disk Cleaner Team,\n\n`;
-    bodyText += `Here are my details for the PRO license activation:\n\n`;
-    bodyText += `• Name: ${name}\n`;
-    bodyText += `• Activation Email: ${email}\n`;
-    bodyText += `• Hardware ID (HWID): ${hwid}\n`;
-    bodyText += `• Purpose: ${purpose}\n\n`;
-    bodyText += `Sent via hunterdiskcleaner.com local form.`;
-    
-    const body = encodeURIComponent(bodyText);
-    
-    window.location.href = `mailto:${destination}?subject=${subject}&body=${body}`;
+    // Desativar o botão para evitar cliques duplos (Muda de processamento)
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Processing...";
+
+    const payload = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        hwid: document.getElementById('hwid').value,
+        purpose: document.getElementById('purpose').value
+    };
+
+    // SUBSTiTUI esta URL abaixo pela URL que a Cloudflare gerou para o teu Worker
+    const workerUrl = "https://hunter-form-pro.geandertkind.workers.dev";
+
+    try {
+        const response = await fetch(workerUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+            // Oculta o formulário e exibe o feedback visual de sucesso na tela
+            proForm.style.display = 'none';
+            successBox.style.display = 'block';
+        } else {
+            alert("Oops! Something went wrong on the server. Please try again later.");
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Submit Request";
+        }
+    } catch (error) {
+        alert("Network error. Could not connect to the registration server.");
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Submit Request";
+    }
 }
 </script>
 
