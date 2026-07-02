@@ -116,6 +116,114 @@
             color: var(--accent-color);
         }
 
+        /* --- NOVO: ESTILOS DO CARROSSEL --- */
+        .carousel-section {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(44, 228, 209, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .carousel-slide {
+            display: none;
+            animation: fadeEffect 0.5s ease-in-out;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .carousel-caption {
+            background: rgba(22, 31, 50, 0.95);
+            padding: 18px 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .carousel-caption h3 {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .carousel-caption p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(22, 31, 50, 0.8);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: var(--accent-color);
+            color: #000000;
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+
+        .prev-btn { left: 15px; }
+        .next-btn { right: 15px; }
+
+        .carousel-dots {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .dot.active, .dot:hover {
+            background: var(--accent-color);
+            transform: scale(1.2);
+        }
+
+        @keyframes fadeEffect {
+            from { opacity: 0.5; }
+            to { opacity: 1; }
+        }
+        /* --- FIM DOS ESTILOS DO CARROSSEL --- */
+
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -190,10 +298,68 @@
         <div class="cta-buttons">
             <a href="https://github.com/workflowtech/hunterdiskcleaner/releases/download/lastest/HunterDiskCleaner_Setup.exe" class="btn btn-primary">Download Free Edition</a>
             <a href="pro.html" class="btn btn-secondary">Get PRO License</a>
-            <!-- NOVO BOTÃO ADICIONADO: Suporte Técnico e Comercial -->
             <a href="contact.html" class="btn btn-secondary">Contact & Support</a>
         </div>
     </section>
+
+    <!-- NOVO: SEÇÃO DO CARROSSEL DINÂMICO -->
+    <h2 style="margin-bottom: 20px; text-align: center;">Interface Overview</h2>
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                
+                <!-- Slide 1 -->
+                <div class="carousel-slide active">
+                    <img src="screenshot01.png" alt="Hunter Disk Cleaner - Main Dashboard" class="carousel-img">
+                    <div class="carousel-caption">
+                        <h3>Architectural Cache Optimizer</h3>
+                        <p>Modern and minimalistic dashboard build designed for rapid navigation and automated system scanning.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-slide">
+                    <img src="screenshot02.png" alt="Hunter Disk Cleaner - Detailed Trash Zones" class="carousel-img">
+                    <div class="carousel-caption">
+                        <h3>Detailed Analysis & Safety Labels</h3>
+                        <p>Comprehensive layout showing exact junk allocations mapped with structural target colors for data preservation.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-slide">
+                    <img src="screenshot03.png" alt="Hunter Disk Cleaner - Pro Activation State" class="carousel-img">
+                    <div class="carousel-caption">
+                        <h3>Advanced Targeting Engine</h3>
+                        <p>Unlock profound junk zone purging capabilities to regain massive space allocations seamlessly.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="carousel-slide">
+                    <img src="screenshot04.png" alt="Hunter Disk Cleaner - Optimization Complete" class="carousel-img">
+                    <div class="carousel-caption">
+                        <h3>Post-Purge Clean Operations</h3>
+                        <p>Instant system stabilization rendering optimal residual cleanup actions without removing critical application parameters.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Controles Manuais -->
+            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+        <!-- Indicadores (Dots) -->
+        <div class="carousel-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+    <!-- FIM DA SEÇÃO DO CARROSSEL -->
 
     <h2 style="margin-bottom: 20px; text-align: center;">Key Features</h2>
     <section class="features">
@@ -248,6 +414,54 @@
         <p>Hunter Disk Cleaner is built with continuous improvement mindsets. Safely hunting junk, pixel by pixel.</p>
     </footer>
 </div>
+
+<!-- LÓGICA JAVASCRIPT DO CARROSSEL -->
+<script>
+    let currentSlideIndex = 0;
+    let slideTimeout;
+
+    // Inicializa o carrossel ao carregar a página
+    document.addEventListener("DOMContentLoaded", () => {
+        showSlides(currentSlideIndex);
+    });
+
+    function moveSlide(n) {
+        showSlides(currentSlideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(currentSlideIndex = n);
+    }
+
+    function showSlides(n) {
+        const slides = document.getElementsByClassName("carousel-slide");
+        const dots = document.getElementsByClassName("dot");
+        
+        // Reseta o temporizador automático em caso de interação manual
+        clearTimeout(slideTimeout);
+
+        if (n >= slides.length) { currentSlideIndex = 0; }
+        if (n < 0) { currentSlideIndex = slides.length - 1; }
+
+        // Remove a classe ativa de todos os elementos
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
+        }
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active");
+        }
+
+        // Ativa o slide e a bolinha da posição atual
+        slides[currentSlideIndex].classList.add("active");
+        dots[currentSlideIndex].classList.add("active");
+
+        // Configura o avanço automático para mudar a cada 6 segundos
+        slideTimeout = setTimeout(() => {
+            currentSlideIndex++;
+            showSlides(currentSlideIndex);
+        }, 6000);
+    }
+</script>
 
 </body>
 </html>
