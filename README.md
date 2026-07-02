@@ -29,6 +29,16 @@ Unlike traditional opaque cleaners, Hunter features a **unified transparency int
 
 ---
 
+## 📸 Interface Screenshots
+
+| Main Dashboard (Scan Overview) | Detailed Analysis & Safety Labels |
+| :---: | :---: |
+| <img src="screenshot01.png" width="400" alt="Main Dashboard"> | <img src="screenshot02.png" width="400" alt="Detailed Analysis"> |
+| **Pro Activation Window** | **Optimization Complete State** |
+| <img src="screenshot03.png" width="400" alt="Pro Activation"> | <img src="screenshot04.png" width="400" alt="Optimization Complete"> |
+
+---
+
 ## ✨ Features
 
 * **⚡ High-Speed Scanning:** Multi-threaded engine optimized to scan critical Windows junk zones in seconds.
@@ -49,8 +59,14 @@ Hunter Disk Cleaner is built for a global audience. The interface adapts instant
 * 🇵🇹 **Português (PT)** (`pt-PT`)
 * 🇪🇸 **Español** (`es-ES`)
 * 🇩🇪 **Deutsch** (`de-DE`)
-* 🇫睿 **Français** (`fr-FR`)
+* 🇫🇷 **Français** (`fr-FR`)
 * 🇮🇹 **Italiano** (`it-IT`)
+* 🇳🇱 **Nederlands** (`nl-NL`)
+* 🇹🇷 **Türkçe** (`tr-TR`)
+* 🇵🇱 **Polski** (`pl-PL`)
+* 🇫🇮 **Suomi** (`fi-FI`)
+* 🇸🇪 **Svenska** (`sv-SE`)
+* 🇨🇿 **Čeština** (`cs-CZ`)
 * 🇮🇩 **Bahasa Indonesia** (`id-ID`)
 * 🇻🇳 **Tiếng Việt** (`vi-VN`)
 * 🇷🇺 **Русский** (`ru-RU`)
