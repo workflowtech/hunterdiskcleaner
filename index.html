@@ -296,19 +296,26 @@
     <section class="hero">
         <p>A modern, blazing-fast, and lightweight disk cleanup utility for Windows. Safely hunt down and remove hidden junk files to free up your computer storage instantly without surprises.</p>
         <div class="cta-buttons">
-            <a href="https://github.com/workflowtech/hunterdiskcleaner/releases/download/lastest/HunterDiskCleaner_Setup.exe" class="btn btn-primary">Download Free Edition</a>
+            <a href="https://github.com/workflowtech/hunterdiskcleaner/releases/download/lastest/HunterDiskCleaner_Setup.exe" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="position: relative; top: -1px;">
+                    <path d="M0 3.449L9.75 2.1v9.45H0V3.449zM0 12.45h9.75v9.45L0 20.551v-8.1zM10.8 1.95L24 0v11.55H10.8V1.95zM10.8 12.45H24v11.55l-13.2-1.95v-9.6z"/>
+                </svg>
+                Download Free Edition
+            </a>
             <a href="pro.html" class="btn btn-secondary">Get PRO License</a>
             <a href="contact.html" class="btn btn-secondary">Contact & Support</a>
         </div>
+        
+        <div style="margin-top: 18px; font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.6px;">
+            Compatible with <strong>Windows 10 / 11 (64-bit)</strong>
+        </div>
     </section>
 
-    <!-- NOVO: SEÇÃO DO CARROSSEL DINÂMICO -->
     <h2 style="margin-bottom: 20px; text-align: center;">Interface Overview</h2>
     <section class="carousel-section">
         <div class="carousel-container">
             <div class="carousel-wrapper">
                 
-                <!-- Slide 1 -->
                 <div class="carousel-slide active">
                     <img src="screenshot01.png" alt="Hunter Disk Cleaner - Main Dashboard" class="carousel-img">
                     <div class="carousel-caption">
@@ -317,7 +324,6 @@
                     </div>
                 </div>
 
-                <!-- Slide 2 -->
                 <div class="carousel-slide">
                     <img src="screenshot02.png" alt="Hunter Disk Cleaner - Detailed Trash Zones" class="carousel-img">
                     <div class="carousel-caption">
@@ -326,7 +332,6 @@
                     </div>
                 </div>
 
-                <!-- Slide 3 -->
                 <div class="carousel-slide">
                     <img src="screenshot03.png" alt="Hunter Disk Cleaner - Pro Activation State" class="carousel-img">
                     <div class="carousel-caption">
@@ -335,7 +340,6 @@
                     </div>
                 </div>
 
-                <!-- Slide 4 -->
                 <div class="carousel-slide">
                     <img src="screenshot04.png" alt="Hunter Disk Cleaner - Optimization Complete" class="carousel-img">
                     <div class="carousel-caption">
@@ -346,12 +350,10 @@
 
             </div>
 
-            <!-- Controles Manuais -->
             <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
             <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
         </div>
 
-        <!-- Indicadores (Dots) -->
         <div class="carousel-dots">
             <span class="dot active" onclick="currentSlide(0)"></span>
             <span class="dot" onclick="currentSlide(1)"></span>
@@ -359,8 +361,6 @@
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
     </section>
-    <!-- FIM DA SEÇÃO DO CARROSSEL -->
-
     <h2 style="margin-bottom: 20px; text-align: center;">Key Features</h2>
     <section class="features">
         <div class="feature-card">
@@ -415,7 +415,6 @@
     </footer>
 </div>
 
-<!-- LÓGICA JAVASCRIPT DO CARROSSEL -->
 <script>
     let currentSlideIndex = 0;
     let slideTimeout;
