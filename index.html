@@ -116,7 +116,6 @@
             color: var(--accent-color);
         }
 
-        
         .carousel-section {
             margin: 50px 0;
             text-align: center;
@@ -222,7 +221,6 @@
             from { opacity: 0.5; }
             to { opacity: 1; }
         }
-        
 
         .features {
             display: grid;
@@ -274,14 +272,12 @@
             border-bottom: none;
         }
 
-        <footer>
-        <p style="margin-bottom: 15px;">Hunter Disk Cleaner is built with continuous improvement mindsets. Safely hunting junk, pixel by pixel.</p>
-        <div style="font-size: 0.85rem; display: flex; justify-content: center; gap: 20px;">
-            <a href="privacy.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a>
-            <span style="color: rgba(255,255,255,0.1);">|</span>
-            <a href="terms.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">Terms of Service</a>
-        </div>
-    </footer>
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 30px;
+        }
     </style>
 </head>
 <body>
@@ -361,6 +357,7 @@
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
     </section>
+
     <h2 style="margin-bottom: 20px; text-align: center;">Key Features</h2>
     <section class="features">
         <div class="feature-card">
@@ -411,7 +408,12 @@
     </table>
 
     <footer>
-        <p>Hunter Disk Cleaner is built with continuous improvement mindsets. Safely hunting junk, pixel by pixel.</p>
+        <p style="margin-bottom: 15px;">Hunter Disk Cleaner is built with continuous improvement mindsets. Safely hunting junk, pixel by pixel.</p>
+        <div style="font-size: 0.85rem; display: flex; justify-content: center; gap: 20px;">
+            <a href="privacy.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a>
+            <span style="color: rgba(255,255,255,0.1);">|</span>
+            <a href="terms.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">Terms of Service</a>
+        </div>
     </footer>
 </div>
 
@@ -419,7 +421,6 @@
     let currentSlideIndex = 0;
     let slideTimeout;
 
-    
     document.addEventListener("DOMContentLoaded", () => {
         showSlides(currentSlideIndex);
     });
@@ -436,13 +437,11 @@
         const slides = document.getElementsByClassName("carousel-slide");
         const dots = document.getElementsByClassName("dot");
         
-       
         clearTimeout(slideTimeout);
 
         if (n >= slides.length) { currentSlideIndex = 0; }
         if (n < 0) { currentSlideIndex = slides.length - 1; }
 
-        
         for (let i = 0; i < slides.length; i++) {
             slides[i].classList.remove("active");
         }
@@ -450,11 +449,9 @@
             dots[i].classList.remove("active");
         }
 
-        
         slides[currentSlideIndex].classList.add("active");
         dots[currentSlideIndex].classList.add("active");
 
-       
         slideTimeout = setTimeout(() => {
             currentSlideIndex++;
             showSlides(currentSlideIndex);
