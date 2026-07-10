@@ -29,7 +29,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -58,20 +58,31 @@
             margin: 0 auto;
         }
 
-        /* Pricing Cards Styles */
-        .pricing-tier {
+        .section-title {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 40px 0 20px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(44, 228, 209, 0.2);
+            padding-bottom: 8px;
+        }
+
+        /* Pricing Grid */
+        .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
         .price-card {
             background-color: var(--card-bg);
-            padding: 35px 25px;
-            border-radius: 16px;
-            border: 1px solid rgba(44, 228, 209, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px 20px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -80,30 +91,40 @@
         }
 
         .price-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             border-color: rgba(44, 228, 209, 0.3);
         }
 
         .price-card.featured {
             border-color: var(--accent-color);
-            position: relative;
         }
 
         .price-card h2 {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             color: #E2E8F0;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+        }
+
+        .price-card .devices {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            background: rgba(44, 228, 209, 0.1);
+            padding: 2px 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .price-card .price {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 800;
-            color: var(--accent-color);
-            margin: 15px 0;
+            color: #FFFFFF;
+            margin: 10px 0;
         }
 
         .price-card .price span {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
             font-weight: 400;
         }
@@ -111,16 +132,16 @@
         .price-card ul {
             text-align: left;
             list-style: none;
-            margin: 20px 0 30px 0;
+            margin: 15px 0 25px 0;
         }
 
         .price-card ul li {
-            color: #E2E8F0;
-            font-size: 0.95rem;
-            margin-bottom: 12px;
+            color: #B2C0D4;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         form, .status-box {
@@ -184,17 +205,16 @@
             background-color: var(--accent-color);
             color: #000000;
             border: none;
-            padding: 14px;
+            padding: 12px;
             border-radius: 8px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.95rem;
             cursor: pointer;
             transition: all 0.2s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
             text-decoration: none;
             text-align: center;
-            margin-top: 10px;
         }
 
         .btn-submit:hover {
@@ -212,12 +232,6 @@
             border-color: var(--accent-color);
             color: var(--accent-color);
             background-color: transparent;
-        }
-
-        .btn-submit:disabled {
-            background-color: var(--text-muted);
-            cursor: not-allowed;
-            box-shadow: none;
         }
 
         .back-link {
@@ -241,42 +255,106 @@
     <header>
         <img src="App.png" alt="Hunter Disk Cleaner Logo" class="logo">
         <h1>Choose Your Hunter PRO License</h1>
-        <p class="description">Unlock full one-click optimizations and deep architecture target cleaning instantly through our secure global processor.</p>
+        <p class="description">Unlock full one-click optimizations and deep target cleaning. Select the package that best fits your workstation pool.</p>
     </header>
 
-    <!-- PRICING TIERS SECTION -->
-    <div class="pricing-tier">
-        <!-- Subscription Plan -->
+    <!-- SECTION 1: SINGLE PACKAGES -->
+    <div class="section-title">Single License Packages (1-Year)</div>
+    <div class="pricing-grid">
+        <!-- Monthly Single -->
         <div class="price-card">
             <div>
-                <h2>Premium Subscription</h2>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Continuous Support & Updates</p>
-                <div class="price">USD$ 1.90 <span>/ mo</span></div>
+                <h2>Monthly Pass</h2>
+                <div class="devices">Max 1 Device</div>
+                <div class="price">USD$ 2.95 <span>/ mo</span></div>
                 <ul>
-                    <li><span style="color: var(--accent-color);">✓</span> Continuous optimization model</li>
-                    <li><span style="color: var(--accent-color);">✓</span> Real-time advanced system scan</li>
-                    <li><span style="color: var(--accent-color);">✓</span> Browser cache & leftovers deletion</li>
-                    <li><span style="color: var(--accent-color);">✓</span> Priority feature updates</li>
+                    <li><span>✓</span> Full 1-Month PRO Access</li>
+                    <li><span>✓</span> Architecture Target Cleanup</li>
+                    <li><span>✓</span> Basic Email Support</li>
                 </ul>
             </div>
-            <a href="https://workflowtech.gumroad.com/l/hunterdiskcleanersubscription?wanted=true" target="_blank" rel="noopener noreferrer" class="btn-submit btn-secondary-card">Subscribe Plan</a>
+            <a href="https://workflowtech.gumroad.com/l/your-monthly-single-link" target="_blank" rel="noopener noreferrer" class="btn-submit btn-secondary-card">Get Pass</a>
         </div>
 
-        <!-- Lifetime Plan -->
-        <div class="price-card featured">
+        <!-- Quarterly Single -->
+        <div class="price-card">
             <div>
-                <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background-color: var(--accent-color); color: #000; font-size: 0.75rem; font-weight: 800; padding: 2px 12px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Most Popular</div>
-                <h2>Lifetime License</h2>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">One-time payment, yours forever</p>
-                <div class="price">USD$ 14.90 <span>/ once</span></div>
+                <h2>Quarterly Pass</h2>
+                <div class="devices">Max 3 Devices</div>
+                <div class="price">USD$ 5.95 <span>/ 3 mo</span></div>
                 <ul>
-                    <li><span style="color: var(--accent-color);">✓</span> No recurring fees ever</li>
-                    <li><span style="color: var(--accent-color);">✓</span> Complete structural disk cleanup</li>
-                    <li><span style="color: var(--accent-color);">✓</span> One-Click Total Optimization</li>
-                    <li><span style="color: var(--accent-color);">✓</span> Full multi-language global switching</li>
+                    <li><span>✓</span> Full 3-Month PRO Access</li>
+                    <li><span>✓</span> Up to 3 active computers</li>
+                    <li><span>✓</span> Cache & leftovers deletion</li>
                 </ul>
             </div>
-            <a href="https://workflowtech.gumroad.com/l/hunterdiskcleaner?wanted=true" target="_blank" rel="noopener noreferrer" class="btn-submit">Buy Lifetime License</a>
+            <a href="https://workflowtech.gumroad.com/l/your-quarterly-single-link" target="_blank" rel="noopener noreferrer" class="btn-submit btn-secondary-card">Get Pass</a>
+        </div>
+
+        <!-- Annual Single -->
+        <div class="price-card featured">
+            <div>
+                <h2>Annual Value</h2>
+                <div class="devices">Max 5 Devices</div>
+                <div class="price">USD$ 12.00 <span>/ yr</span></div>
+                <ul>
+                    <li><span>✓</span> Full 1-Year Full Pass</li>
+                    <li><span>✓</span> Up to 5 active computers</li>
+                    <li><span>✓</span> Best standalone value</li>
+                    <li><span>✓</span> Priority Feature Updates</li>
+                </ul>
+            </div>
+            <a href="https://workflowtech.gumroad.com/l/your-annual-single-link" target="_blank" rel="noopener noreferrer" class="btn-submit">Get Annual</a>
+        </div>
+    </div>
+
+    <!-- SECTION 2: SUBSCRIPTIONS -->
+    <div class="section-title">Continuous Subscriptions (Auto-Renew)</div>
+    <div class="pricing-grid">
+        <!-- Monthly Subscription -->
+        <div class="price-card">
+            <div>
+                <h2>Monthly Sub</h2>
+                <div class="devices">Max 3 Devices</div>
+                <div class="price">USD$ 2.95 <span>/ mo</span></div>
+                <ul>
+                    <li><span>✓</span> Continuous Auto-Renewal</li>
+                    <li><span>✓</span> Multi-device deployment (3)</li>
+                    <li><span>✓</span> Real-time advanced scan</li>
+                </ul>
+            </div>
+            <a href="https://workflowtech.gumroad.com/l/your-monthly-sub-link" target="_blank" rel="noopener noreferrer" class="btn-submit btn-secondary-card">Subscribe</a>
+        </div>
+
+        <!-- Quarterly Subscription -->
+        <div class="price-card">
+            <div>
+                <h2>Quarterly Sub</h2>
+                <div class="devices">Max 5 Devices</div>
+                <div class="price">USD$ 5.95 <span>/ qtr</span></div>
+                <ul>
+                    <li><span>✓</span> Renewed every 3 months</li>
+                    <li><span>✓</span> Mid-size pool support (5)</li>
+                    <li><span>✓</span> Full system target cleaning</li>
+                </ul>
+            </div>
+            <a href="https://workflowtech.gumroad.com/l/your-quarterly-sub-link" target="_blank" rel="noopener noreferrer" class="btn-submit btn-secondary-card">Subscribe</a>
+        </div>
+
+        <!-- Annual Subscription -->
+        <div class="price-card featured">
+            <div>
+                <h2>Annual Sub</h2>
+                <div class="devices">Max 10 Devices</div>
+                <div class="price">USD$ 12.00 <span>/ yr</span></div>
+                <ul>
+                    <li><span>✓</span> Yearly seamless billing</li>
+                    <li><span>✓</span> Power-user lab scale (10)</li>
+                    <li><span>✓</span> Highest priority support</li>
+                    <li><span>✓</span> Continuous deployment sync</li>
+                </ul>
+            </div>
+            <a href="https://workflowtech.gumroad.com/l/your-annual-sub-link" target="_blank" rel="noopener noreferrer" class="btn-submit">Subscribe</a>
         </div>
     </div>
 
@@ -295,13 +373,11 @@
         <div class="form-group">
             <label for="email">Activation Email</label>
             <input type="email" id="email" placeholder="your@email.com" required>
-            <small style="color: var(--text-muted); font-size: 0.8rem; display: block; margin-top: 4px;">This email will be linked directly to your software license validation.</small>
         </div>
 
         <div class="form-group">
             <label for="hwid">Hardware ID (HWID)</label>
             <input type="text" id="hwid" placeholder="Copy and paste your HWID from the App" required>
-            <small style="color: var(--text-muted); font-size: 0.8rem; display: block; margin-top: 4px;">You can find your unique HWID inside the Hunter Disk Cleaner application settings.</small>
         </div>
 
         <div class="form-group">
@@ -322,7 +398,7 @@
 
     <div id="successBox" class="status-box">
         <h2 style="color: var(--accent-color); margin-bottom: 15px;">✓ Request Received!</h2>
-        <p style="color: #E2E8F0; margin-bottom: 20px;">Thank you for contributing to our Beta phase. Your application data and HWID have been submitted directly to our development team. We will review it shortly.</p>
+        <p style="color: #E2E8F0; margin-bottom: 20px;">Your activation data and HWID have been submitted directly to our development team.</p>
         <a href="index.html" class="btn-submit" style="display: inline-block; text-align: center; text-decoration: none; width: auto; padding: 10px 30px;">Back to Home</a>
     </div>
 
@@ -332,7 +408,6 @@
 <script>
 async function submitForm(event) {
     event.preventDefault();
-    
     const submitBtn = document.getElementById('submitBtn');
     const proForm = document.getElementById('proForm');
     const successBox = document.getElementById('successBox');
@@ -353,9 +428,7 @@ async function submitForm(event) {
     try {
         const response = await fetch(workerUrl, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
         });
 
@@ -363,7 +436,7 @@ async function submitForm(event) {
             proForm.style.display = 'none';
             successBox.style.display = 'block';
         } else {
-            alert("Oops! Something went wrong on the server. Please try again later.");
+            alert("Oops! Something went wrong. Please try again later.");
             submitBtn.disabled = false;
             submitBtn.innerText = "Submit Request";
         }
