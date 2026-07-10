@@ -29,7 +29,7 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
@@ -54,14 +54,82 @@
         p.description {
             color: var(--text-muted);
             font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Pricing Cards Styles */
+        .pricing-tier {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .price-card {
+            background-color: var(--card-bg);
+            padding: 35px 25px;
+            border-radius: 16px;
+            border: 1px solid rgba(44, 228, 209, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(44, 228, 209, 0.3);
+        }
+
+        .price-card.featured {
+            border-color: var(--accent-color);
+            position: relative;
+        }
+
+        .price-card h2 {
+            font-size: 1.4rem;
+            color: #E2E8F0;
+            margin-bottom: 10px;
+        }
+
+        .price-card .price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin: 15px 0;
+        }
+
+        .price-card .price span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .price-card ul {
+            text-align: left;
+            list-style: none;
+            margin: 20px 0 30px 0;
+        }
+
+        .price-card ul li {
+            color: #E2E8F0;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         form, .status-box {
             background-color: var(--card-bg);
             padding: 30px;
             border-radius: 16px;
-            border: 1px solid rgba(44, 228, 209, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-top: 40px;
         }
 
         .status-box {
@@ -111,6 +179,7 @@
         }
 
         .btn-submit {
+            display: block;
             width: 100%;
             background-color: var(--accent-color);
             color: #000000;
@@ -123,12 +192,26 @@
             transition: all 0.2s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
+            text-decoration: none;
+            text-align: center;
             margin-top: 10px;
         }
 
         .btn-submit:hover {
             background-color: #24bdaf;
             box-shadow: 0 0 15px rgba(44, 228, 209, 0.4);
+        }
+
+        .btn-submit.btn-secondary-card {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--text-muted);
+        }
+
+        .btn-submit.btn-secondary-card:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            background-color: transparent;
         }
 
         .btn-submit:disabled {
@@ -157,9 +240,51 @@
 <div class="container">
     <header>
         <img src="App.png" alt="Hunter Disk Cleaner Logo" class="logo">
-        <h1>Hunter Disk Cleaner PRO</h1>
-        <p class="description">Please fill in the details below to request your professional license key during the Beta testing phase.</p>
+        <h1>Choose Your Hunter PRO License</h1>
+        <p class="description">Unlock full one-click optimizations and deep architecture target cleaning instantly through our secure global processor.</p>
     </header>
+
+    <!-- PRICING TIERS SECTION -->
+    <div class="pricing-tier">
+        <!-- Subscription Plan -->
+        <div class="price-card">
+            <div>
+                <h2>Premium Subscription</h2>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Continuous Support & Updates</p>
+                <div class="price">USD$ 1.90 <span>/ mo</span></div>
+                <ul>
+                    <li><span style="color: var(--accent-color);">✓</span> Continuous optimization model</li>
+                    <li><span style="color: var(--accent-color);">✓</span> Real-time advanced system scan</li>
+                    <li><span style="color: var(--accent-color);">✓</span> Browser cache & leftovers deletion</li>
+                    <li><span style="color: var(--accent-color);">✓</span> Priority feature updates</li>
+                </ul>
+            </div>
+            <a href="https://workflowtech.gumroad.com/l/hunterdiskcleanersubscription?wanted=true" target="_blank" rel="noopener noreferrer" class="btn-submit btn-secondary-card">Subscribe Plan</a>
+        </div>
+
+        <!-- Lifetime Plan -->
+        <div class="price-card featured">
+            <div>
+                <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background-color: var(--accent-color); color: #000; font-size: 0.75rem; font-weight: 800; padding: 2px 12px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Most Popular</div>
+                <h2>Lifetime License</h2>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">One-time payment, yours forever</p>
+                <div class="price">USD$ 14.90 <span>/ once</span></div>
+                <ul>
+                    <li><span style="color: var(--accent-color);">✓</span> No recurring fees ever</li>
+                    <li><span style="color: var(--accent-color);">✓</span> Complete structural disk cleanup</li>
+                    <li><span style="color: var(--accent-color);">✓</span> One-Click Total Optimization</li>
+                    <li><span style="color: var(--accent-color);">✓</span> Full multi-language global switching</li>
+                </ul>
+            </div>
+            <a href="https://workflowtech.gumroad.com/l/hunterdiskcleaner?wanted=true" target="_blank" rel="noopener noreferrer" class="btn-submit">Buy Lifetime License</a>
+        </div>
+    </div>
+
+    <!-- BETA / MANUAL ACTIVATION SECTION -->
+    <div style="text-align: center; margin-top: 60px;">
+        <h3 style="color: #E2E8F0; font-size: 1.2rem; margin-bottom: 5px;">Need Beta or Manual Activation?</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">If you are an approved beta tester or have a manual key inquiry, use the secure field below.</p>
+    </div>
 
     <form id="proForm" onsubmit="submitForm(event)">
         <div class="form-group">
@@ -187,7 +312,6 @@
             </select>
         </div>
 
-        <!-- NOVO CAMPO ADICIONADO: Observações (Opcional) -->
         <div class="form-group">
             <label for="notes">Comments / Notes (Optional)</label>
             <textarea id="notes" placeholder="Any extra information or feedback you'd like to share with us..."></textarea>
@@ -221,7 +345,7 @@ async function submitForm(event) {
         email: document.getElementById('email').value,
         hwid: document.getElementById('hwid').value,
         purpose: document.getElementById('purpose').value,
-        notes: document.getElementById('notes').value // Captura o valor do campo opcional
+        notes: document.getElementById('notes').value
     };
 
     const workerUrl = "https://hunter-form-pro.geandertkind.workers.dev";
