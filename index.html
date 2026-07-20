@@ -31,7 +31,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1020px; /* Alargado levemente para dar respiro aos 4 botões */
             margin: 0 auto;
         }
 
@@ -78,29 +78,31 @@
             margin: 0 auto 30px auto;
         }
 
-        /* Estrutura Grid para garantir simetria e padronização dos botões */
+        /* Estrutura Flexbox rígida para manter os 4 alinhados lado a lado no desktop */
         .cta-buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 16px;
-            max-width: 850px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            gap: 12px;
+            width: 100%;
             margin: 0 auto 30px auto;
             justify-content: center;
         }
 
-        /* Classe base padronizada e centralizada de forma precisa */
+        /* Classe base padronizada com distribuição flexível idêntica */
         .btn {
+            flex: 1;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 14px 20px;
+            padding: 14px 10px; /* Reduzido o padding lateral interno para evitar falsas quebras */
             border-radius: 8px;
             font-weight: 700;
             text-decoration: none;
             transition: all 0.2s ease;
             cursor: pointer;
             white-space: nowrap;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .btn-primary {
@@ -122,6 +124,20 @@
         .btn-secondary:hover {
             border-color: var(--accent-color);
             color: var(--accent-color);
+        }
+
+        /* Responsividade: Transiciona para lista vertical apenas em telas menores de tablets/smartphones */
+        @media (max-width: 860px) {
+            .cta-buttons {
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                padding: 14px 20px;
+            }
         }
 
         .carousel-section {
@@ -294,14 +310,16 @@
     <section class="hero">
         <p>A modern, blazing-fast, and lightweight disk cleanup utility for Windows. Safely hunt down and remove hidden temporary files to free up your computer storage instantly without surprises.</p>
         <div class="cta-buttons">
-            <a href="https://github.com/workflowtech/hunterdiskcleaner/releases/download/lastest/HunterDiskCleaner_Setup.exe" class="btn btn-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 10px;">
-                    <path d="M0 3.449L9.75 2.1v9.45H0V3.449zM0 12.45h9.75v9.45L0 20.551v-8.1zM10.8 1.95L24 0v11.55H10.8V1.95zM10.8 12.45H24v11.55l-13.2-1.95v-9.6z"/>
+            <!-- Botão de Autoridade Máxima: Link Oficial para a Microsoft Store -->
+            <a href="https://apps.microsoft.com/detail/9NHQDCSTS58K" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <svg width="18" height="18" viewBox="0 0 23 23" style="margin-right: 8px; flex-shrink: 0;" fill="currentColor">
+                    <path d="M0 0h11v11H0zM12 0h11v11H12zM0 12h11v11H0zM12 12h11v11H12z"/>
                 </svg>
-                Download Free Edition
+                Get it from Microsoft Store
             </a>
+            <!-- Outras Opções com Links e Textos Mantidos Rigorosamente Omitindo Quebras -->
+            <a href="downloads.html" class="btn btn-secondary">All Downloads</a>
             <a href="pro.html" class="btn btn-secondary">Get PRO License</a>
-           <!-- <a href="https://workflowtech.gumroad.com/affiliates" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Become an Affiliate</a> -->
             <a href="contact.html" class="btn btn-secondary">Contact & Support</a>
         </div>
         
