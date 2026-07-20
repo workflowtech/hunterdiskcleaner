@@ -125,7 +125,7 @@
             flex-grow: 1;
         }
 
-        /* Botões padronizados com o mesmo design da index */
+        /* Botões padronizados */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -161,30 +161,6 @@
         .btn-secondary:hover {
             border-color: var(--accent-color);
             color: var(--accent-color);
-        }
-
-        /* Seção de Integridade e Segurança */
-        .integrity-box {
-            background-color: rgba(22, 31, 50, 0.5);
-            border-radius: 8px;
-            padding: 12px;
-            margin-top: 15px;
-            font-family: monospace;
-            font-size: 0.8rem;
-            word-break: break-all;
-            color: #A0AEC0;
-            border: 1px solid rgba(255, 255, 255, 0.02);
-            width: 100%;
-            text-align: left;
-        }
-
-        .integrity-title {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 4px;
-            font-weight: bold;
         }
 
         .requirements-section {
@@ -258,34 +234,29 @@
                 </svg>
             </div>
             <h3>Microsoft Store (Recommended)</h3>
-            <p>Get automatic updates, effortless one-click background installation, and maximum security sandbox verification verified officially by Microsoft.</p>
-            <a href="https://apps.microsoft.com/detail/YOUR_APP_ID" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <p>Get automatic background updates, effortless one-click deployment, and maximum secure sandbox system isolation verified officially by Microsoft.</p>
+            <a href="https://apps.microsoft.com/detail/9NHQDCSTS58K" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                 Get from Microsoft Store
             </a>
         </div>
 
-        <!-- Opção Alternativa: MSIX Package -->
+        <!-- Download Direto: Executável Clássico (.exe) via GitHub -->
         <div class="download-card">
-            <div class="card-icon">📦</div>
-            <h3>Direct MSIX Package</h3>
-            <p>Download the standalone modern Windows App package directly. Perfect for offline deployments or restricted network environments.</p>
-            <a href="downloads/HunterDiskCleaner_Latest.msix" class="btn btn-secondary">
-                Download .msix Installer
+            <div class="card-icon">🚀</div>
+            <h3>Direct Installer</h3>
+            <p>Download the standalone, classical executable architecture. Simple desktop installation deployment sequence mapped cleanly to current production releases.</p>
+            <a href="https://github.com/workflowtech/hunterdiskcleaner/releases/download/lastest/HunterDiskCleaner_Setup.exe" class="btn btn-secondary">
+                Download Setup (.exe)
             </a>
-            <div class="integrity-box">
-                <div class="integrity-title">SHA-256 Checksum</div>
-                <!-- Substitua pelo hash real gerado no seu build final -->
-                e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-            </div>
         </div>
 
-        <!-- Opção Alternativa: GitHub Source / Releases -->
+        <!-- Repositório do GitHub: Releases Históricas -->
         <div class="download-card">
             <div class="card-icon">🛠️</div>
             <h3>GitHub Releases</h3>
-            <p>Review the historical build logs, inspect change logs, or download target compilation binaries directly from our official developer repository infrastructure.</p>
-            <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/releases" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                View on GitHub
+            <p>Review historical compilation workflows, explore explicit changelog tags, or inspect open verification details directly inside the repository workspace.</p>
+            <a href="https://github.com/workflowtech/hunterdiskcleaner/releases" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                View All Releases
             </a>
         </div>
 
@@ -295,9 +266,7 @@
         <h2>System Requirements</h2>
         <ul class="requirements-list">
             <li><strong>Operating System:</strong> Windows 11 or Windows 10 (Build 19041 or higher)</li>
-            <li><strong>Architecture:</strong> 64-bit (x64) optimized</li>
-            <li><strong>Permissions:</strong> Standard User (Administrator elevation only mapped dynamically when hunting deep secure temporary paths)</li>
-            <li><strong>Storage Space:</strong> Less than 20 MB required for deployment</li>
+            <li><strong>Architecture:</strong> 64-bit (x64) optimized deployment</li>
         </ul>
     </section>
 
