@@ -33,6 +33,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hunter Disk Cleaner - Deep & Safe Windows Optimization</title>
+    <meta name="description" content="Hunter Disk Cleaner is a fast, lightweight, and safe disk cleaner for Windows 10/11. Instantly remove unnecessary system caches and temporary files to free up storage space.">
+    <link rel="canonical" href="https://hunterdiskcleaner.com/" />
+
+    <!-- Open Graph / Facebook / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hunterdiskcleaner.com/">
+    <meta property="og:title" content="Hunter Disk Cleaner - Deep & Safe Windows Optimization">
+    <meta property="og:description" content="Fast and lightweight system cleaning & cache optimization utility for Windows. Safely reclaim storage space.">
+    <meta property="og:image" content="https://hunterdiskcleaner.com/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hunter Disk Cleaner - Deep & Safe Windows Optimization">
+    <meta name="twitter:description" content="Fast and lightweight system cleaning & cache optimization utility for Windows. Safely reclaim storage space.">
+    <meta name="twitter:image" content="https://hunterdiskcleaner.com/og-image.png">
     
     <!-- Favicon from root -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -46,6 +61,7 @@
     <link rel="alternate" hreflang="de-de" href="https://hunterdiskcleaner.com/de-de/" />
     <link rel="alternate" hreflang="ja-jp" href="https://hunterdiskcleaner.com/ja-jp/" />
     <link rel="alternate" hreflang="zh-cn" href="https://hunterdiskcleaner.com/zh-cn/" />
+    <link rel="alternate" hreflang="ru-ru" href="https://hunterdiskcleaner.com/ru-ru/" />
     <link rel="alternate" hreflang="x-default" href="https://hunterdiskcleaner.com/" />
     
     <style>
@@ -212,7 +228,7 @@
             }
         }
 
-        /* Modern Carousel Track Styles (Japanese Style) */
+        /* Carousel Structure with Smooth Transition (.carousel-wrapper) */
         .carousel-section {
             margin: 50px 0;
             text-align: center;
@@ -226,26 +242,17 @@
             overflow: hidden;
             border: 1px solid rgba(44, 228, 209, 0.15);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            touch-action: pan-y;
         }
 
-        .carousel-track {
+        .carousel-wrapper {
             display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Firefox */
-        }
-
-        .carousel-track::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Edge */
+            width: 100%;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .carousel-slide {
-            flex: 0 0 100%;
             min-width: 100%;
-            scroll-snap-align: start;
-            scroll-snap-stop: always;
             box-sizing: border-box;
         }
 
@@ -253,6 +260,7 @@
             width: 100%;
             height: auto;
             display: block;
+            user-select: none;
         }
 
         .carousel-caption {
@@ -467,8 +475,8 @@
 
     <h2 style="margin-bottom: 20px; text-align: center;">Interface Overview</h2>
     <section class="carousel-section">
-        <div class="carousel-container">
-            <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-container" id="carouselContainer">
+            <div class="carousel-wrapper" id="carouselWrapper">
                 
                 <div class="carousel-slide">
                     <img src="/screenshot01.png" alt="Hunter Disk Cleaner - Main Dashboard" class="carousel-img">
@@ -504,8 +512,8 @@
 
             </div>
 
-            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)" aria-label="Previous">&#10094;</button>
+            <button class="carousel-btn next-btn" onclick="moveSlide(1)" aria-label="Next">&#10095;</button>
         </div>
 
         <div class="carousel-dots">
@@ -595,64 +603,65 @@
 <script>
     let currentSlideIndex = 0;
     let slideTimeout;
-    const track = document.getElementById("carouselTrack");
-    const dots = document.getElementsByClassName("dot");
 
     document.addEventListener("DOMContentLoaded", () => {
-        updateDots(0);
-        resetAutoSlide();
+        showSlides(currentSlideIndex);
+        
+        // Touch Gestures (Swipe)
+        const carouselContainer = document.getElementById('carouselContainer');
+        let touchStartX = 0;
+        let touchEndX = 0;
 
-        // Monitor manual drag/scroll to update active indicator dots
-        track.addEventListener("scroll", () => {
-            const index = Math.round(track.scrollLeft / track.clientWidth);
-            if (index !== currentSlideIndex) {
-                currentSlideIndex = index;
-                updateDots(currentSlideIndex);
-                resetAutoSlide();
+        carouselContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        carouselContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                moveSlide(1);
             }
-        });
+            if (touchEndX > touchStartX + swipeThreshold) {
+                moveSlide(-1);
+            }
+        }
     });
 
-    function scrollToSlide(index) {
-        const slideWidth = track.clientWidth;
-        track.scrollTo({
-            left: index * slideWidth,
-            behavior: "smooth"
-        });
-    }
-
     function moveSlide(n) {
-        const slidesCount = dots.length;
-        currentSlideIndex += n;
-
-        if (currentSlideIndex >= slidesCount) { currentSlideIndex = 0; }
-        if (currentSlideIndex < 0) { currentSlideIndex = slidesCount - 1; }
-
-        scrollToSlide(currentSlideIndex);
-        updateDots(currentSlideIndex);
-        resetAutoSlide();
+        showSlides(currentSlideIndex += n);
     }
 
     function currentSlide(n) {
-        currentSlideIndex = n;
-        scrollToSlide(currentSlideIndex);
-        updateDots(currentSlideIndex);
-        resetAutoSlide();
+        showSlides(currentSlideIndex = n);
     }
 
-    function updateDots(index) {
+    function showSlides(n) {
+        const wrapper = document.getElementById("carouselWrapper");
+        const slides = document.getElementsByClassName("carousel-slide");
+        const dots = document.getElementsByClassName("dot");
+        
+        clearTimeout(slideTimeout);
+
+        if (n >= slides.length) { currentSlideIndex = 0; }
+        if (n < 0) { currentSlideIndex = slides.length - 1; }
+
+        // Sliding animation via hardware acceleration (transform X)
+        wrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+
         for (let i = 0; i < dots.length; i++) {
             dots[i].classList.remove("active");
         }
-        if (dots[index]) {
-            dots[index].classList.add("active");
-        }
-    }
 
-    function resetAutoSlide() {
-        clearTimeout(slideTimeout);
+        dots[currentSlideIndex].classList.add("active");
+
         slideTimeout = setTimeout(() => {
-            moveSlide(1);
+            currentSlideIndex++;
+            showSlides(currentSlideIndex);
         }, 6000);
     }
 </script>
