@@ -184,6 +184,7 @@
             }
         }
 
+        /* --- Carrousel mis à jour avec Flexbox et Touch Support --- */
         .carousel-section {
             margin: 50px 0;
             text-align: center;
@@ -197,38 +198,36 @@
             overflow: hidden;
             border: 1px solid rgba(44, 228, 209, 0.15);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            touch-action: pan-y; /* Permet le défilement vertical, capture le horizontal */
         }
 
         .carousel-wrapper {
-            position: relative;
+            display: flex;
             width: 100%;
-            display: grid;
-            grid-template-areas: "slide";
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform;
         }
 
         .carousel-slide {
-            grid-area: slide;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
-            width: 100%;
-        }
-
-        .carousel-slide.active {
-            opacity: 1;
-            visibility: visible;
+            min-width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
         }
 
         .carousel-img {
             width: 100%;
             height: auto;
             display: block;
+            user-select: none;
+            -webkit-user-drag: none;
         }
 
         .carousel-caption {
             background: rgba(22, 31, 50, 0.95);
             padding: 18px 25px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
+            flex-grow: 1;
         }
 
         .carousel-caption h3 {
@@ -439,11 +438,11 @@
 
     <h2 style="margin-bottom: 20px; text-align: center;">Aperçu de l'interface</h2>
     <section class="carousel-section">
-        <div class="carousel-container">
-            <div class="carousel-wrapper">
+        <div class="carousel-container" id="carouselContainer">
+            <div class="carousel-wrapper" id="carouselWrapper">
                 
                 <!-- Images depuis la racine -->
-                <div class="carousel-slide active">
+                <div class="carousel-slide">
                     <img src="/screenshot01.png" alt="Hunter Disk Cleaner - Tableau de bord principal" class="carousel-img">
                     <div class="carousel-caption">
                         <h3>Optimiseur de Cache Architectural</h3>
@@ -477,8 +476,8 @@
 
             </div>
 
-            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)" aria-label="Slide précédente">&#10094;</button>
+            <button class="carousel-btn next-btn" onclick="moveSlide(1)" aria-label="Slide suivante">&#10095;</button>
         </div>
 
         <div class="carousel-dots">
@@ -568,43 +567,94 @@
 
 <script>
     let currentSlideIndex = 0;
-    let slideTimeout;
+    let slideTimeout = null;
+    const AUTO_SLIDE_INTERVAL = 6000;
+
+    const wrapper = document.getElementById("carouselWrapper");
+    const container = document.getElementById("carouselContainer");
+    const slides = document.getElementsByClassName("carousel-slide");
+    const dots = document.getElementsByClassName("dot");
 
     document.addEventListener("DOMContentLoaded", () => {
-        showSlides(currentSlideIndex);
+        updateCarousel();
+        startAutoSlide();
+        initTouchSupport();
     });
 
-    function moveSlide(n) {
-        showSlides(currentSlideIndex += n);
-    }
+    function updateCarousel() {
+        wrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
 
-    function currentSlide(n) {
-        showSlides(currentSlideIndex = n);
-    }
-
-    function showSlides(n) {
-        const slides = document.getElementsByClassName("carousel-slide");
-        const dots = document.getElementsByClassName("dot");
-        
-        clearTimeout(slideTimeout);
-
-        if (n >= slides.length) { currentSlideIndex = 0; }
-        if (n < 0) { currentSlideIndex = slides.length - 1; }
-
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-        }
         for (let i = 0; i < dots.length; i++) {
             dots[i].classList.remove("active");
         }
+        if (dots[currentSlideIndex]) {
+            dots[currentSlideIndex].classList.add("active");
+        }
+    }
 
-        slides[currentSlideIndex].classList.add("active");
-        dots[currentSlideIndex].classList.add("active");
+    function moveSlide(n) {
+        currentSlideIndex += n;
+        if (currentSlideIndex >= slides.length) { currentSlideIndex = 0; }
+        if (currentSlideIndex < 0) { currentSlideIndex = slides.length - 1; }
+        updateCarousel();
+        resetAutoSlide();
+    }
 
+    function currentSlide(n) {
+        currentSlideIndex = n;
+        updateCarousel();
+        resetAutoSlide();
+    }
+
+    function startAutoSlide() {
+        stopAutoSlide();
         slideTimeout = setTimeout(() => {
-            currentSlideIndex++;
-            showSlides(currentSlideIndex);
-        }, 6000);
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            updateCarousel();
+            startAutoSlide();
+        }, AUTO_SLIDE_INTERVAL);
+    }
+
+    function stopAutoSlide() {
+        if (slideTimeout) {
+            clearTimeout(slideTimeout);
+            slideTimeout = null;
+        }
+    }
+
+    function resetAutoSlide() {
+        stopAutoSlide();
+        startAutoSlide();
+    }
+
+    // Gestion du Touch / Swipe
+    function initTouchSupport() {
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const minSwipeDistance = 40;
+
+        container.addEventListener("touchstart", (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            stopAutoSlide();
+        }, { passive: true });
+
+        container.addEventListener("touchend", (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const distance = touchEndX - touchStartX;
+            if (Math.abs(distance) > minSwipeDistance) {
+                if (distance < 0) {
+                    moveSlide(1);  // Swipe à gauche -> Suivant
+                } else {
+                    moveSlide(-1); // Swipe à droite -> Précédent
+                }
+            } else {
+                startAutoSlide();
+            }
+        }
     }
 </script>
 
