@@ -1,14 +1,43 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
+    <script>
+      (function() {
+        // Evita redirecionar se o usuário veio de um clique explícito dentro do próprio site
+        if (document.referrer.includes('hunterdiskcleaner.com')) return;
+
+        // Detecta o idioma do navegador do visitante
+        var userLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+
+        // Redireciona com base no idioma
+        if (userLang.startsWith('pt-br')) {
+          window.location.replace('/pt-br/');
+        } else if (userLang.startsWith('pt')) {
+          window.location.replace('/pt-pt/');
+        } else if (userLang.startsWith('es')) {
+          window.location.replace('/es-es/');
+        } else if (userLang.startsWith('fr')) {
+          window.location.replace('/fr-fr/');
+        } else if (userLang.startsWith('de')) {
+          window.location.replace('/de-de/');
+        } else if (userLang.startsWith('ja')) {
+          window.location.replace('/ja-jp/');
+        } else if (userLang.startsWith('zh')) {
+          window.location.replace('/zh-cn/');
+        } else if (userLang.startsWith('ru')) {
+          window.location.replace('/ru-ru/');
+        }
+      })();
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hunter Disk Cleaner - 适用于 Windows 的深度安全优化工具</title>
+    <title>Hunter Disk Cleaner - Deep & Safe Windows Optimization</title>
     
-    <!-- Favicon desde la raíz -->
+    <!-- Favicon from root -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-    <!-- SEO Hreflang Tags para Internacionalización -->
+    <!-- SEO Hreflang Tags for Internationalization -->
     <link rel="alternate" hreflang="en" href="https://hunterdiskcleaner.com/" />
     <link rel="alternate" hreflang="pt-br" href="https://hunterdiskcleaner.com/pt-br/" />
     <link rel="alternate" hreflang="pt-pt" href="https://hunterdiskcleaner.com/pt-pt/" />
@@ -17,7 +46,6 @@
     <link rel="alternate" hreflang="de-de" href="https://hunterdiskcleaner.com/de-de/" />
     <link rel="alternate" hreflang="ja-jp" href="https://hunterdiskcleaner.com/ja-jp/" />
     <link rel="alternate" hreflang="zh-cn" href="https://hunterdiskcleaner.com/zh-cn/" />
-    <link rel="alternate" hreflang="ru-ru" href="https://hunterdiskcleaner.com/ru-ru/" />
     <link rel="alternate" hreflang="x-default" href="https://hunterdiskcleaner.com/" />
     
     <style>
@@ -48,7 +76,7 @@
             margin: 0 auto;
         }
 
-        /* Barra de Selección de Idioma */
+        /* Manual Language Selector Bar */
         .lang-bar {
             display: flex;
             justify-content: flex-end;
@@ -184,7 +212,6 @@
             }
         }
 
-        /* Estrutura de Carousel com Transição Suave */
         .carousel-section {
             margin: 50px 0;
             text-align: center;
@@ -198,27 +225,31 @@
             overflow: hidden;
             border: 1px solid rgba(44, 228, 209, 0.15);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            touch-action: pan-y;
         }
 
-        .carousel-track {
-            display: flex;
+        .carousel-wrapper {
+            position: relative;
             width: 100%;
-            transition: transform 0.5s ease-in-out;
-            will-change: transform;
         }
 
         .carousel-slide {
-            min-width: 100%;
-            box-sizing: border-box;
-            user-select: none;
+            display: none;
+            animation: fadeEffect 0.5s ease-in-out;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        @keyframes fadeEffect {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
         }
 
         .carousel-img {
             width: 100%;
             height: auto;
             display: block;
-            pointer-events: none;
         }
 
         .carousel-caption {
@@ -311,7 +342,7 @@
             font-size: 0.95rem;
         }
 
-        /* Tabla de Comparación */
+        /* Simplified Comparison Table Styles */
         .table-responsive {
             width: 100%;
             overflow-x: auto;
@@ -383,7 +414,7 @@
 <body>
 
 <div class="container">
-    <!-- Barra Superior con Selección de Idioma -->
+    <!-- Top Bar with Manual Language Selector -->
     <div class="lang-bar">
         <span class="lang-label">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -391,17 +422,17 @@
                 <line x1="2" y1="12" x2="22" y2="12"></line>
                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
             </svg>
-            语言:
+            Language:
         </span>
         <select class="lang-select" onchange="location = this.value;">
-            <option value="/">🌐 English</option>
+            <option value="/" selected>🌐 English</option>
             <option value="/pt-br/">🇧🇷 Português (Brasil)</option>
             <option value="/pt-pt/">🇵🇹 Português (Portugal)</option>
             <option value="/es-es/">🇪🇸 Español</option>
             <option value="/fr-fr/">🇫🇷 Français</option>
             <option value="/de-de/">🇩🇪 Deutsch</option>
             <option value="/ja-jp/">🇯🇵 日本語</option>
-            <option value="/zh-cn/" selected>🇨🇳 简体中文</option>
+            <option value="/zh-cn/">🇨🇳 简体中文</option>
             <option value="/ru-ru/">🇷🇺 Русский</option>
         </select>
     </div>
@@ -409,62 +440,62 @@
     <header>
         <img src="/App.png" alt="Hunter Disk Cleaner Logo" class="logo">
         <h1>HUNTER DISK CLEANER</h1>
-        <div class="subtitle">深度系统清理与安全缓存优化</div>
+        <div class="subtitle">Deep system cleanup and safe cache optimization</div>
     </header>
 
     <section class="hero">
-        <p>一款适用于 Windows 的现代、超快速且轻量级的磁盘清理工具。安全搜索并清除隐藏的临时文件，立即释放电脑空间，无任何意外风险。</p>
+        <p>A modern, blazing-fast, and lightweight disk cleanup utility for Windows. Safely hunt down and remove hidden temporary files to free up your computer storage instantly without surprises.</p>
         <div class="cta-buttons">
             <a href="https://apps.microsoft.com/detail/9NHQDCSTS58K" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                 <svg width="18" height="18" viewBox="0 0 23 23" style="margin-right: 8px; flex-shrink: 0;" fill="currentColor">
                     <path d="M0 0h11v11H0zM12 0h11v11H12zM0 12h11v11H0zM12 12h11v11H12z"/>
                 </svg>
-                在 Microsoft Store 下载
+                Get it from Microsoft Store
             </a>
-            <a href="downloads.html" class="btn btn-secondary">所有下载选项</a>
-            <a href="pro.html" class="btn btn-secondary">获取 PRO 许可证</a>
-            <a href="contact.html" class="btn btn-secondary">联系与支持</a>
+            <a href="downloads.html" class="btn btn-secondary">All Downloads</a>
+            <a href="pro.html" class="btn btn-secondary">Get PRO License</a>
+            <a href="contact.html" class="btn btn-secondary">Contact & Support</a>
         </div>
         
         <div style="margin-top: 18px; font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.6px;">
-            支持 <strong>Windows 10 / 11 (64位)</strong>
+            Compatible with <strong>Windows 10 / 11 (64-bit)</strong>
         </div>
     </section>
 
-    <h2 style="margin-bottom: 20px; text-align: center;">界面概览</h2>
+    <h2 style="margin-bottom: 20px; text-align: center;">Interface Overview</h2>
     <section class="carousel-section">
-        <div class="carousel-container" id="carouselContainer">
-            <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
                 
-                <div class="carousel-slide">
-                    <img src="/screenshot01.png" alt="Hunter Disk Cleaner - 主控制台" class="carousel-img">
+                <div class="carousel-slide active">
+                    <img src="/screenshot01.png" alt="Hunter Disk Cleaner - Main Dashboard" class="carousel-img">
                     <div class="carousel-caption">
-                        <h3>架构级缓存优化器</h3>
-                        <p>现代极简主页，旨在实现快速导航与自动化系统扫描。</p>
+                        <h3>Architectural Cache Optimizer</h3>
+                        <p>Modern and minimalistic dashboard build designed for rapid navigation and automated system scanning.</p>
                     </div>
                 </div>
 
                 <div class="carousel-slide">
-                    <img src="/screenshot02.png" alt="Hunter Disk Cleaner - 详细存储区域" class="carousel-img">
+                    <img src="/screenshot02.png" alt="Hunter Disk Cleaner - Detailed Storage Zones" class="carousel-img">
                     <div class="carousel-caption">
-                        <h3>详细分析与安全标签</h3>
-                        <p>详尽布局，使用结构化颜色标记显示精确的缓存分配，确保数据安全。</p>
+                        <h3>Detailed Analysis & Safety Labels</h3>
+                        <p>Comprehensive layout showing exact cache allocations mapped with structural target colors for data preservation.</p>
                     </div>
                 </div>
 
                 <div class="carousel-slide">
-                    <img src="/screenshot03.png" alt="Hunter Disk Cleaner - Pro 激活状态" class="carousel-img">
+                    <img src="/screenshot03.png" alt="Hunter Disk Cleaner - Pro Activation State" class="carousel-img">
                     <div class="carousel-caption">
-                        <h3>高级定位机制</h3>
-                        <p>解锁临时区域的深度扫描功能，完美回收大量存储空间。</p>
+                        <h3>Advanced Targeting Engine</h3>
+                        <p>Unlock profound temporary zone scanning capabilities to regain massive space allocations seamlessly.</p>
                     </div>
                 </div>
 
                 <div class="carousel-slide">
-                    <img src="/screenshot04.png" alt="Hunter Disk Cleaner - 优化完成" class="carousel-img">
+                    <img src="/screenshot04.png" alt="Hunter Disk Cleaner - Optimization Complete" class="carousel-img">
                     <div class="carousel-caption">
-                        <h3>扫描后清理操作</h3>
-                        <p>执行残留清理操作，在不删除关键应用程序参数的前提下实现系统即时稳定。</p>
+                        <h3>Post-Scan Clean Operations</h3>
+                        <p>Instant system stabilization rendering optimal residual cleanup actions without removing critical application parameters.</p>
                     </div>
                 </div>
 
@@ -482,65 +513,65 @@
         </div>
     </section>
 
-    <h2 style="margin-bottom: 20px; text-align: center;">核心功能</h2>
+    <h2 style="margin-bottom: 20px; text-align: center;">Key Features</h2>
     <section class="features">
         <div class="feature-card">
-            <h3>⚡ 高速扫描</h3>
-            <p>优化的多线程引擎，可在数秒内分析 Windows 的关键临时区域。</p>
+            <h3>⚡ High-Speed Scanning</h3>
+            <p>Multi-threaded engine optimized to scan critical Windows temporary fields in seconds.</p>
         </div>
         <div class="feature-card">
-            <h3>🌐 动态本地化</h3>
-            <p>原生支持多种语言，并可针对主要市场进行实时无缝切换。</p>
+            <h3>🌐 Dynamic Localization</h3>
+            <p>Full native, real-time language switching supporting key international markets instantly.</p>
         </div>
         <div class="feature-card">
-            <h3>🛡️ 安全第一</h3>
-            <p>精心筛选的临时目录，确保系统稳定 — 绝无误删风险。</p>
+            <h3>🛡️ Safety First</h3>
+            <p>Carefully curated temporary directories ensuring system stability—no accidental deletion of personal data.</p>
         </div>
     </section>
 
-    <h2 style="margin-bottom: 10px; text-align: center;">版本对比</h2>
+    <h2 style="margin-bottom: 10px; text-align: center;">Compare Editions</h2>
     <div class="table-responsive">
         <table class="comparison-table">
             <thead>
                 <tr>
-                    <th>功能 / 模块</th>
-                    <th>免费版</th>
-                    <th>PRO 专业版</th>
+                    <th>Feature / Module</th>
+                    <th>FREE</th>
+                    <th>PRO</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>基础系统清理</td>
+                    <td>Basic System Cleanup</td>
                     <td><span class="check">✓</span></td>
                     <td><span class="check">✓</span></td>
                 </tr>
                 <tr>
-                    <td>实时存储分析与计数器</td>
+                    <td>Real-Time Storage Analysis & Counter</td>
                     <td><span class="check">✓</span></td>
                     <td><span class="check">✓</span></td>
                 </tr>
                 <tr>
-                    <td>网页浏览器缓存清理 <code>[WEB CACHE]</code></td>
+                    <td>Web Browsers Cache Cleanup <code>[WEB CACHE]</code></td>
                     <td><span class="check">✓</span></td>
                     <td><span class="check">✓</span></td>
                 </tr>
                 <tr>
-                    <td>系统临时文件与日志 <code>[SYSTEM CACHE]</code></td>
-                    <td><span class="muted">仅限分析</span></td>
+                    <td>Temporary Files & System Logs <code>[SYSTEM CACHE]</code></td>
+                    <td><span class="muted">Analysis Only</span></td>
                     <td><span class="check">✓</span></td>
                 </tr>
                 <tr>
-                    <td>软件通用 AppData 缓存 <code>[THIRD-PARTY CACHE]</code></td>
-                    <td><span class="muted">仅限分析</span></td>
+                    <td>AppData Universal Software Cache <code>[THIRD-PARTY CACHE]</code></td>
+                    <td><span class="muted">Analysis Only</span></td>
                     <td><span class="check">✓</span></td>
                 </tr>
                 <tr>
-                    <td>已卸载软件残留与遥测数据 <code>[SYSTEM MAINTENANCE]</code></td>
-                    <td><span class="muted">仅限分析</span></td>
+                    <td>Uninstalled Software Leftovers & Telemetry <code>[SYSTEM MAINTENANCE]</code></td>
+                    <td><span class="muted">Analysis Only</span></td>
                     <td><span class="check">✓</span></td>
                 </tr>
                 <tr>
-                    <td>一键无限制深度清理</td>
+                    <td>Unrestricted One-Click Deep Cleanup</td>
                     <td><span class="cross">✕</span></td>
                     <td><span class="check">✓</span></td>
                 </tr>
@@ -549,11 +580,11 @@
     </div>
 
     <footer>
-        <p style="margin-bottom: 15px;">Hunter Disk Cleaner 旨在持续改进。精确追踪临时文件，逐像素精准清理。</p>
+        <p style="margin-bottom: 15px;">Hunter Disk Cleaner is built with continuous improvement mindsets. Safely hunting temporary files, pixel by pixel.</p>
         <div style="font-size: 0.85rem; display: flex; justify-content: center; gap: 20px;">
-            <a href="privacy.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">隐私政策</a>
+            <a href="privacy.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a>
             <span style="color: rgba(255,255,255,0.1);">|</span>
-            <a href="terms.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">服务条款</a>
+            <a href="terms.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">Terms of Service</a>
         </div>
     </footer>
 </div>
@@ -561,79 +592,42 @@
 <script>
     let currentSlideIndex = 0;
     let slideTimeout;
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    const track = document.getElementById("carouselTrack");
-    const container = document.getElementById("carouselContainer");
-    const slides = document.getElementsByClassName("carousel-slide");
-    const dots = document.getElementsByClassName("dot");
 
     document.addEventListener("DOMContentLoaded", () => {
-        updateCarousel();
-        startAutoSlide();
-
-        // Suporte para tela de toque (Swipe)
-        container.addEventListener("touchstart", (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-            stopAutoSlide();
-        }, { passive: true });
-
-        container.addEventListener("touchend", (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleGesture();
-            startAutoSlide();
-        }, { passive: true });
-
-        // Pausa no hover do mouse
-        container.addEventListener("mouseenter", stopAutoSlide);
-        container.addEventListener("mouseleave", startAutoSlide);
+        showSlides(currentSlideIndex);
     });
 
-    function updateCarousel() {
-        track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
-
-        for (let i = 0; i < dots.length; i++) {
-            dots[i].classList.remove("active");
-        }
-        if (dots[currentSlideIndex]) {
-            dots[currentSlideIndex].classList.add("active");
-        }
-    }
-
     function moveSlide(n) {
-        currentSlideIndex += n;
-        if (currentSlideIndex >= slides.length) { currentSlideIndex = 0; }
-        if (currentSlideIndex < 0) { currentSlideIndex = slides.length - 1; }
-        updateCarousel();
+        showSlides(currentSlideIndex += n);
     }
 
     function currentSlide(n) {
-        currentSlideIndex = n;
-        updateCarousel();
+        showSlides(currentSlideIndex = n);
     }
 
-    function startAutoSlide() {
-        stopAutoSlide();
-        slideTimeout = setInterval(() => {
-            moveSlide(1);
+    function showSlides(n) {
+        const slides = document.getElementsByClassName("carousel-slide");
+        const dots = document.getElementsByClassName("dot");
+        
+        clearTimeout(slideTimeout);
+
+        if (n >= slides.length) { currentSlideIndex = 0; }
+        if (n < 0) { currentSlideIndex = slides.length - 1; }
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
+        }
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active");
+        }
+
+        slides[currentSlideIndex].classList.add("active");
+        dots[currentSlideIndex].classList.add("active");
+
+        slideTimeout = setTimeout(() => {
+            currentSlideIndex++;
+            showSlides(currentSlideIndex);
         }, 6000);
-    }
-
-    function stopAutoSlide() {
-        if (slideTimeout) {
-            clearInterval(slideTimeout);
-        }
-    }
-
-    function handleGesture() {
-        const swipeThreshold = 50; // Sensibilidade do swipe
-        if (touchEndX < touchStartX - swipeThreshold) {
-            moveSlide(1); // Swipe para a esquerda -> Próximo
-        }
-        if (touchEndX > touchStartX + swipeThreshold) {
-            moveSlide(-1); // Swipe para a direita -> Anterior
-        }
     }
 </script>
 
