@@ -308,28 +308,64 @@
             font-size: 0.95rem;
         }
 
-        table {
+        /* Estilos da Tabela de Comparação Simplificada */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            margin: 40px 0;
+        }
+
+        .comparison-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 40px 0;
             background-color: var(--card-bg);
             border-radius: 12px;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        th, td {
+        .comparison-table th, .comparison-table td {
             padding: 16px;
             text-align: left;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        th {
+        .comparison-table th {
             background-color: rgba(44, 228, 209, 0.05);
             color: var(--accent-color);
             font-weight: 700;
         }
 
-        tr:last-child td {
+        .comparison-table td:nth-child(2), .comparison-table td:nth-child(3),
+        .comparison-table th:nth-child(2), .comparison-table th:nth-child(3) {
+            text-align: center;
+            width: 140px;
+        }
+
+        .comparison-table code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.82rem;
+            color: var(--accent-color);
+        }
+
+        .check {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .muted {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        .cross {
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        .comparison-table tr:last-child td {
             border-bottom: none;
         }
 
@@ -382,7 +418,7 @@
                 </svg>
                 Baixar na Microsoft Store
             </a>
-            <!-- Links locais mantidos na pasta do idioma pt-br/ -->
+            <!-- Links locais na pasta do idioma pt-br/ -->
             <a href="downloads.html" class="btn btn-secondary">Todos os Downloads</a>
             <a href="pro.html" class="btn btn-secondary">Obter Licença PRO</a>
             <a href="contact.html" class="btn btn-secondary">Contato e Suporte</a>
@@ -462,92 +498,59 @@
     </section>
 
     <h2 style="margin-bottom: 10px; text-align: center;">Comparar Edições</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Recurso</th>
-                <th style="text-align: center; width: 120px;">GRÁTIS</th>
-                <th style="text-align: center; width: 120px;">PRO</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Arquivos Temporários do Usuário (%TEMP%)</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-            </tr>
-            <tr>
-                <td>Arquivos Temporários do Sistema (C:\Windows\Temp)</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-            </tr>
-            <tr>
-                <td>Cache de Navegadores Web (Chrome, Edge, Firefox, Brave, Opera)</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-            </tr>
-            <tr>
-                <td>Arquivos de Log do Windows (.log)</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-            </tr>
-            <tr>
-                <td>Arquivos de Prefetch</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-            </tr>
-            <tr>
-                <td>Relatório de Erros do Windows (WER)</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-            </tr>
-            <tr>
-                <td>Dumps de Memória de Crash (.dmp)</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-            </tr>
-            <tr>
-                <td>Downloads do Windows Update (SoftwareDistribution)</td>
-                <td style="text-align: center; color: var(--text-muted);">-</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-            </tr>
-            <tr>
-                <td>Cache de Otimização de Entrega</td>
-                <td style="text-align: center; color: var(--text-muted);">-</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-            </tr>
-            <tr>
-                <td>Cache do Instalador do Windows</td>
-                <td style="text-align: center; color: var(--text-muted);">-</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-            </tr>
-            <tr>
-                <td>Cache de Shaders DirectX</td>
-                <td style="text-align: center; color: var(--text-muted);">-</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-            </tr>
-            <tr>
-                <td>Cache de Miniaturas (Thumbnails)</td>
-                <td style="text-align: center; color: var(--text-muted);">-</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-            </tr>
-            <tr>
-                <td>Cache de Fontes e Ícones do Sistema</td>
-                <td style="text-align: center; color: var(--text-muted);">-</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-            </tr>
-            <tr>
-                <td>Cache do Windows Defender</td>
-                <td style="text-align: center; color: var(--text-muted);">-</td>
-                <td style="text-align: center; color: var(--accent-color);">✓</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Recurso / Módulo</th>
+                    <th>Gratuito</th>
+                    <th>PRO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Limpeza Básica do Sistema</td>
+                    <td><span class="check">✓</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Análise e Contador de Armazenamento em Tempo Real</td>
+                    <td><span class="check">✓</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Limpeza de Cache de Navegadores Web <code>[WEB CACHE]</code></td>
+                    <td><span class="check">✓</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Arquivos Temporários e Logs do Sistema <code>[SYSTEM CACHE]</code></td>
+                    <td><span class="muted">Apenas Análise</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Cache Universal AppData de Softwares <code>[THIRD-PARTY CACHE]</code></td>
+                    <td><span class="muted">Apenas Análise</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Restos de Softwares Desinstalados e Telemetria <code>[SYSTEM MAINTENANCE]</code></td>
+                    <td><span class="muted">Apenas Análise</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Limpeza Profunda Irrestrita em Um Clique</td>
+                    <td><span class="cross">✕</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <footer>
         <p style="margin-bottom: 15px;">Hunter Disk Cleaner é construído com foco na melhoria contínua. Caçando arquivos temporários com precisão, pixel por pixel.</p>
         <div style="font-size: 0.85rem; display: flex; justify-content: center; gap: 20px;">
-            <!-- Links locais mantidos na pasta do idioma pt-br/ -->
+            <!-- Links locais na pasta do idioma pt-br/ -->
             <a href="privacy.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">Política de Privacidade</a>
             <span style="color: rgba(255,255,255,0.1);">|</span>
             <a href="terms.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">Termos de Serviço</a>
