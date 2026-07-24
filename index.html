@@ -212,6 +212,7 @@
             }
         }
 
+        /* Modern Carousel Track Styles (Japanese Style) */
         .carousel-section {
             margin: 50px 0;
             text-align: center;
@@ -227,23 +228,25 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .carousel-wrapper {
-            position: relative;
-            width: 100%;
+        .carousel-track {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .carousel-track::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Edge */
         }
 
         .carousel-slide {
-            display: none;
-            animation: fadeEffect 0.5s ease-in-out;
-        }
-
-        .carousel-slide.active {
-            display: block;
-        }
-
-        @keyframes fadeEffect {
-            from { opacity: 0.4; }
-            to { opacity: 1; }
+            flex: 0 0 100%;
+            min-width: 100%;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            box-sizing: border-box;
         }
 
         .carousel-img {
@@ -465,9 +468,9 @@
     <h2 style="margin-bottom: 20px; text-align: center;">Interface Overview</h2>
     <section class="carousel-section">
         <div class="carousel-container">
-            <div class="carousel-wrapper">
+            <div class="carousel-track" id="carouselTrack">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide">
                     <img src="/screenshot01.png" alt="Hunter Disk Cleaner - Main Dashboard" class="carousel-img">
                     <div class="carousel-caption">
                         <h3>Architectural Cache Optimizer</h3>
@@ -592,41 +595,64 @@
 <script>
     let currentSlideIndex = 0;
     let slideTimeout;
+    const track = document.getElementById("carouselTrack");
+    const dots = document.getElementsByClassName("dot");
 
     document.addEventListener("DOMContentLoaded", () => {
-        showSlides(currentSlideIndex);
+        updateDots(0);
+        resetAutoSlide();
+
+        // Monitor manual drag/scroll to update active indicator dots
+        track.addEventListener("scroll", () => {
+            const index = Math.round(track.scrollLeft / track.clientWidth);
+            if (index !== currentSlideIndex) {
+                currentSlideIndex = index;
+                updateDots(currentSlideIndex);
+                resetAutoSlide();
+            }
+        });
     });
 
+    function scrollToSlide(index) {
+        const slideWidth = track.clientWidth;
+        track.scrollTo({
+            left: index * slideWidth,
+            behavior: "smooth"
+        });
+    }
+
     function moveSlide(n) {
-        showSlides(currentSlideIndex += n);
+        const slidesCount = dots.length;
+        currentSlideIndex += n;
+
+        if (currentSlideIndex >= slidesCount) { currentSlideIndex = 0; }
+        if (currentSlideIndex < 0) { currentSlideIndex = slidesCount - 1; }
+
+        scrollToSlide(currentSlideIndex);
+        updateDots(currentSlideIndex);
+        resetAutoSlide();
     }
 
     function currentSlide(n) {
-        showSlides(currentSlideIndex = n);
+        currentSlideIndex = n;
+        scrollToSlide(currentSlideIndex);
+        updateDots(currentSlideIndex);
+        resetAutoSlide();
     }
 
-    function showSlides(n) {
-        const slides = document.getElementsByClassName("carousel-slide");
-        const dots = document.getElementsByClassName("dot");
-        
-        clearTimeout(slideTimeout);
-
-        if (n >= slides.length) { currentSlideIndex = 0; }
-        if (n < 0) { currentSlideIndex = slides.length - 1; }
-
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-        }
+    function updateDots(index) {
         for (let i = 0; i < dots.length; i++) {
             dots[i].classList.remove("active");
         }
+        if (dots[index]) {
+            dots[index].classList.add("active");
+        }
+    }
 
-        slides[currentSlideIndex].classList.add("active");
-        dots[currentSlideIndex].classList.add("active");
-
+    function resetAutoSlide() {
+        clearTimeout(slideTimeout);
         slideTimeout = setTimeout(() => {
-            currentSlideIndex++;
-            showSlides(currentSlideIndex);
+            moveSlide(1);
         }, 6000);
     }
 </script>
