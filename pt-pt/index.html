@@ -184,6 +184,7 @@
             }
         }
 
+        /* Estilos do Carrossel Otimizado (Sliding / Touch) */
         .carousel-section {
             margin: 50px 0;
             text-align: center;
@@ -197,26 +198,28 @@
             overflow: hidden;
             border: 1px solid rgba(44, 228, 209, 0.15);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            touch-action: pan-y;
         }
 
-        .carousel-wrapper {
-            position: relative;
+        .carousel-track {
+            display: flex;
             width: 100%;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform;
         }
 
         .carousel-slide {
-            display: none;
-            animation: fadeEffect 0.5s ease-in-out;
-        }
-
-        .carousel-slide.active {
-            display: block;
+            min-width: 100%;
+            flex-shrink: 0;
+            box-sizing: border-box;
         }
 
         .carousel-img {
             width: 100%;
             height: auto;
             display: block;
+            user-select: none;
+            -webkit-user-drag: none;
         }
 
         .carousel-caption {
@@ -433,11 +436,11 @@
 
     <h2 style="margin-bottom: 20px; text-align: center;">Visão Geral da Interface</h2>
     <section class="carousel-section">
-        <div class="carousel-container">
-            <div class="carousel-wrapper">
+        <div class="carousel-container" id="carouselContainer">
+            <div class="carousel-track" id="carouselTrack">
                 
                 <!-- Assets de imagens vindos da raiz -->
-                <div class="carousel-slide active">
+                <div class="carousel-slide">
                     <img src="/screenshot01.png" alt="Hunter Disk Cleaner - Painel Principal" class="carousel-img">
                     <div class="carousel-caption">
                         <h3>Optimizador da Cache Arquitetural</h3>
@@ -471,15 +474,15 @@
 
             </div>
 
-            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+            <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Slide anterior">&#10094;</button>
+            <button class="carousel-btn next-btn" id="nextBtn" aria-label="Próximo slide">&#10095;</button>
         </div>
 
-        <div class="carousel-dots">
-            <span class="dot active" onclick="currentSlide(0)"></span>
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+        <div class="carousel-dots" id="carouselDots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
     </section>
 
@@ -561,45 +564,100 @@
 </div>
 
 <script>
-    let currentSlideIndex = 0;
-    let slideTimeout;
-
     document.addEventListener("DOMContentLoaded", () => {
-        showSlides(currentSlideIndex);
+        const track = document.getElementById("carouselTrack");
+        const slides = Array.from(track.children);
+        const nextBtn = document.getElementById("nextBtn");
+        const prevBtn = document.getElementById("prevBtn");
+        const dotsNav = document.getElementById("carouselDots");
+        const dots = Array.from(dotsNav.children);
+        const container = document.getElementById("carouselContainer");
+
+        let currentIndex = 0;
+        let slideInterval;
+        const autoSlideDelay = 6000;
+
+        // Variáveis de Touch / Swipe
+        let startX = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+        let isDragging = false;
+
+        function updateCarousel(index) {
+            if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else if (index >= slides.length) {
+                currentIndex = 0;
+            } else {
+                currentIndex = index;
+            }
+
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle("active", idx === currentIndex);
+            });
+        }
+
+        function nextSlide() {
+            updateCarousel(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            updateCarousel(currentIndex - 1);
+        }
+
+        function startTimer() {
+            stopTimer();
+            slideInterval = setInterval(nextSlide, autoSlideDelay);
+        }
+
+        function stopTimer() {
+            if (slideInterval) clearInterval(slideInterval);
+        }
+
+        function handleUserInteraction(action) {
+            stopTimer();
+            action();
+            startTimer();
+        }
+
+        nextBtn.addEventListener("click", () => handleUserInteraction(nextSlide));
+        prevBtn.addEventListener("click", () => handleUserInteraction(prevSlide));
+
+        dots.forEach((dot, idx) => {
+            dot.addEventListener("click", () => handleUserInteraction(() => updateCarousel(idx)));
+        });
+
+        // Eventos Touch / Swipe
+        container.addEventListener("touchstart", (e) => {
+            stopTimer();
+            isDragging = true;
+            startX = e.touches[0].clientX;
+        }, { passive: true });
+
+        container.addEventListener("touchmove", (e) => {
+            if (!isDragging) return;
+        }, { passive: true });
+
+        container.addEventListener("touchend", (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            const endX = e.changedTouches[0].clientX;
+            const diffX = startX - endX;
+
+            if (Math.abs(diffX) > 40) {
+                if (diffX > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+            startTimer();
+        });
+
+        startTimer();
     });
-
-    function moveSlide(n) {
-        showSlides(currentSlideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(currentSlideIndex = n);
-    }
-
-    function showSlides(n) {
-        const slides = document.getElementsByClassName("carousel-slide");
-        const dots = document.getElementsByClassName("dot");
-        
-        clearTimeout(slideTimeout);
-
-        if (n >= slides.length) { currentSlideIndex = 0; }
-        if (n < 0) { currentSlideIndex = slides.length - 1; }
-
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-        }
-        for (let i = 0; i < dots.length; i++) {
-            dots[i].classList.remove("active");
-        }
-
-        slides[currentSlideIndex].classList.add("active");
-        dots[currentSlideIndex].classList.add("active");
-
-        slideTimeout = setTimeout(() => {
-            currentSlideIndex++;
-            showSlides(currentSlideIndex);
-        }, 6000);
-    }
 </script>
 
 </body>
