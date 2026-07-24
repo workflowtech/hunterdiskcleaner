@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-ES">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -184,7 +184,7 @@
             }
         }
 
-        /* Estrutura de Carousel com Wrapper Adicionado */
+        /* Estructura del Carousel con Transición Suave via Wrapper (Deslizamiento) */
         .carousel-section {
             margin: 50px 0;
             text-align: center;
@@ -208,26 +208,15 @@
         }
 
         .carousel-slide {
-            display: none;
-            width: 100%;
-            animation: fadeIn 0.5s ease-in-out;
-            user-select: none;
-        }
-
-        .carousel-slide.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0.4; }
-            to { opacity: 1; }
+            min-width: 100%;
+            box-sizing: border-box;
         }
 
         .carousel-img {
             width: 100%;
             height: auto;
             display: block;
-            pointer-events: none;
+            user-select: none;
         }
 
         .carousel-caption {
@@ -250,7 +239,7 @@
 
         .carousel-btn {
             position: absolute;
-            top: 40%;
+            top: 50%;
             transform: translateY(-50%);
             background: rgba(22, 31, 50, 0.8);
             color: var(--accent-color);
@@ -419,17 +408,17 @@
     <header>
         <img src="/App.png" alt="Hunter Disk Cleaner Logo" class="logo">
         <h1>HUNTER DISK CLEANER</h1>
-        <div class="subtitle">Limpieza profunda del sistema y optimización segura del caché</div>
+        <div class="subtitle">Limpieza profunda del sistema y optimización segura de caché</div>
     </header>
 
     <section class="hero">
-        <p>Una utilidad de limpieza de disco moderna, ultra rápida y ligera para Windows. Busca y elimina con seguridad archivos temporales ocultos para liberar espacio en tu ordenador al instante, sin sorpresas.</p>
+        <p>Una utilidad de limpieza de disco moderna, ultrarrápida y ligera para Windows. Busca y elimina de forma segura archivos temporales ocultos para liberar espacio en tu ordenador al instante, sin sorpresas.</p>
         <div class="cta-buttons">
             <a href="https://apps.microsoft.com/detail/9NHQDCSTS58K" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                 <svg width="18" height="18" viewBox="0 0 23 23" style="margin-right: 8px; flex-shrink: 0;" fill="currentColor">
                     <path d="M0 0h11v11H0zM12 0h11v11H12zM0 12h11v11H0zM12 12h11v11H12z"/>
                 </svg>
-                Descargar en Microsoft Store
+                Obtener en Microsoft Store
             </a>
             <a href="downloads.html" class="btn btn-secondary">Todas las Descargas</a>
             <a href="pro.html" class="btn btn-secondary">Obtener Licencia PRO</a>
@@ -444,9 +433,9 @@
     <h2 style="margin-bottom: 20px; text-align: center;">Vista General de la Interfaz</h2>
     <section class="carousel-section">
         <div class="carousel-container" id="carouselContainer">
-            
-            <div class="carousel-wrapper">
-                <div class="carousel-slide active">
+            <div class="carousel-wrapper" id="carouselWrapper">
+                
+                <div class="carousel-slide">
                     <img src="/screenshot01.png" alt="Hunter Disk Cleaner - Panel Principal" class="carousel-img">
                     <div class="carousel-caption">
                         <h3>Optimizador de Caché Arquitectónico</h3>
@@ -465,22 +454,23 @@
                 <div class="carousel-slide">
                     <img src="/screenshot03.png" alt="Hunter Disk Cleaner - Estado de Activación Pro" class="carousel-img">
                     <div class="carousel-caption">
-                        <h3>Mecanismo Avanzado de Objetivo</h3>
-                        <p>Desbloquea capacidades de escaneo profundo en zonas temporales para recuperar una gran cantidad de espacio a la perfección.</p>
+                        <h3>Mecanismo Avanzado de Objetivos</h3>
+                        <p>Desbloquea capacidades de escaneo profundo en zonas temporales para recuperar una gran cantidad de espacio con precisión.</p>
                     </div>
                 </div>
 
                 <div class="carousel-slide">
-                    <img src="/screenshot04.png" alt="Hunter Disk Cleaner - Optimización Finalizada" class="carousel-img">
+                    <img src="/screenshot04.png" alt="Hunter Disk Cleaner - Optimización Completada" class="carousel-img">
                     <div class="carousel-caption">
                         <h3>Operaciones de Limpieza Post-Escaneo</h3>
-                        <p>Estabilización instantánea del sistema ejecutando acciones de limpieza residual sin eliminar parámetros críticos de la aplicación.</p>
+                        <p>Estabilización instantánea del sistema ejecutando acciones de limpieza residual sin eliminar parámetros críticos de aplicaciones.</p>
                     </div>
                 </div>
+
             </div>
 
-            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)" aria-label="Anterior">&#10094;</button>
+            <button class="carousel-btn next-btn" onclick="moveSlide(1)" aria-label="Siguiente">&#10095;</button>
         </div>
 
         <div class="carousel-dots">
@@ -502,7 +492,7 @@
             <p>Soporte completo y nativo en múltiples idiomas con cambio en tiempo real para los principales mercados.</p>
         </div>
         <div class="feature-card">
-            <h3>🛡️ La Seguridad Es Lo Primero</h3>
+            <h3>🛡️ La Seguridad Primero</h3>
             <p>Directorios temporales cuidadosamente seleccionados para garantizar la estabilidad del sistema — sin eliminaciones accidentales.</p>
         </div>
     </section>
@@ -512,8 +502,8 @@
         <table class="comparison-table">
             <thead>
                 <tr>
-                    <th>Función / Módulo</th>
-                    <th>Gratis</th>
+                    <th>Característica / Módulo</th>
+                    <th>Gratuita</th>
                     <th>PRO</th>
                 </tr>
             </thead>
@@ -544,12 +534,12 @@
                     <td><span class="check">✓</span></td>
                 </tr>
                 <tr>
-                    <td>Restos de Software Desinstalado y Telemetría <code>[SYSTEM MAINTENANCE]</code></td>
+                    <td>Residuos de Software Desinstalado y Telemetría <code>[SYSTEM MAINTENANCE]</code></td>
                     <td><span class="muted">Solo Análisis</span></td>
                     <td><span class="check">✓</span></td>
                 </tr>
                 <tr>
-                    <td>Limpieza Profunda Sin Restricciones en Un Clic</td>
+                    <td>Limpieza Profunda Sin Restricciones en un Solo Clic</td>
                     <td><span class="cross">✕</span></td>
                     <td><span class="check">✓</span></td>
                 </tr>
@@ -558,7 +548,7 @@
     </div>
 
     <footer>
-        <p style="margin-bottom: 15px;">Hunter Disk Cleaner está construido enfocado en la mejora continua. Cazando archivos temporales con precisión, píxel a píxel.</p>
+        <p style="margin-bottom: 15px;">Hunter Disk Cleaner está desarrollado con un enfoque en la mejora continua. Cazando archivos temporales con precisión, píxel a píxel.</p>
         <div style="font-size: 0.85rem; display: flex; justify-content: center; gap: 20px;">
             <a href="privacy.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">Política de Privacidad</a>
             <span style="color: rgba(255,255,255,0.1);">|</span>
@@ -570,77 +560,66 @@
 <script>
     let currentSlideIndex = 0;
     let slideTimeout;
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    const container = document.getElementById("carouselContainer");
-    const slides = document.getElementsByClassName("carousel-slide");
-    const dots = document.getElementsByClassName("dot");
 
     document.addEventListener("DOMContentLoaded", () => {
-        showSlide(currentSlideIndex);
-        startAutoSlide();
+        showSlides(currentSlideIndex);
+        
+        // Gestos de Touch (Swipe)
+        const carouselContainer = document.getElementById('carouselContainer');
+        let touchStartX = 0;
+        let touchEndX = 0;
 
-        // Soporte para tela de toque (Swipe)
-        container.addEventListener("touchstart", (e) => {
+        carouselContainer.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
-            stopAutoSlide();
         }, { passive: true });
 
-        container.addEventListener("touchend", (e) => {
+        carouselContainer.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
-            handleGesture();
-            startAutoSlide();
+            handleSwipe();
         }, { passive: true });
 
-        // Pausa no hover do mouse
-        container.addEventListener("mouseenter", stopAutoSlide);
-        container.addEventListener("mouseleave", startAutoSlide);
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                moveSlide(1);
+            }
+            if (touchEndX > touchStartX - swipeThreshold) {
+                moveSlide(-1);
+            }
+        }
     });
 
-    function showSlide(index) {
-        if (index >= slides.length) { currentSlideIndex = 0; }
-        else if (index < 0) { currentSlideIndex = slides.length - 1; }
-        else { currentSlideIndex = index; }
-
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-            dots[i].classList.remove("active");
-        }
-
-        slides[currentSlideIndex].classList.add("active");
-        dots[currentSlideIndex].classList.add("active");
-    }
-
     function moveSlide(n) {
-        showSlide(currentSlideIndex + n);
+        showSlides(currentSlideIndex += n);
     }
 
     function currentSlide(n) {
-        showSlide(n);
+        showSlides(currentSlideIndex = n);
     }
 
-    function startAutoSlide() {
-        stopAutoSlide();
-        slideTimeout = setInterval(() => {
-            moveSlide(1);
+    function showSlides(n) {
+        const wrapper = document.getElementById("carouselWrapper");
+        const slides = document.getElementsByClassName("carousel-slide");
+        const dots = document.getElementsByClassName("dot");
+        
+        clearTimeout(slideTimeout);
+
+        if (n >= slides.length) { currentSlideIndex = 0; }
+        if (n < 0) { currentSlideIndex = slides.length - 1; }
+
+        // Animación de deslizamiento via hardware acceleration (transform X) con wrapper
+        wrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active");
+        }
+
+        dots[currentSlideIndex].classList.add("active");
+
+        slideTimeout = setTimeout(() => {
+            currentSlideIndex++;
+            showSlides(currentSlideIndex);
         }, 6000);
-    }
-
-    function stopAutoSlide() {
-        if (slideTimeout) {
-            clearInterval(slideTimeout);
-        }
-    }
-
-    function handleGesture() {
-        const swipeThreshold = 50;
-        if (touchEndX < touchStartX - swipeThreshold) {
-            moveSlide(1); // Swipe para a esquerda -> Próximo
-        }
-        if (touchEndX > touchStartX + swipeThreshold) {
-            moveSlide(-1); // Swipe para a direita -> Anterior
-        }
     }
 </script>
 
