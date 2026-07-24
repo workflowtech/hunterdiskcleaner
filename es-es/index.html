@@ -184,6 +184,7 @@
             }
         }
 
+        /* Estrutura de Carousel com Transição Suave */
         .carousel-section {
             margin: 50px 0;
             text-align: center;
@@ -197,32 +198,27 @@
             overflow: hidden;
             border: 1px solid rgba(44, 228, 209, 0.15);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            touch-action: pan-y;
         }
 
-        .carousel-wrapper {
-            position: relative;
+        .carousel-track {
+            display: flex;
             width: 100%;
+            transition: transform 0.4s ease-in-out;
+            will-change: transform;
         }
 
         .carousel-slide {
-            display: none;
-            animation: fadeEffect 0.5s ease-in-out;
-        }
-
-        /* Animación para la transición de diapositivas */
-        @keyframes fadeEffect {
-            from { opacity: 0.4; }
-            to { opacity: 1; }
-        }
-
-        .carousel-slide.active {
-            display: block;
+            min-width: 100%;
+            box-sizing: border-box;
+            user-select: none;
         }
 
         .carousel-img {
             width: 100%;
             height: auto;
             display: block;
+            pointer-events: none;
         }
 
         .carousel-caption {
@@ -315,7 +311,7 @@
             font-size: 0.95rem;
         }
 
-        /* Estilos de la Tabla de Comparación */
+        /* Tabla de Comparación */
         .table-responsive {
             width: 100%;
             overflow-x: auto;
@@ -411,7 +407,6 @@
     </div>
 
     <header>
-        <!-- Asset de imagen desde la raíz -->
         <img src="/App.png" alt="Hunter Disk Cleaner Logo" class="logo">
         <h1>HUNTER DISK CLEANER</h1>
         <div class="subtitle">Limpieza profunda del sistema y optimización segura del caché</div>
@@ -426,7 +421,6 @@
                 </svg>
                 Descargar en Microsoft Store
             </a>
-            <!-- Enlaces locales en la carpeta del idioma es-es/ -->
             <a href="downloads.html" class="btn btn-secondary">Todas las Descargas</a>
             <a href="pro.html" class="btn btn-secondary">Obtener Licencia PRO</a>
             <a href="contact.html" class="btn btn-secondary">Contacto y Soporte</a>
@@ -439,11 +433,10 @@
 
     <h2 style="margin-bottom: 20px; text-align: center;">Vista General de la Interfaz</h2>
     <section class="carousel-section">
-        <div class="carousel-container">
-            <div class="carousel-wrapper">
+        <div class="carousel-container" id="carouselContainer">
+            <div class="carousel-track" id="carouselTrack">
                 
-                <!-- Assets de imágenes desde la raíz -->
-                <div class="carousel-slide active">
+                <div class="carousel-slide">
                     <img src="/screenshot01.png" alt="Hunter Disk Cleaner - Panel Principal" class="carousel-img">
                     <div class="carousel-caption">
                         <h3>Optimizador de Caché Arquitectónico</h3>
@@ -558,7 +551,6 @@
     <footer>
         <p style="margin-bottom: 15px;">Hunter Disk Cleaner está construido enfocado en la mejora continua. Cazando archivos temporales con precisión, píxel a píxel.</p>
         <div style="font-size: 0.85rem; display: flex; justify-content: center; gap: 20px;">
-            <!-- Enlaces locales en la carpeta del idioma es-es/ -->
             <a href="privacy.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">Política de Privacidad</a>
             <span style="color: rgba(255,255,255,0.1);">|</span>
             <a href="terms.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">Términos de Servicio</a>
@@ -569,42 +561,79 @@
 <script>
     let currentSlideIndex = 0;
     let slideTimeout;
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const track = document.getElementById("carouselTrack");
+    const container = document.getElementById("carouselContainer");
+    const slides = document.getElementsByClassName("carousel-slide");
+    const dots = document.getElementsByClassName("dot");
 
     document.addEventListener("DOMContentLoaded", () => {
-        showSlides(currentSlideIndex);
+        updateCarousel();
+        startAutoSlide();
+
+        // Suporte para tela de toque (Swipe)
+        container.addEventListener("touchstart", (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            stopAutoSlide();
+        }, { passive: true });
+
+        container.addEventListener("touchend", (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleGesture();
+            startAutoSlide();
+        }, { passive: true });
+
+        // Pausa no hover do mouse
+        container.addEventListener("mouseenter", stopAutoSlide);
+        container.addEventListener("mouseleave", startAutoSlide);
     });
 
-    function moveSlide(n) {
-        showSlides(currentSlideIndex += n);
-    }
+    function updateCarousel() {
+        track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
 
-    function currentSlide(n) {
-        showSlides(currentSlideIndex = n);
-    }
-
-    function showSlides(n) {
-        const slides = document.getElementsByClassName("carousel-slide");
-        const dots = document.getElementsByClassName("dot");
-        
-        clearTimeout(slideTimeout);
-
-        if (n >= slides.length) { currentSlideIndex = 0; }
-        if (n < 0) { currentSlideIndex = slides.length - 1; }
-
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-        }
         for (let i = 0; i < dots.length; i++) {
             dots[i].classList.remove("active");
         }
+        if (dots[currentSlideIndex]) {
+            dots[currentSlideIndex].classList.add("active");
+        }
+    }
 
-        slides[currentSlideIndex].classList.add("active");
-        dots[currentSlideIndex].classList.add("active");
+    function moveSlide(n) {
+        currentSlideIndex += n;
+        if (currentSlideIndex >= slides.length) { currentSlideIndex = 0; }
+        if (currentSlideIndex < 0) { currentSlideIndex = slides.length - 1; }
+        updateCarousel();
+    }
 
-        slideTimeout = setTimeout(() => {
-            currentSlideIndex++;
-            showSlides(currentSlideIndex);
+    function currentSlide(n) {
+        currentSlideIndex = n;
+        updateCarousel();
+    }
+
+    function startAutoSlide() {
+        stopAutoSlide();
+        slideTimeout = setInterval(() => {
+            moveSlide(1);
         }, 6000);
+    }
+
+    function stopAutoSlide() {
+        if (slideTimeout) {
+            clearInterval(slideTimeout);
+        }
+    }
+
+    function handleGesture() {
+        const swipeThreshold = 50; // Sensibilidade do swipe
+        if (touchEndX < touchStartX - swipeThreshold) {
+            moveSlide(1); // Swipe para a esquerda -> Próximo
+        }
+        if (touchEndX > touchStartX + swipeThreshold) {
+            moveSlide(-1); // Swipe para a direita -> Anterior
+        }
     }
 </script>
 
