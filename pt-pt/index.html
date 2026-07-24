@@ -184,7 +184,7 @@
             }
         }
 
-        /* Estrutura de Carrossel com Wrapper Adicionado */
+        /* Estrutura do Carousel com Transição Suave via Wrapper (Deslizamento) */
         .carousel-section {
             margin: 50px 0;
             text-align: center;
@@ -202,31 +202,21 @@
         }
 
         .carousel-wrapper {
-            position: relative;
+            display: flex;
             width: 100%;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .carousel-slide {
-            display: none;
-            width: 100%;
-            animation: fadeIn 0.5s ease-in-out;
-            user-select: none;
-        }
-
-        .carousel-slide.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0.4; }
-            to { opacity: 1; }
+            min-width: 100%;
+            box-sizing: border-box;
         }
 
         .carousel-img {
             width: 100%;
             height: auto;
             display: block;
-            pointer-events: none;
+            user-select: none;
         }
 
         .carousel-caption {
@@ -249,7 +239,7 @@
 
         .carousel-btn {
             position: absolute;
-            top: 40%;
+            top: 50%;
             transform: translateY(-50%);
             background: rgba(22, 31, 50, 0.8);
             color: var(--accent-color);
@@ -443,9 +433,9 @@
     <h2 style="margin-bottom: 20px; text-align: center;">Visão Geral da Interface</h2>
     <section class="carousel-section">
         <div class="carousel-container" id="carouselContainer">
-            
-            <div class="carousel-wrapper">
-                <div class="carousel-slide active">
+            <div class="carousel-wrapper" id="carouselWrapper">
+                
+                <div class="carousel-slide">
                     <img src="/screenshot01.png" alt="Hunter Disk Cleaner - Painel Principal" class="carousel-img">
                     <div class="carousel-caption">
                         <h3>Otimizador de Cache Arquitetónico</h3>
@@ -476,10 +466,11 @@
                         <p>Estabilização instantânea do sistema a executar ações de limpeza residual sem eliminar parâmetros críticos da aplicação.</p>
                     </div>
                 </div>
+
             </div>
 
-            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)" aria-label="Anterior">&#10094;</button>
+            <button class="carousel-btn next-btn" onclick="moveSlide(1)" aria-label="Seguinte">&#10095;</button>
         </div>
 
         <div class="carousel-dots">
@@ -569,77 +560,66 @@
 <script>
     let currentSlideIndex = 0;
     let slideTimeout;
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    const container = document.getElementById("carouselContainer");
-    const slides = document.getElementsByClassName("carousel-slide");
-    const dots = document.getElementsByClassName("dot");
 
     document.addEventListener("DOMContentLoaded", () => {
-        showSlide(currentSlideIndex);
-        startAutoSlide();
+        showSlides(currentSlideIndex);
+        
+        // Gestos de Touch (Swipe)
+        const carouselContainer = document.getElementById('carouselContainer');
+        let touchStartX = 0;
+        let touchEndX = 0;
 
-        // Suporte para ecrã tátil (Swipe)
-        container.addEventListener("touchstart", (e) => {
+        carouselContainer.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
-            stopAutoSlide();
         }, { passive: true });
 
-        container.addEventListener("touchend", (e) => {
+        carouselContainer.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
-            handleGesture();
-            startAutoSlide();
+            handleSwipe();
         }, { passive: true });
 
-        // Pausa ao passar o rato (hover)
-        container.addEventListener("mouseenter", stopAutoSlide);
-        container.addEventListener("mouseleave", startAutoSlide);
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                moveSlide(1);
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+                moveSlide(-1);
+            }
+        }
     });
 
-    function showSlide(index) {
-        if (index >= slides.length) { currentSlideIndex = 0; }
-        else if (index < 0) { currentSlideIndex = slides.length - 1; }
-        else { currentSlideIndex = index; }
-
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-            dots[i].classList.remove("active");
-        }
-
-        slides[currentSlideIndex].classList.add("active");
-        dots[currentSlideIndex].classList.add("active");
-    }
-
     function moveSlide(n) {
-        showSlide(currentSlideIndex + n);
+        showSlides(currentSlideIndex += n);
     }
 
     function currentSlide(n) {
-        showSlide(n);
+        showSlides(currentSlideIndex = n);
     }
 
-    function startAutoSlide() {
-        stopAutoSlide();
-        slideTimeout = setInterval(() => {
-            moveSlide(1);
+    function showSlides(n) {
+        const wrapper = document.getElementById("carouselWrapper");
+        const slides = document.getElementsByClassName("carousel-slide");
+        const dots = document.getElementsByClassName("dot");
+        
+        clearTimeout(slideTimeout);
+
+        if (n >= slides.length) { currentSlideIndex = 0; }
+        if (n < 0) { currentSlideIndex = slides.length - 1; }
+
+        // Animação de deslizamento via hardware acceleration (transform X) com wrapper
+        wrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active");
+        }
+
+        dots[currentSlideIndex].classList.add("active");
+
+        slideTimeout = setTimeout(() => {
+            currentSlideIndex++;
+            showSlides(currentSlideIndex);
         }, 6000);
-    }
-
-    function stopAutoSlide() {
-        if (slideTimeout) {
-            clearInterval(slideTimeout);
-        }
-    }
-
-    function handleGesture() {
-        const swipeThreshold = 50; // Sensibilidade do swipe
-        if (touchEndX < touchStartX - swipeThreshold) {
-            moveSlide(1); // Swipe para a esquerda -> Próximo
-        }
-        if (touchEndX > touchStartX + swipeThreshold) {
-            moveSlide(-1); // Swipe para a direita -> Anterior
-        }
     }
 </script>
 
