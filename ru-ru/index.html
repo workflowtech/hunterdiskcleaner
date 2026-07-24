@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hunter Disk Cleaner - Безопасная и глубокая оптимизация Windows</title>
+    <title>Hunter Disk Cleaner — Глубокая и безопасная оптимизация Windows</title>
     
-    <!-- Favicon в корневом каталоге -->
+    <!-- Favicon desde la raíz -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-    <!-- SEO Hreflang Теги -->
+    <!-- SEO Hreflang Tags para Internacionalización -->
     <link rel="alternate" hreflang="en" href="https://hunterdiskcleaner.com/" />
     <link rel="alternate" hreflang="pt-br" href="https://hunterdiskcleaner.com/pt-br/" />
     <link rel="alternate" hreflang="pt-pt" href="https://hunterdiskcleaner.com/pt-pt/" />
@@ -48,7 +48,7 @@
             margin: 0 auto;
         }
 
-        /* Выбор языка */
+        /* Barra de Selección de Idioma */
         .lang-bar {
             display: flex;
             justify-content: flex-end;
@@ -184,7 +184,7 @@
             }
         }
 
-        /* Estilos do Carrossel Otimizado (Sliding / Touch) */
+        /* Estrutura de Carousel com Transição Suave */
         .carousel-section {
             margin: 50px 0;
             text-align: center;
@@ -204,22 +204,21 @@
         .carousel-track {
             display: flex;
             width: 100%;
-            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: transform 0.4s ease-in-out;
             will-change: transform;
         }
 
         .carousel-slide {
             min-width: 100%;
-            flex-shrink: 0;
             box-sizing: border-box;
+            user-select: none;
         }
 
         .carousel-img {
             width: 100%;
             height: auto;
             display: block;
-            user-select: none;
-            -webkit-user-drag: none;
+            pointer-events: none;
         }
 
         .carousel-caption {
@@ -312,6 +311,7 @@
             font-size: 0.95rem;
         }
 
+        /* Tabla de Comparación */
         .table-responsive {
             width: 100%;
             overflow-x: auto;
@@ -383,7 +383,7 @@
 <body>
 
 <div class="container">
-    <!-- Верхняя панель выбора языка -->
+    <!-- Barra Superior con Selección de Idioma -->
     <div class="lang-bar">
         <span class="lang-label">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -407,21 +407,21 @@
     </div>
 
     <header>
-        <img src="/App.png" alt="Hunter Disk Cleaner Logo" class="logo">
+        <img src="/App.png" alt="Логотип Hunter Disk Cleaner" class="logo">
         <h1>HUNTER DISK CLEANER</h1>
-        <div class="subtitle">Глубокая очистка системы и безопасное удаление кэша</div>
+        <div class="subtitle">Глубокая очистка системы и безопасная оптимизация кэша</div>
     </header>
 
     <section class="hero">
-        <p>Современный, быстрый и легкий инструмент очистки диска для Windows. Безопасно находите и удаляйте скрытые временные файлы, освобождая дисковое пространство без лишних забот.</p>
+        <p>Современная, сверхбыстрая и легкая утилита для очистки диска в Windows. Безопасно находит и удаляет скрытые временные файлы, мгновенно освобождая место на вашем компьютере без лишних сюрпризов.</p>
         <div class="cta-buttons">
             <a href="https://apps.microsoft.com/detail/9NHQDCSTS58K" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                 <svg width="18" height="18" viewBox="0 0 23 23" style="margin-right: 8px; flex-shrink: 0;" fill="currentColor">
                     <path d="M0 0h11v11H0zM12 0h11v11H12zM0 12h11v11H0zM12 12h11v11H12z"/>
                 </svg>
-                Скачать из Microsoft Store
+                Скачать в Microsoft Store
             </a>
-            <a href="downloads.html" class="btn btn-secondary">Все варианты загрузки</a>
+            <a href="downloads.html" class="btn btn-secondary">Все загрузки</a>
             <a href="pro.html" class="btn btn-secondary">Получить лицензию PRO</a>
             <a href="contact.html" class="btn btn-secondary">Контакты и поддержка</a>
         </div>
@@ -437,75 +437,75 @@
             <div class="carousel-track" id="carouselTrack">
                 
                 <div class="carousel-slide">
-                    <img src="/screenshot01.png" alt="Hunter Disk Cleaner - Главный интерфейс" class="carousel-img">
+                    <img src="/screenshot01.png" alt="Hunter Disk Cleaner — Главная панель" class="carousel-img">
                     <div class="carousel-caption">
-                        <h3>Оптимизатор кэша архитектуры</h3>
-                        <p>Современная минималистичная панель управления, созданная для быстрой навигации и автоматического сканирования.</p>
+                        <h3>Архитектурный оптимизатор кэша</h3>
+                        <p>Современная минималистичная панель, разработанная для быстрой навигации и автоматического сканирования системы.</p>
                     </div>
                 </div>
 
                 <div class="carousel-slide">
-                    <img src="/screenshot02.png" alt="Hunter Disk Cleaner - Детали хранилища" class="carousel-img">
+                    <img src="/screenshot02.png" alt="Hunter Disk Cleaner — Детализация областей хранения" class="carousel-img">
                     <div class="carousel-caption">
                         <h3>Подробный анализ и метки безопасности</h3>
-                        <p>Полное распределение кэша с цветовой маркировкой для абсолютной безопасности данных.</p>
+                        <p>Детальный дизайн, отображающий точные распределения кэша с цветовой маркировкой для защиты ваших данных.</p>
                     </div>
                 </div>
 
                 <div class="carousel-slide">
-                    <img src="/screenshot03.png" alt="Hunter Disk Cleaner - Состояние PRO" class="carousel-img">
+                    <img src="/screenshot03.png" alt="Hunter Disk Cleaner — Статус активации Pro" class="carousel-img">
                     <div class="carousel-caption">
-                        <h3>Продвинутый движок поиска</h3>
-                        <p>Разблокируйте глубокое сканирование временных каталогов для максимального освобождения памяти.</p>
+                        <h3>Продвинутый механизм сканирования</h3>
+                        <p>Разблокирует возможности глубокого сканирования временных зон для идеального освобождения больших объемов памяти.</p>
                     </div>
                 </div>
 
                 <div class="carousel-slide">
-                    <img src="/screenshot04.png" alt="Hunter Disk Cleaner - Очистка завершена" class="carousel-img">
+                    <img src="/screenshot04.png" alt="Hunter Disk Cleaner — Оптимизация завершена" class="carousel-img">
                     <div class="carousel-caption">
-                        <h3>Очистка после сканирования</h3>
-                        <p>Удаляйте мусорные файлы с гарантией стабильности системы и сохранности ключевых настроек приложений.</p>
+                        <h3>Операции очистки после сканирования</h3>
+                        <p>Мгновенная стабилизация системы благодаря удалению остаточных файлов без затрагивания критических параметров приложений.</p>
                     </div>
                 </div>
 
             </div>
 
-            <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Предыдущий слайд">&#10094;</button>
-            <button class="carousel-btn next-btn" id="nextBtn" aria-label="Следующий слайд">&#10095;</button>
+            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
         </div>
 
-        <div class="carousel-dots" id="carouselDots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+        <div class="carousel-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
         </div>
     </section>
 
     <h2 style="margin-bottom: 20px; text-align: center;">Основные возможности</h2>
     <section class="features">
         <div class="feature-card">
-            <h3>⚡ Высокая скорость</h3>
-            <p>Оптимизированный многопоточный движок анализирует ключевые временные зоны Windows за считанные секунды.</p>
+            <h3>⚡ Высокоскоростное сканирование</h3>
+            <p>Многопоточный движок, оптимизированный для анализа критических временных зон Windows за считанные секунды.</p>
         </div>
         <div class="feature-card">
-            <h3>🌐 Локализация</h3>
-            <p>Полная нативная поддержка нескольких языков с мгновенным переключением на лету.</p>
+            <h3>🌐 Динамическая локализация</h3>
+            <p>Полная нативная поддержка множества языков с переключением в реальном времени для ключевых мировых рынков.</p>
         </div>
         <div class="feature-card">
-            <h3>🛡️ Безопасность прежде всего</h3>
-            <p>Строго точный отбор временных каталогов гарантирует стабильность системы и исключает случайные удаления.</p>
+            <h3>🛡️ Безопасность превыше всего</h3>
+            <p>Тщательно отобранные временные каталоги для обеспечения стабильности системы — без случайных удалений.</p>
         </div>
     </section>
 
-    <h2 style="margin-bottom: 10px; text-align: center;">Сравнение версий</h2>
+    <h2 style="margin-bottom: 10px; text-align: center;">Сравнение редакций</h2>
     <div class="table-responsive">
         <table class="comparison-table">
             <thead>
                 <tr>
-                    <th>Модуль / Функция</th>
-                    <th>FREE (Бесплатно)</th>
-                    <th>PRO (Профессиональная)</th>
+                    <th>Функция / Модуль</th>
+                    <th>Бесплатно</th>
+                    <th>PRO</th>
                 </tr>
             </thead>
             <tbody>
@@ -515,7 +515,7 @@
                     <td><span class="check">✓</span></td>
                 </tr>
                 <tr>
-                    <td>Анализ диска и счетчики в реальном времени</td>
+                    <td>Анализ и счетчик хранилища в реальном времени</td>
                     <td><span class="check">✓</span></td>
                     <td><span class="check">✓</span></td>
                 </tr>
@@ -525,22 +525,22 @@
                     <td><span class="check">✓</span></td>
                 </tr>
                 <tr>
-                    <td>Системные логи и временные файлы <code>[SYSTEM CACHE]</code></td>
-                    <td><span class="muted">Только сканирование</span></td>
+                    <td>Временные файлы и системные журналы <code>[SYSTEM CACHE]</code></td>
+                    <td><span class="muted">Только анализ</span></td>
                     <td><span class="check">✓</span></td>
                 </tr>
                 <tr>
-                    <td>Кэш сторонних программ AppData <code>[THIRD-PARTY CACHE]</code></td>
-                    <td><span class="muted">Только сканирование</span></td>
+                    <td>Универсальный кэш AppData сторонних программ <code>[THIRD-PARTY CACHE]</code></td>
+                    <td><span class="muted">Только анализ</span></td>
                     <td><span class="check">✓</span></td>
                 </tr>
                 <tr>
                     <td>Остатки удаленного ПО и телеметрия <code>[SYSTEM MAINTENANCE]</code></td>
-                    <td><span class="muted">Только сканирование</span></td>
+                    <td><span class="muted">Только анализ</span></td>
                     <td><span class="check">✓</span></td>
                 </tr>
                 <tr>
-                    <td>Неограниченная глубокая очистка в один клик</td>
+                    <td>Глубокая очистка без ограничений в один клик</td>
                     <td><span class="cross">✕</span></td>
                     <td><span class="check">✓</span></td>
                 </tr>
@@ -549,7 +549,7 @@
     </div>
 
     <footer>
-        <p style="margin-bottom: 15px;">Hunter Disk Cleaner создан для постоянного совершенствования. Точный поиск временных файлов пиксель за пикселем.</p>
+        <p style="margin-bottom: 15px;">Hunter Disk Cleaner создан с акцентом на непрерывное совершенствование. Точная охота за временными файлами, пиксель за пикселем.</p>
         <div style="font-size: 0.85rem; display: flex; justify-content: center; gap: 20px;">
             <a href="privacy.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">Политика конфиденциальности</a>
             <span style="color: rgba(255,255,255,0.1);">|</span>
@@ -559,98 +559,82 @@
 </div>
 
 <script>
+    let currentSlideIndex = 0;
+    let slideTimeout;
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const track = document.getElementById("carouselTrack");
+    const container = document.getElementById("carouselContainer");
+    const slides = document.getElementsByClassName("carousel-slide");
+    const dots = document.getElementsByClassName("dot");
+
     document.addEventListener("DOMContentLoaded", () => {
-        const track = document.getElementById("carouselTrack");
-        const slides = Array.from(track.children);
-        const nextBtn = document.getElementById("nextBtn");
-        const prevBtn = document.getElementById("prevBtn");
-        const dotsNav = document.getElementById("carouselDots");
-        const dots = Array.from(dotsNav.children);
-        const container = document.getElementById("carouselContainer");
+        updateCarousel();
+        startAutoSlide();
 
-        let currentIndex = 0;
-        let slideInterval;
-        const autoSlideDelay = 6000;
-
-        // Переменные для Touch / Swipe
-        let startX = 0;
-        let isDragging = false;
-
-        function updateCarousel(index) {
-            if (index < 0) {
-                currentIndex = slides.length - 1;
-            } else if (index >= slides.length) {
-                currentIndex = 0;
-            } else {
-                currentIndex = index;
-            }
-
-            track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-            dots.forEach((dot, idx) => {
-                dot.classList.toggle("active", idx === currentIndex);
-            });
-        }
-
-        function nextSlide() {
-            updateCarousel(currentIndex + 1);
-        }
-
-        function prevSlide() {
-            updateCarousel(currentIndex - 1);
-        }
-
-        function startTimer() {
-            stopTimer();
-            slideInterval = setInterval(nextSlide, autoSlideDelay);
-        }
-
-        function stopTimer() {
-            if (slideInterval) clearInterval(slideInterval);
-        }
-
-        function handleUserInteraction(action) {
-            stopTimer();
-            action();
-            startTimer();
-        }
-
-        nextBtn.addEventListener("click", () => handleUserInteraction(nextSlide));
-        prevBtn.addEventListener("click", () => handleUserInteraction(prevSlide));
-
-        dots.forEach((dot, idx) => {
-            dot.addEventListener("click", () => handleUserInteraction(() => updateCarousel(idx)));
-        });
-
-        // События Touch / Swipe
+        // Suporte para tela de toque (Swipe)
         container.addEventListener("touchstart", (e) => {
-            stopTimer();
-            isDragging = true;
-            startX = e.touches[0].clientX;
-        }, { passive: true });
-
-        container.addEventListener("touchmove", (e) => {
-            if (!isDragging) return;
+            touchStartX = e.changedTouches[0].screenX;
+            stopAutoSlide();
         }, { passive: true });
 
         container.addEventListener("touchend", (e) => {
-            if (!isDragging) return;
-            isDragging = false;
-            const endX = e.changedTouches[0].clientX;
-            const diffX = startX - endX;
+            touchEndX = e.changedTouches[0].screenX;
+            handleGesture();
+            startAutoSlide();
+        }, { passive: true });
 
-            if (Math.abs(diffX) > 40) {
-                if (diffX > 0) {
-                    nextSlide();
-                } else {
-                    prevSlide();
-                }
-            }
-            startTimer();
-        });
-
-        startTimer();
+        // Pausa no hover do mouse
+        container.addEventListener("mouseenter", stopAutoSlide);
+        container.addEventListener("mouseleave", startAutoSlide);
     });
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active");
+        }
+        if (dots[currentSlideIndex]) {
+            dots[currentSlideIndex].classList.add("active");
+        }
+    }
+
+    function moveSlide(n) {
+        currentSlideIndex += n;
+        if (currentSlideIndex >= slides.length) { currentSlideIndex = 0; }
+        if (currentSlideIndex < 0) { currentSlideIndex = slides.length - 1; }
+        updateCarousel();
+    }
+
+    function currentSlide(n) {
+        currentSlideIndex = n;
+        updateCarousel();
+    }
+
+    function startAutoSlide() {
+        stopAutoSlide();
+        slideTimeout = setInterval(() => {
+            moveSlide(1);
+        }, 6000);
+    }
+
+    function stopAutoSlide() {
+        if (slideTimeout) {
+            clearInterval(slideTimeout);
+        }
+    }
+
+    function handleGesture() {
+        const swipeThreshold = 50; // Sensibilidade do swipe
+        if (touchEndX < touchStartX - swipeThreshold) {
+            moveSlide(1); // Swipe para a esquerda -> Próximo
+        }
+        if (touchEndX > touchStartX + swipeThreshold) {
+            moveSlide(-1); // Swipe para a direita -> Anterior
+        }
+    }
 </script>
 
 </body>
