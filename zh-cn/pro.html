@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取 PRO 许可证 - Hunter Disk Cleaner</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        :root {
+            --bg-color: #0F1522;
+            --card-bg: #161F32;
+            --accent-color: #2CE4D1;
+            --text-main: #FFFFFF;
+            --text-muted: #8A929E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            border-radius: 18px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        p.description {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 40px 0 20px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(44, 228, 209, 0.2);
+            padding-bottom: 8px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .price-card {
+            background-color: var(--card-bg);
+            padding: 30px 20px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(44, 228, 209, 0.3);
+        }
+
+        .price-card.featured {
+            border-color: var(--accent-color);
+        }
+
+        .price-card h2 {
+            font-size: 1.25rem;
+            color: #E2E8F0;
+            margin-bottom: 5px;
+        }
+
+        .price-card .devices {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            background: rgba(44, 228, 209, 0.1);
+            padding: 2px 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .price-card .price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin: 10px 0;
+        }
+
+        .price-card .price span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .price-card ul {
+            text-align: left;
+            list-style: none;
+            margin: 15px 0 25px 0;
+        }
+
+        .price-card ul li {
+            color: #B2C0D4;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        form, .status-box {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-top: 40px;
+        }
+
+        .status-box {
+            display: none;
+            text-align: center;
+            padding: 40px 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(15, 21, 34, 0.6);
+            color: var(--text-main);
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 8px rgba(44, 228, 209, 0.2);
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            background-color: var(--accent-color);
+            color: #000000;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-submit:hover {
+            background-color: #24bdaf;
+            box-shadow: 0 0 15px rgba(44, 228, 209, 0.4);
+        }
+
+        .btn-submit.btn-secondary-card {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--text-muted);
+        }
+
+        .btn-submit.btn-secondary-card:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            background-color: transparent;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="App.png" alt="Hunter Disk Cleaner Logo" class="logo">
+        <h1>选择您的 Hunter PRO 许可证</h1>
+        <p class="description">解锁全功能一键优化与深度目标清理。选择最适合您工作站数量的套餐方案。</p>
+    </header>
+
+    <!-- 区域 1: 个人套餐 -->
+    <div class="section-title">个人许可证套餐</div>
+    <div class="pricing-grid">
+        <!-- 月度通行证 -->
+        <div class="price-card">
+            <div>
+                <h2>月度通行证</h2>
+                <div class="devices">最多 1 台设备</div>
+                <div class="price">USD$ 2.95 <span>/ 月</span></div>
+                <ul>
+                    <li><span>✓</span> 解锁完整 PRO 专业功能</li>
+                    <li><span>✓</span> 深度目标与系统清理</li>
+                    <li><span>✓</span> 标准邮件技术支持</li>
+                    <li><span>✓</span> 有效期 1 个月</li>
+                </ul>
+            </div>
+            <a href="https://workflowtech.gumroad.com/l/hunterdiskcleaner?wanted=true" target="_blank" rel="noopener noreferrer" class="btn-submit btn-secondary-card">获取通行证</a>
+        </div>
+
+        <!-- 季度通行证 -->
+        <div class="price-card">
+            <div>
+                <h2>季度通行证</h2>
+                <div class="devices">最多 3 台设备</div>
+                <div class="price">USD$ 5.95 <span>/ 3 个月</span></div>
+                <ul>
+                    <li><span>✓</span> 解锁完整 PRO 专业功能</li>
+                    <li><span>✓</span> 深度目标与系统清理</li>
+                    <li><span>✓</span> 标准邮件技术支持</li>
+                    <li><span>✓</span> 有效期 3 个月</li>
+                </ul>
+            </div>
+            <a href="https://workflowtech.gumroad.com/l/hunterdiskcleaner?wanted=true" target="_blank" rel="noopener noreferrer" class="btn-submit btn-secondary-card">获取通行证</a>
+        </div>
+
+        <!-- 年度超值版 -->
+        <div class="price-card featured">
+            <div>
+                <h2>年度超值版</h2>
+                <div class="devices">最多 5 台设备</div>
+                <div class="price">USD$ 12.00 <span>/ 年</span></div>
+                <ul>
+                    <li><span>✓</span> 解锁完整 PRO 专业功能</li>
+                    <li><span>✓</span> 深度目标与系统清理</li>
+                    <li><span>✓</span> 标准邮件技术支持</li>
+                    <li><span>✓</span> 有效期 1 整年</li>
+                </ul>
+            </div>
+            <a href="https://workflowtech.gumroad.com/l/hunterdiskcleaner?wanted=true" target="_blank" rel="noopener noreferrer" class="btn-submit">获取年度版</a>
+        </div>
+    </div>
+
+    <!-- Beta / 手动激活区域 -->
+    <div style="text-align: center; margin-top: 60px;">
+        <h3 style="color: #E2E8F0; font-size: 1.2rem; margin-bottom: 5px;">需要 Beta 或是手动激活？</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">如果您是已批准的 Beta 测试人员或有手动密钥咨询，请使用下方的安全表单。</p>
+    </div>
+
+    <form id="proForm" onsubmit="submitForm(event)">
+        <div class="form-group">
+            <label for="name">姓名</label>
+            <input type="text" id="name" placeholder="例如：张三" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">激活邮箱</label>
+            <input type="email" id="email" placeholder="your@email.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="hwid">硬件 ID (HWID)</label>
+            <input type="text" id="hwid" placeholder="请从软件内部复制并粘贴您的 HWID" required>
+        </div>
+
+        <div class="form-group">
+            <label for="purpose">申请目的</label>
+            <select id="purpose" required>
+                <option value="Beta Tester Activation">申请 PRO Beta 测试密钥</option>
+                <option value="License Renewal Request">许可证续订 / 验证</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">备注 / 留言（可选）</label>
+            <textarea id="notes" placeholder="任何您想与我们分享的补充信息或反馈..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">提交申请</button>
+    </form>
+
+    <div id="successBox" class="status-box">
+        <h2 style="color: var(--accent-color); margin-bottom: 15px;">✓ 申请已收到！</h2>
+        <p style="color: #E2E8F0; margin-bottom: 20px;">您的激活数据和 HWID 已直接提交给我们的开发团队。</p>
+        <a href="index.html" class="btn-submit" style="display: inline-block; text-align: center; text-decoration: none; width: auto; padding: 10px 30px;">返回首页</a>
+    </div>
+
+    <a href="index.html" class="back-link">← 返回主页</a>
+</div>
+
+<script>
+async function submitForm(event) {
+    event.preventDefault();
+    const submitBtn = document.getElementById('submitBtn');
+    const proForm = document.getElementById('proForm');
+    const successBox = document.getElementById('successBox');
+    
+    submitBtn.disabled = true;
+    submitBtn.innerText = "处理中...";
+
+    const payload = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        hwid: document.getElementById('hwid').value,
+        purpose: document.getElementById('purpose').value,
+        notes: document.getElementById('notes').value
+    };
+
+    const workerUrl = "https://hunter-form-pro.geandertkind.workers.dev";
+
+    try {
+        const response = await fetch(workerUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+            proForm.style.display = 'none';
+            successBox.style.display = 'block';
+        } else {
+            alert("抱歉！服务器出现错误。请稍后再试。");
+            submitBtn.disabled = false;
+            submitBtn.innerText = "提交申请";
+        }
+    } catch (error) {
+        alert("网络错误。无法连接至注册服务器。");
+        submitBtn.disabled = false;
+        submitBtn.innerText = "提交申请";
+    }
+}
+</script>
+
+</body>
+</html>
