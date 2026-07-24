@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+      (function() {
+        // Evita redirecionar se o usuário veio de um clique explícito dentro do próprio site
+        if (document.referrer.includes('hunterdiskcleaner.com')) return;
+
+        // Detecta o idioma do navegador do visitante
+        var userLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+
+        // Redireciona com base no idioma
+        if (userLang.startsWith('pt-br')) {
+          window.location.replace('/pt-br/');
+        } else if (userLang.startsWith('pt')) {
+          window.location.replace('/pt-pt/');
+        } else if (userLang.startsWith('es')) {
+          window.location.replace('/es-es/');
+        } else if (userLang.startsWith('fr')) {
+          window.location.replace('/fr-fr/');
+        } else if (userLang.startsWith('de')) {
+          window.location.replace('/de-de/');
+        } else if (userLang.startsWith('ja')) {
+          window.location.replace('/ja-jp/');
+        } else if (userLang.startsWith('zh')) {
+          window.location.replace('/zh-cn/');
+        } else if (userLang.startsWith('ru')) {
+          window.location.replace('/ru-ru/');
+        }
+      })();
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hunter Disk Cleaner - Deep & Safe Windows Optimization</title>
