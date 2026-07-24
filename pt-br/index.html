@@ -184,6 +184,7 @@
             }
         }
 
+        /* Estilos do Carrossel Otimizado (Flexbox + Touch Native) */
         .carousel-section {
             margin: 50px 0;
             text-align: center;
@@ -197,26 +198,26 @@
             overflow: hidden;
             border: 1px solid rgba(44, 228, 209, 0.15);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            touch-action: pan-y;
         }
 
         .carousel-wrapper {
-            position: relative;
+            display: flex;
             width: 100%;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .carousel-slide {
-            display: none;
-            animation: fadeEffect 0.5s ease-in-out;
-        }
-
-        .carousel-slide.active {
-            display: block;
+            min-width: 100%;
+            box-sizing: border-box;
+            user-select: none;
         }
 
         .carousel-img {
             width: 100%;
             height: auto;
             display: block;
+            pointer-events: none;
         }
 
         .carousel-caption {
@@ -433,11 +434,11 @@
 
     <h2 style="margin-bottom: 20px; text-align: center;">Visão Geral da Interface</h2>
     <section class="carousel-section">
-        <div class="carousel-container">
-            <div class="carousel-wrapper">
+        <div class="carousel-container" id="carouselContainer">
+            <div class="carousel-wrapper" id="carouselWrapper">
                 
                 <!-- Assets de imagens vindos da raiz -->
-                <div class="carousel-slide active">
+                <div class="carousel-slide">
                     <img src="/screenshot01.png" alt="Hunter Disk Cleaner - Painel Principal" class="carousel-img">
                     <div class="carousel-caption">
                         <h3>Otimizador do Cache Arquitetural</h3>
@@ -563,42 +564,80 @@
 <script>
     let currentSlideIndex = 0;
     let slideTimeout;
+    const autoSlideInterval = 6000;
+
+    const wrapper = document.getElementById("carouselWrapper");
+    const container = document.getElementById("carouselContainer");
+    const dots = document.getElementsByClassName("dot");
+    const totalSlides = document.getElementsByClassName("carousel-slide").length;
+
+    let touchStartX = 0;
+    let touchEndX = 0;
 
     document.addEventListener("DOMContentLoaded", () => {
-        showSlides(currentSlideIndex);
+        updateCarousel();
+        startAutoSlide();
+        setupTouchEvents();
     });
 
-    function moveSlide(n) {
-        showSlides(currentSlideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(currentSlideIndex = n);
-    }
-
-    function showSlides(n) {
-        const slides = document.getElementsByClassName("carousel-slide");
-        const dots = document.getElementsByClassName("dot");
+    function updateCarousel() {
+        wrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
         
-        clearTimeout(slideTimeout);
-
-        if (n >= slides.length) { currentSlideIndex = 0; }
-        if (n < 0) { currentSlideIndex = slides.length - 1; }
-
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-        }
         for (let i = 0; i < dots.length; i++) {
             dots[i].classList.remove("active");
         }
+        if (dots[currentSlideIndex]) {
+            dots[currentSlideIndex].classList.add("active");
+        }
+    }
 
-        slides[currentSlideIndex].classList.add("active");
-        dots[currentSlideIndex].classList.add("active");
+    function moveSlide(n) {
+        currentSlideIndex += n;
+        if (currentSlideIndex >= totalSlides) { currentSlideIndex = 0; }
+        if (currentSlideIndex < 0) { currentSlideIndex = totalSlides - 1; }
+        updateCarousel();
+        resetAutoSlide();
+    }
 
+    function currentSlide(n) {
+        currentSlideIndex = n;
+        updateCarousel();
+        resetAutoSlide();
+    }
+
+    function startAutoSlide() {
         slideTimeout = setTimeout(() => {
             currentSlideIndex++;
-            showSlides(currentSlideIndex);
-        }, 6000);
+            if (currentSlideIndex >= totalSlides) { currentSlideIndex = 0; }
+            updateCarousel();
+            startAutoSlide();
+        }, autoSlideInterval);
+    }
+
+    function resetAutoSlide() {
+        clearTimeout(slideTimeout);
+        startAutoSlide();
+    }
+
+    function setupTouchEvents() {
+        container.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        container.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+    }
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+            moveSlide(1);
+        }
+        if (touchEndX > touchStartX + swipeThreshold) {
+            moveSlide(-1);
+        }
     }
 </script>
 
