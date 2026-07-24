@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato e Suporte - Hunter Disk Cleaner</title>
-    
-    <!-- Asset subindo um nível -->
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <style>
         :root {
             --bg-color: #0F1522;
@@ -159,16 +156,15 @@
 
 <div class="container">
     <header>
-        <!-- Asset subindo um nível -->
-        <img src="../App.png" alt="Logo do Hunter Disk Cleaner" class="logo">
+        <img src="/App.png" alt="Hunter Disk Cleaner Logo" class="logo">
         <h1>Contato e Suporte</h1>
-        <p class="description">Tem dúvidas, precisa de assistência técnica ou quer discutir uma parceria? Envie-nos uma mensagem abaixo.</p>
+        <p class="description">Tem alguma dúvida, precisa de assistência técnica ou quer discutir uma parceria? Envie-nos uma mensagem abaixo.</p>
     </header>
 
     <form id="contactForm" onsubmit="submitContactForm(event)">
         <div class="form-group">
             <label for="name">Seu Nome</label>
-            <input type="text" id="name" placeholder="ex: Maria Silva" required>
+            <input type="text" id="name" placeholder="Ex: Maria Silva" required>
         </div>
 
         <div class="form-group">
@@ -179,15 +175,15 @@
         <div class="form-group">
             <label for="purpose">Motivo do Contato</label>
             <select id="purpose" required>
-                <option value="Technical Support">Suporte Técnico / Reportar Bug</option>
-                <option value="Commercial Inquiry">Comercial / Parcerias de Negócio</option>
+                <option value="Technical Support">Suporte Técnico / Relatar Erro</option>
+                <option value="Commercial Inquiry">Comercial / Parcerias</option>
                 <option value="General Question">Dúvidas Gerais</option>
             </select>
         </div>
 
         <div class="form-group">
             <label for="notes">Mensagem</label>
-            <textarea id="notes" placeholder="Por favor, escreva aqui sua mensagem detalhada ou feedback..." required></textarea>
+            <textarea id="notes" placeholder="Por favor, escreva sua mensagem detalhada ou feedback aqui..." required></textarea>
         </div>
 
         <button type="submit" class="btn-submit" id="submitBtn">Enviar Mensagem</button>
@@ -195,8 +191,8 @@
 
     <div id="successBox" class="status-box">
         <h2 style="color: var(--accent-color); margin-bottom: 15px;">✓ Mensagem Enviada!</h2>
-        <p style="color: #E2E8F0; margin-bottom: 20px;">Obrigado por entrar em contato. Sua mensagem foi enviada diretamente para a equipe de suporte do Hunter Disk Cleaner. Responderemos o mais breve possível.</p>
-        <a href="index.html" class="btn-submit" style="display: inline-block; text-align: center; text-decoration: none; width: auto; padding: 10px 30px;">Voltar para o Início</a>
+        <p style="color: #E2E8F0; margin-bottom: 20px;">Obrigado pelo contato. Sua mensagem foi enviada diretamente para a equipe de suporte do Hunter Disk Cleaner. Responderemos o mais breve possível.</p>
+        <a href="index.html" class="btn-submit" style="display: inline-block; text-align: center; text-decoration: none; width: auto; padding: 10px 30px;">Voltar ao Início</a>
     </div>
 
     <a href="index.html" class="back-link">← Voltar para a Página Principal</a>
