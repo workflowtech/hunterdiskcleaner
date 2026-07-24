@@ -312,7 +312,7 @@
             font-size: 0.95rem;
         }
 
-        /* Estilos da Tabela de Comparação Simplificada */
+        /* Estilos da Tabela de Comparação */
         .table-responsive {
             width: 100%;
             overflow-x: auto;
@@ -394,7 +394,7 @@
             </svg>
             Idioma:
         </span>
-        <select class="lang-select" onchange="location = this.value;">
+        <select class="lang-select" aria-label="Selecionar idioma" onchange="location = this.value;">
             <option value="/">🌐 English</option>
             <option value="/pt-br/">🇧🇷 Português (Brasil)</option>
             <option value="/pt-pt/" selected>🇵🇹 Português (Portugal)</option>
@@ -409,22 +409,22 @@
 
     <header>
         <!-- Asset de imagem vindo da raiz -->
-        <img src="/App.png" alt="Hunter Disk Cleaner Logo" class="logo">
+        <img src="/App.png" alt="Logótipo do Hunter Disk Cleaner" class="logo">
         <h1>HUNTER DISK CLEANER</h1>
         <div class="subtitle">Limpeza profunda do sistema e optimização segura da cache</div>
     </header>
 
     <section class="hero">
-        <p>Um utilitário de limpeza de disco moderno, ultrarrápido e leve para o Windows. Cace e remova com segurança ficheiros temporários ocultos para libertar espaço no seu computador instantaneamente, sem surpresas.</p>
+        <p>Um utilitário de limpeza de disco moderno, ultrarrápido e leve para o Windows. Detete e remova com segurança ficheiros temporários ocultos para libertar espaço no seu computador instantaneamente, sem complicações.</p>
         <div class="cta-buttons">
             <a href="https://apps.microsoft.com/detail/9NHQDCSTS58K" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                 <svg width="18" height="18" viewBox="0 0 23 23" style="margin-right: 8px; flex-shrink: 0;" fill="currentColor">
                     <path d="M0 0h11v11H0zM12 0h11v11H12zM0 12h11v11H0zM12 12h11v11H12z"/>
                 </svg>
-                Descarregar na Microsoft Store
+                Obter na Microsoft Store
             </a>
             <!-- Links locais na pasta do idioma pt-pt/ -->
-            <a href="downloads.html" class="btn btn-secondary">Todos os Downloads</a>
+            <a href="downloads.html" class="btn btn-secondary">Transferências</a>
             <a href="pro.html" class="btn btn-secondary">Obter Licença PRO</a>
             <a href="contact.html" class="btn btn-secondary">Contacto e Suporte</a>
         </div>
@@ -443,16 +443,16 @@
                 <div class="carousel-slide">
                     <img src="/screenshot01.png" alt="Hunter Disk Cleaner - Painel Principal" class="carousel-img">
                     <div class="carousel-caption">
-                        <h3>Optimizador da Cache Arquitetural</h3>
+                        <h3>Optimizador de Cache Arquitetural</h3>
                         <p>Painel moderno e minimalista concebido para uma navegação rápida e varrimento automatizado do sistema.</p>
                     </div>
                 </div>
 
                 <div class="carousel-slide">
-                    <img src="/screenshot02.png" alt="Hunter Disk Cleaner - Zonas de Armazenamento Detalhadas" class="carousel-img">
+                    <img src="/screenshot02.png" alt="Hunter Disk Cleaner - Detalhe do Armazenamento" class="carousel-img">
                     <div class="carousel-caption">
                         <h3>Análise Detalhada e Rótulos de Segurança</h3>
-                        <p>Layout abrangente a mostrar as alocações exatas de cache mapeadas com cores estruturais para a preservação de dados.</p>
+                        <p>Layout abrangente que apresenta a alocação exata da cache, mapeada com cores estruturais para a proteção dos seus dados.</p>
                     </div>
                 </div>
 
@@ -460,7 +460,7 @@
                     <img src="/screenshot03.png" alt="Hunter Disk Cleaner - Estado de Activação Pro" class="carousel-img">
                     <div class="carousel-caption">
                         <h3>Mecanismo Avançado de Alvo</h3>
-                        <p>Desbloqueie capacidades de varrimento profundo em zonas temporárias para recuperar uma grande quantidade de espaço na perfeição.</p>
+                        <p>Desbloqueie capacidades de varrimento profundo em zonas temporárias para recuperar uma grande quantidade de espaço com precisão.</p>
                     </div>
                 </div>
 
@@ -468,14 +468,14 @@
                     <img src="/screenshot04.png" alt="Hunter Disk Cleaner - Optimização Concluída" class="carousel-img">
                     <div class="carousel-caption">
                         <h3>Operações de Limpeza Pós-Varrimento</h3>
-                        <p>Estabilização instantânea do sistema executando acções de limpeza residual sem remover parâmetros críticos da aplicação.</p>
+                        <p>Estabilização instantânea do sistema executando ações de limpeza residual sem remover definições críticas de aplicações.</p>
                     </div>
                 </div>
 
             </div>
 
-            <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Slide anterior">&#10094;</button>
-            <button class="carousel-btn next-btn" id="nextBtn" aria-label="Próximo slide">&#10095;</button>
+            <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Diapo anterior">&#10094;</button>
+            <button class="carousel-btn next-btn" id="nextBtn" aria-label="Diapo seguinte">&#10095;</button>
         </div>
 
         <div class="carousel-dots" id="carouselDots">
@@ -490,7 +490,7 @@
     <section class="features">
         <div class="feature-card">
             <h3>⚡ Varrimento de Alta Velocidade</h3>
-            <p>Mecanismo multi-thread optimizado para analisar campos temporários críticos do Windows em poucos segundos.</p>
+            <p>Mecanismo multi-thread optimizado para analisar diretórios temporários críticos do Windows em poucos segundos.</p>
         </div>
         <div class="feature-card">
             <h3>🌐 Localização Dinâmica</h3>
@@ -498,7 +498,7 @@
         </div>
         <div class="feature-card">
             <h3>🛡️ Segurança em Primeiro Lugar</h3>
-            <p>Directórios temporários cuidadosamente seleccionados para garantir a estabilidade do sistema — sem eliminações acidentais.</p>
+            <p>Diretórios temporários cuidadosamente selecionados para garantir a estabilidade do sistema — sem eliminações acidentais.</p>
         </div>
     </section>
 
@@ -539,7 +539,7 @@
                     <td><span class="check">✓</span></td>
                 </tr>
                 <tr>
-                    <td>Restos de Softwares Desinstalados e Telemetria <code>[SYSTEM MAINTENANCE]</code></td>
+                    <td>Resíduos de Softwares Desinstalados e Telemetria <code>[SYSTEM MAINTENANCE]</code></td>
                     <td><span class="muted">Apenas Análise</span></td>
                     <td><span class="check">✓</span></td>
                 </tr>
@@ -553,7 +553,7 @@
     </div>
 
     <footer>
-        <p style="margin-bottom: 15px;">Hunter Disk Cleaner é construído com foco na melhoria contínua. A caçar ficheiros temporários com precisão, pixel a pixel.</p>
+        <p style="margin-bottom: 15px;">Hunter Disk Cleaner é desenvolvido com foco na melhoria contínua. A eliminar ficheiros temporários com precisão, pixel a pixel.</p>
         <div style="font-size: 0.85rem; display: flex; justify-content: center; gap: 20px;">
             <!-- Links locais na pasta do idioma pt-pt/ -->
             <a href="privacy.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">Política de Privacidade</a>
@@ -579,8 +579,6 @@
 
         // Variáveis de Touch / Swipe
         let startX = 0;
-        let currentTranslate = 0;
-        let prevTranslate = 0;
         let isDragging = false;
 
         function updateCarousel(index) {
