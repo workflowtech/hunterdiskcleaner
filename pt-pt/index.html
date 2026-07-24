@@ -184,7 +184,7 @@
             }
         }
 
-        /* Estrutura do Carrossel com Transição Suave */
+        /* Estrutura de Carrossel com Wrapper Adicionado */
         .carousel-section {
             margin: 50px 0;
             text-align: center;
@@ -201,17 +201,25 @@
             touch-action: pan-y;
         }
 
-        .carousel-track {
-            display: flex;
+        .carousel-wrapper {
+            position: relative;
             width: 100%;
-            transition: transform 0.5s ease-in-out;
-            will-change: transform;
         }
 
         .carousel-slide {
-            min-width: 100%;
-            box-sizing: border-box;
+            display: none;
+            width: 100%;
+            animation: fadeIn 0.5s ease-in-out;
             user-select: none;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
         }
 
         .carousel-img {
@@ -225,6 +233,7 @@
             background: rgba(22, 31, 50, 0.95);
             padding: 18px 25px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: left;
         }
 
         .carousel-caption h3 {
@@ -240,7 +249,7 @@
 
         .carousel-btn {
             position: absolute;
-            top: 50%;
+            top: 40%;
             transform: translateY(-50%);
             background: rgba(22, 31, 50, 0.8);
             color: var(--accent-color);
@@ -434,9 +443,9 @@
     <h2 style="margin-bottom: 20px; text-align: center;">Visão Geral da Interface</h2>
     <section class="carousel-section">
         <div class="carousel-container" id="carouselContainer">
-            <div class="carousel-track" id="carouselTrack">
-                
-                <div class="carousel-slide">
+            
+            <div class="carousel-wrapper">
+                <div class="carousel-slide active">
                     <img src="/screenshot01.png" alt="Hunter Disk Cleaner - Painel Principal" class="carousel-img">
                     <div class="carousel-caption">
                         <h3>Otimizador de Cache Arquitetónico</h3>
@@ -467,7 +476,6 @@
                         <p>Estabilização instantânea do sistema a executar ações de limpeza residual sem eliminar parâmetros críticos da aplicação.</p>
                     </div>
                 </div>
-
             </div>
 
             <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
@@ -564,13 +572,12 @@
     let touchStartX = 0;
     let touchEndX = 0;
 
-    const track = document.getElementById("carouselTrack");
     const container = document.getElementById("carouselContainer");
     const slides = document.getElementsByClassName("carousel-slide");
     const dots = document.getElementsByClassName("dot");
 
     document.addEventListener("DOMContentLoaded", () => {
-        updateCarousel();
+        showSlide(currentSlideIndex);
         startAutoSlide();
 
         // Suporte para ecrã tátil (Swipe)
@@ -590,27 +597,26 @@
         container.addEventListener("mouseleave", startAutoSlide);
     });
 
-    function updateCarousel() {
-        track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+    function showSlide(index) {
+        if (index >= slides.length) { currentSlideIndex = 0; }
+        else if (index < 0) { currentSlideIndex = slides.length - 1; }
+        else { currentSlideIndex = index; }
 
-        for (let i = 0; i < dots.length; i++) {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
             dots[i].classList.remove("active");
         }
-        if (dots[currentSlideIndex]) {
-            dots[currentSlideIndex].classList.add("active");
-        }
+
+        slides[currentSlideIndex].classList.add("active");
+        dots[currentSlideIndex].classList.add("active");
     }
 
     function moveSlide(n) {
-        currentSlideIndex += n;
-        if (currentSlideIndex >= slides.length) { currentSlideIndex = 0; }
-        if (currentSlideIndex < 0) { currentSlideIndex = slides.length - 1; }
-        updateCarousel();
+        showSlide(currentSlideIndex + n);
     }
 
     function currentSlide(n) {
-        currentSlideIndex = n;
-        updateCarousel();
+        showSlide(n);
     }
 
     function startAutoSlide() {
