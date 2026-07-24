@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obter Licença PRO - Hunter Disk Cleaner</title>
+    
+    <!-- Asset subindo um nível -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    
+    <style>
+        :root {
+            --bg-color: #0F1522;
+            --card-bg: #161F32;
+            --accent-color: #2CE4D1;
+            --text-main: #FFFFFF;
+            --text-muted: #8A929E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            border-radius: 18px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        p.description {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 40px 0 20px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(44, 228, 209, 0.2);
+            padding-bottom: 8px;
+        }
+
+        /* Pricing Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .price-card {
+            background-color: var(--card-bg);
+            padding: 30px 20px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(44, 228, 209, 0.3);
+        }
+
+        .price-card.featured {
+            border-color: var(--accent-color);
+        }
+
+        .price-card h2 {
+            font-size: 1.25rem;
+            color: #E2E8F0;
+            margin-bottom: 5px;
+        }
+
+        .price-card .devices {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            background: rgba(44, 228, 209, 0.1);
+            padding: 2px 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .price-card .price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin: 10px 0;
+        }
+
+        .price-card .price span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .price-card ul {
+            text-align: left;
+            list-style: none;
+            margin: 15px 0 25px 0;
+        }
+
+        .price-card ul li {
+            color: #B2C0D4;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        form, .status-box {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-top: 40px;
+        }
+
+        .status-box {
+            display: none;
+            text-align: center;
+            padding: 40px 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(15, 21, 34, 0.6);
+            color: var(--text-main);
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 8px rgba(44, 228, 209, 0.2);
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            background-color: var(--accent-color);
+            color: #000000;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-submit:hover {
+            background-color: #24bdaf;
+            box-shadow: 0 0 15px rgba(44, 228, 209, 0.4);
+        }
+
+        .btn-submit.btn-secondary-card {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--text-muted);
+        }
+
+        .btn-submit.btn-secondary-card:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            background-color: transparent;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <!-- Asset subindo um nível -->
+        <img src="../App.png" alt="Logo do Hunter Disk Cleaner" class="logo">
+        <h1>Escolha sua Licença Hunter PRO</h1>
+        <p class="description">Desbloqueie otimizações completas com um clique e limpeza profunda de alvos. Selecione o pacote ideal para o seu parque de máquinas.</p>
+    </header>
+
+    <!-- SEÇÃO 1: PACOTES AVULSOS -->
+    <div class="section-title">Pacotes Avulsos (Acesso Vitalício/Período Fixo)</div>
+    <div class="pricing-grid">
+        <!-- Mensal Avulso -->
+        <div class="price-card">
+            <div>
+                <h2>Passe Mensal</h2>
+                <div class="devices">Até 1 Dispositivo</div>
+                <div class="price">USD$ 2,95 <span>/ mês</span></div>
+                <ul>
+                    <li><span>✓</span> Todos os Recursos PRO Desbloqueados</li>
+                    <li><span>✓</span> Limpeza profunda de sistema e alvos</li>
+                    <li><span>✓</span> Suporte Padrão por E-mail</li>
+                    <li><span>✓</span> Válido por 1 mês</li>
+                </ul>
+            </div>
+            <a href="https://workflowtech.gumroad.com/l/hunterdiskcleaner?wanted=true" target="_blank" rel="noopener noreferrer" class="btn-submit btn-secondary-card">Obter Passe</a>
+        </div>
+
+        <!-- Trimestral Avulso -->
+        <div class="price-card">
+            <div>
+                <h2>Passe Trimestral</h2>
+                <div class="devices">Até 3 Dispositivos</div>
+                <div class="price">USD$ 5,95 <span>/ 3 meses</span></div>
+                <ul>
+                    <li><span>✓</span> Todos os Recursos PRO Desbloqueados</li>
+                    <li><span>✓</span> Limpeza profunda de sistema e alvos</li>
+                    <li><span>✓</span> Suporte Padrão por E-mail</li>
+                    <li><span>✓</span> Válido por 3 meses</li>
+                </ul>
+            </div>
+            <a href="https://workflowtech.gumroad.com/l/hunterdiskcleaner?wanted=true" target="_blank" rel="noopener noreferrer" class="btn-submit btn-secondary-card">Obter Passe</a>
+        </div>
+
+        <!-- Anual Avulso -->
+        <div class="price-card featured">
+            <div>
+                <h2>Melhor Valor Anual</h2>
+                <div class="devices">Até 5 Dispositivos</div>
+                <div class="price">USD$ 12,00 <span>/ ano</span></div>
+                <ul>
+                    <li><span>✓</span> Todos os Recursos PRO Desbloqueados</li>
+                    <li><span>✓</span> Limpeza profunda de sistema e alvos</li>
+                    <li><span>✓</span> Suporte Padrão por E-mail</li>
+                    <li><span>✓</span> Válido por 1 ano completo</li>
+                </ul>
+            </div>
+            <a href="https://workflowtech.gumroad.com/l/hunterdiskcleaner?wanted=true" target="_blank" rel="noopener noreferrer" class="btn-submit">Obter Plano Anual</a>
+        </div>
+    </div>
+
+    <!-- SEÇÃO 2: ASSINATURAS -->
+    <div class="section-title">Assinaturas Recorrentes</div>
+    <div class="pricing-grid">
+        <!-- Assinatura Mensal -->
+        <div class="price-card">
+            <div>
+                <h2>Assinatura Mensal</h2>
+                <div class="devices">Até 3 Dispositivos</div>
+                <div class="price">USD$ 2,95 <span>/ mês</span></div>
+                <ul>
+                    <li><span>✓</span> Todos os Recursos PRO Desbloqueados</li>
+                    <li><span>✓</span> Limpeza profunda de sistema e alvos</li>
+                    <li><span>✓</span> Suporte Padrão por E-mail</li>
+                    <li><span>✓</span> Plano de assinatura recorrente</li>
+                </ul>
+            </div>
+            <a href="https://workflowtech.gumroad.com/l/hunterdiskcleanersubscription?wanted=true" target="_blank" rel="noopener noreferrer" class="btn-submit btn-secondary-card">Assinar</a>
+        </div>
+
+        <!-- Assinatura Trimestral -->
+        <div class="price-card">
+            <div>
+                <h2>Assinatura Trimestral</h2>
+                <div class="devices">Até 5 Dispositivos</div>
+                <div class="price">USD$ 5,95 <span>/ tri</span></div>
+                <ul>
+                    <li><span>✓</span> Todos os Recursos PRO Desbloqueados</li>
+                    <li><span>✓</span> Limpeza profunda de sistema e alvos</li>
+                    <li><span>✓</span> Suporte Padrão por E-mail</li>
+                    <li><span>✓</span> Plano de assinatura recorrente</li>
+                </ul>
+            </div>
+            <a href="https://workflowtech.gumroad.com/l/hunterdiskcleanersubscription?wanted=true" target="_blank" rel="noopener noreferrer" class="btn-submit btn-secondary-card">Assinar</a>
+        </div>
+
+        <!-- Assinatura Anual -->
+        <div class="price-card featured">
+            <div>
+                <h2>Assinatura Anual</h2>
+                <div class="devices">Até 10 Dispositivos</div>
+                <div class="price">USD$ 12,00 <span>/ ano</span></div>
+                <ul>
+                    <li><span>✓</span> Todos os Recursos PRO Desbloqueados</li>
+                    <li><span>✓</span> Limpeza profunda de sistema e alvos</li>
+                    <li><span>✓</span> Suporte Padrão por E-mail</li>
+                    <li><span>✓</span> Plano de assinatura recorrente</li>
+                </ul>
+            </div>
+            <a href="https://workflowtech.gumroad.com/l/hunterdiskcleanersubscription?wanted=true" target="_blank" rel="noopener noreferrer" class="btn-submit">Assinar</a>
+        </div>
+    </div>
+
+    <!-- SEÇÃO BETA / ATIVAÇÃO MANUAL -->
+    <div style="text-align: center; margin-top: 60px;">
+        <h3 style="color: #E2E8F0; font-size: 1.2rem; margin-bottom: 5px;">Precisa de Ativação Manual ou Beta?</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Se você é um testador beta aprovado ou precisa solicitar uma chave manual, utilize o formulário seguro abaixo.</p>
+    </div>
+
+    <form id="proForm" onsubmit="submitForm(event)">
+        <div class="form-group">
+            <label for="name">Nome Completo</label>
+            <input type="text" id="name" placeholder="ex: João da Silva" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail para Ativação</label>
+            <input type="email" id="email" placeholder="seu@email.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="hwid">ID de Hardware (HWID)</label>
+            <input type="text" id="hwid" placeholder="Copie e cole o seu HWID direto do aplicativo" required>
+        </div>
+
+        <div class="form-group">
+            <label for="purpose">Motivo da Solicitação</label>
+            <select id="purpose" required>
+                <option value="Beta Tester Activation">Solicitar Chave de Licença PRO Beta</option>
+                <option value="License Renewal Request">Renovação / Validação de Licença</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Comentários / Observações (Opcional)</label>
+            <textarea id="notes" placeholder="Qualquer informação adicional ou feedback que gostaria de compartilhar..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">Enviar Solicitação</button>
+    </form>
+
+    <div id="successBox" class="status-box">
+        <h2 style="color: var(--accent-color); margin-bottom: 15px;">✓ Solicitação Recebida!</h2>
+        <p style="color: #E2E8F0; margin-bottom: 20px;">Seus dados de ativação e HWID foram enviados diretamente para a nossa equipe de desenvolvimento.</p>
+        <a href="index.html" class="btn-submit" style="display: inline-block; text-align: center; text-decoration: none; width: auto; padding: 10px 30px;">Voltar para o Início</a>
+    </div>
+
+    <a href="index.html" class="back-link">← Voltar para a Página Principal</a>
+</div>
+
+<script>
+async function submitForm(event) {
+    event.preventDefault();
+    const submitBtn = document.getElementById('submitBtn');
+    const proForm = document.getElementById('proForm');
+    const successBox = document.getElementById('successBox');
+    
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Processando...";
+
+    const payload = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        hwid: document.getElementById('hwid').value,
+        purpose: document.getElementById('purpose').value,
+        notes: document.getElementById('notes').value
+    };
+
+    const workerUrl = "https://hunter-form-pro.geandertkind.workers.dev";
+
+    try {
+        const response = await fetch(workerUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+            proForm.style.display = 'none';
+            successBox.style.display = 'block';
+        } else {
+            alert("Ops! Algo deu errado. Por favor, tente novamente mais tarde.");
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Enviar Solicitação";
+        }
+    } catch (error) {
+        alert("Erro de rede. Não foi possível conectar ao servidor de registro.");
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Enviar Solicitação";
+    }
+}
+</script>
+
+</body>
+</html>
