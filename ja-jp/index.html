@@ -3,7 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Principal -->
     <title>Hunter Disk Cleaner - ディープ & 安全な Windows クリーニング</title>
+    <meta name="description" content="Hunter Disk Cleanerは、Windows 10/11用の高速・軽量・安全なディスククリーナーです。不要なシステムキャッシュや一時ファイルを即座に削除し、空き容量を解放します。">
+    <link rel="canonical" href="https://hunterdiskcleaner.com/ja-jp/" />
+
+    <!-- Open Graph / Facebook / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hunterdiskcleaner.com/ja-jp/">
+    <meta property="og:title" content="Hunter Disk Cleaner - ディープ & 安全な Windows クリーニング">
+    <meta property="og:description" content="Windows用の高速かつ軽量なシステムクリーニング＆キャッシュ最適化ツール。安全にストレージ容量を取り戻します。">
+    <meta property="og:image" content="https://hunterdiskcleaner.com/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hunter Disk Cleaner - ディープ & 安全な Windows クリーニング">
+    <meta name="twitter:description" content="Windows用の高速かつ軽量なシステムクリーニング＆キャッシュ最適化ツール。安全にストレージ容量を取り戻します。">
+    <meta name="twitter:image" content="https://hunterdiskcleaner.com/og-image.png">
     
     <!-- Favicon vindo da raiz -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -184,6 +201,7 @@
             }
         }
 
+        /* Estrutura do Carousel com Transição Suave */
         .carousel-section {
             margin: 50px 0;
             text-align: center;
@@ -197,26 +215,25 @@
             overflow: hidden;
             border: 1px solid rgba(44, 228, 209, 0.15);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            touch-action: pan-y;
         }
 
         .carousel-wrapper {
-            position: relative;
+            display: flex;
             width: 100%;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .carousel-slide {
-            display: none;
-            animation: fadeEffect 0.5s ease-in-out;
-        }
-
-        .carousel-slide.active {
-            display: block;
+            min-width: 100%;
+            box-sizing: border-box;
         }
 
         .carousel-img {
             width: 100%;
             height: auto;
             display: block;
+            user-select: none;
         }
 
         .carousel-caption {
@@ -433,11 +450,11 @@
 
     <h2 style="margin-bottom: 20px; text-align: center;">インターフェース プレビュー</h2>
     <section class="carousel-section">
-        <div class="carousel-container">
-            <div class="carousel-wrapper">
+        <div class="carousel-container" id="carouselContainer">
+            <div class="carousel-wrapper" id="carouselWrapper">
                 
                 <!-- Assets de imagens vindos da raiz -->
-                <div class="carousel-slide active">
+                <div class="carousel-slide">
                     <img src="/screenshot01.png" alt="Hunter Disk Cleaner - メインダッシュボード" class="carousel-img">
                     <div class="carousel-caption">
                         <h3>構造化されたキャッシュオプティマイザー</h3>
@@ -471,8 +488,8 @@
 
             </div>
 
-            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)" aria-label="前へ">&#10094;</button>
+            <button class="carousel-btn next-btn" onclick="moveSlide(1)" aria-label="次へ">&#10095;</button>
         </div>
 
         <div class="carousel-dots">
@@ -566,6 +583,30 @@
 
     document.addEventListener("DOMContentLoaded", () => {
         showSlides(currentSlideIndex);
+        
+        // Gestos de Touch (Swipe)
+        const carouselContainer = document.getElementById('carouselContainer');
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carouselContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        carouselContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                moveSlide(1);
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+                moveSlide(-1);
+            }
+        }
     });
 
     function moveSlide(n) {
@@ -577,6 +618,7 @@
     }
 
     function showSlides(n) {
+        const wrapper = document.getElementById("carouselWrapper");
         const slides = document.getElementsByClassName("carousel-slide");
         const dots = document.getElementsByClassName("dot");
         
@@ -585,14 +627,13 @@
         if (n >= slides.length) { currentSlideIndex = 0; }
         if (n < 0) { currentSlideIndex = slides.length - 1; }
 
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-        }
+        // Animação de deslisamento via hardware acceleration (transform X)
+        wrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+
         for (let i = 0; i < dots.length; i++) {
             dots[i].classList.remove("active");
         }
 
-        slides[currentSlideIndex].classList.add("active");
         dots[currentSlideIndex].classList.add("active");
 
         slideTimeout = setTimeout(() => {
