@@ -184,7 +184,7 @@
             }
         }
 
-        /* Estilos do Carrossel Otimizado (Sliding / Touch) */
+        /* --- CARROSSEL ENQUADRADO E RESPONSIVO --- */
         .carousel-section {
             margin: 50px 0;
             text-align: center;
@@ -192,7 +192,7 @@
 
         .carousel-container {
             position: relative;
-            max-width: 100%;
+            width: 100%;
             background-color: var(--card-bg);
             border-radius: 12px;
             overflow: hidden;
@@ -204,28 +204,39 @@
         .carousel-track {
             display: flex;
             width: 100%;
-            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: transform 0.4s ease-in-out;
             will-change: transform;
         }
 
         .carousel-slide {
+            width: 100%;
             min-width: 100%;
-            flex-shrink: 0;
+            max-width: 100%;
+            flex: 0 0 100%;
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .carousel-img {
             width: 100%;
+            max-width: 100%;
             height: auto;
+            max-height: 550px;
+            object-fit: contain;
             display: block;
             user-select: none;
             -webkit-user-drag: none;
         }
 
         .carousel-caption {
+            width: 100%;
             background: rgba(22, 31, 50, 0.95);
             padding: 18px 25px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
         }
 
         .carousel-caption h3 {
@@ -241,9 +252,9 @@
 
         .carousel-btn {
             position: absolute;
-            top: 50%;
+            top: 40%;
             transform: translateY(-50%);
-            background: rgba(22, 31, 50, 0.8);
+            background: rgba(22, 31, 50, 0.85);
             color: var(--accent-color);
             border: 1px solid var(--accent-color);
             width: 45px;
@@ -312,7 +323,7 @@
             font-size: 0.95rem;
         }
 
-        /* Estilos da Tabela de Comparação */
+        /* Tabela de Comparação */
         .table-responsive {
             width: 100%;
             overflow-x: auto;
@@ -408,7 +419,6 @@
     </div>
 
     <header>
-        <!-- Asset de imagem vindo da raiz -->
         <img src="/App.png" alt="Logótipo do Hunter Disk Cleaner" class="logo">
         <h1>HUNTER DISK CLEANER</h1>
         <div class="subtitle">Limpeza profunda do sistema e optimização segura da cache</div>
@@ -423,8 +433,7 @@
                 </svg>
                 Obter na Microsoft Store
             </a>
-            <!-- Links locais na pasta do idioma pt-pt/ -->
-            <a href="downloads.html" class="btn btn-secondary">Transferências</a>
+            <a href="downloads.html" class="btn btn-secondary">Outras Transferências</a>
             <a href="pro.html" class="btn btn-secondary">Obter Licença PRO</a>
             <a href="contact.html" class="btn btn-secondary">Contacto e Suporte</a>
         </div>
@@ -439,7 +448,6 @@
         <div class="carousel-container" id="carouselContainer">
             <div class="carousel-track" id="carouselTrack">
                 
-                <!-- Assets de imagens vindos da raiz -->
                 <div class="carousel-slide">
                     <img src="/screenshot01.png" alt="Hunter Disk Cleaner - Painel Principal" class="carousel-img">
                     <div class="carousel-caption">
@@ -555,7 +563,6 @@
     <footer>
         <p style="margin-bottom: 15px;">Hunter Disk Cleaner é desenvolvido com foco na melhoria contínua. A eliminar ficheiros temporários com precisão, pixel a pixel.</p>
         <div style="font-size: 0.85rem; display: flex; justify-content: center; gap: 20px;">
-            <!-- Links locais na pasta do idioma pt-pt/ -->
             <a href="privacy.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">Política de Privacidade</a>
             <span style="color: rgba(255,255,255,0.1);">|</span>
             <a href="terms.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-muted)'">Termos de Serviço</a>
@@ -577,7 +584,6 @@
         let slideInterval;
         const autoSlideDelay = 6000;
 
-        // Variáveis de Touch / Swipe
         let startX = 0;
         let isDragging = false;
 
@@ -627,15 +633,11 @@
             dot.addEventListener("click", () => handleUserInteraction(() => updateCarousel(idx)));
         });
 
-        // Eventos Touch / Swipe
+        // Suporte a Touch / Swipe em dispositivos móveis
         container.addEventListener("touchstart", (e) => {
             stopTimer();
             isDragging = true;
             startX = e.touches[0].clientX;
-        }, { passive: true });
-
-        container.addEventListener("touchmove", (e) => {
-            if (!isDragging) return;
         }, { passive: true });
 
         container.addEventListener("touchend", (e) => {
@@ -653,6 +655,10 @@
             }
             startTimer();
         });
+
+        // Pausa no Hover
+        container.addEventListener("mouseenter", stopTimer);
+        container.addEventListener("mouseleave", startTimer);
 
         startTimer();
     });
