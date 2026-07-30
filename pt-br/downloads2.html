@@ -125,21 +125,12 @@
             flex-grow: 1;
         }
 
-        /* Container de botões lado a lado */
-        .store-actions {
-            display: flex;
-            gap: 12px;
-            width: 100%;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
         /* Botões padronizados */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 12px 20px;
+            padding: 12px 24px;
             border-radius: 8px;
             font-weight: 700;
             text-decoration: none;
@@ -148,12 +139,8 @@
             white-space: nowrap;
             font-size: 0.95rem;
             width: 100%;
-            border: none;
-        }
-
-        .store-actions .btn {
-            flex: 1 1 240px;
             max-width: 320px;
+            border: none;
         }
 
         .btn-primary {
@@ -240,7 +227,7 @@
 
     <div class="download-grid">
         
-        <!-- Opção Recomendada: Microsoft Store / Instalação Direta -->
+        <!-- Opção Recomendada: Microsoft Store (Com Lógica Híbrida) -->
         <div class="download-card store-card">
             <div class="card-icon">
                 <svg width="32" height="32" viewBox="0 0 23 23" fill="currentColor">
@@ -249,15 +236,9 @@
             </div>
             <h3>Microsoft Store (Recomendado)</h3>
             <p>Obtenha atualizações automáticas em segundo plano, instalação simples com um clique e isolamento de sistema seguro em sandbox, verificado oficialmente pela Microsoft.</p>
-            
-            <div class="store-actions">
-                <button onclick="openMSStore('9NHQDCSTS58K')" class="btn btn-primary">
-                    Abrir na Microsoft Store
-                </button>
-                <a href="ms-appinstaller:?source=https://apps.microsoft.com/detail/9NHQDCSTS58K" class="btn btn-secondary">
-                    Instalar Direto pelo Windows
-                </a>
-            </div>
+            <button onclick="openMSStore('9NHQDCSTS58K')" class="btn btn-primary">
+                Baixar da Microsoft Store
+            </button>
         </div>
 
         <!-- Download Direto: Executável Clássico (.exe) via GitHub -->
