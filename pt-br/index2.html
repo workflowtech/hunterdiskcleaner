@@ -425,7 +425,7 @@
         <svg width="18" height="18" viewBox="0 0 23 23" style="margin-right: 8px; flex-shrink: 0;" fill="currentColor">
             <path d="M0 0h11v11H0zM12 0h11v11H12zM0 12h11v11H0zM12 12h11v11H12z"/>
         </svg>
-        Baixar na Microsoft Store
+        Abrir na Microsoft Store
     </a>
 
     <!-- Links locais na pasta do idioma pt-br/ -->
@@ -433,43 +433,6 @@
     <a href="pro.html" class="btn btn-secondary">Obter Licença PRO</a>
     <a href="contact.html" class="btn btn-secondary">Contato e Suporte</a>
 </div>
-
-<script>
-function handleMSStoreDownload(event, productId) {
-    // Detecta se o sistema operacional é Windows
-    const isWindows = /Win/i.test(navigator.userAgent || navigator.platform);
-
-    if (isWindows) {
-        // Previne o comportamento padrão imediato do link web
-        event.preventDefault();
-
-        const webUrl = `https://apps.microsoft.com/detail/${productId}`;
-        const storeProtocolUrl = `ms-windows-store://pdp/?ProductId=${productId}`;
-
-        // Tenta abrir o protocolo nativo usando um iframe invisível
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = storeProtocolUrl;
-        document.body.appendChild(iframe);
-
-        // Fallback: se o aplicativo da loja não responder a tempo, abre o link Web
-        const fallbackTimer = setTimeout(() => {
-            document.body.removeChild(iframe);
-            window.open(webUrl, '_blank', 'noopener,noreferrer');
-        }, 1500);
-
-        // Se a página perder o foco, significa que o app da Microsoft Store abriu com sucesso
-        window.addEventListener('blur', function clearFallback() {
-            clearTimeout(fallbackTimer);
-            if (iframe.parentNode) {
-                document.body.removeChild(iframe);
-            }
-            window.removeEventListener('blur', clearFallback);
-        });
-    }
-    // Se NÃO for Windows, o evento não é interrompido e o link web (href) abre normalmente.
-}
-</script>
         
         <div style="margin-top: 18px; font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.6px;">
             Compatível com <strong>Windows 10 / 11 (64-bit)</strong>
@@ -685,5 +648,42 @@ function handleMSStoreDownload(event, productId) {
     }
 </script>
 
+<script>
+function handleMSStoreDownload(event, productId) {
+    // Detecta se o sistema operacional é Windows
+    const isWindows = /Win/i.test(navigator.userAgent || navigator.platform);
+
+    if (isWindows) {
+        // Previne o comportamento padrão imediato do link web
+        event.preventDefault();
+
+        const webUrl = `https://apps.microsoft.com/detail/${productId}`;
+        const storeProtocolUrl = `ms-windows-store://pdp/?ProductId=${productId}`;
+
+        // Tenta abrir o protocolo nativo usando um iframe invisível
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = storeProtocolUrl;
+        document.body.appendChild(iframe);
+
+        // Fallback: se o aplicativo da loja não responder a tempo, abre o link Web
+        const fallbackTimer = setTimeout(() => {
+            document.body.removeChild(iframe);
+            window.open(webUrl, '_blank', 'noopener,noreferrer');
+        }, 1500);
+
+        // Se a página perder o foco, significa que o app da Microsoft Store abriu com sucesso
+        window.addEventListener('blur', function clearFallback() {
+            clearTimeout(fallbackTimer);
+            if (iframe.parentNode) {
+                document.body.removeChild(iframe);
+            }
+            window.removeEventListener('blur', clearFallback);
+        });
+    }
+    // Se NÃO for Windows, o evento não é interrompido e o link web (href) abre normalmente.
+}
+</script>
+    
 </body>
 </html>
