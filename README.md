@@ -54,44 +54,49 @@ Unlike traditional opaque cleaners, Hunter features a **unified transparency int
 Hunter Disk Cleaner is built for a global audience. The interface adapts instantly to major global markets and can be dynamically changed on the fly through the options menu:
 
 * 🇺🇸 **English** (`en-US` - Core Fallback)
-* 🇸🇦 **العربية** (`ar-SA` - RTL Compatible)
+* 🇬🇧 **English (UK)** (`en-GB`)
 * 🇮🇩 **Bahasa Indonesia** (`id-ID`)
 * 🇨🇿 **Čeština** (`cs-CZ`)
 * 🇩🇰 **Dansk** (`da-DK`)
 * 🇩🇪 **Deutsch** (`de-DE`)
-* 🇬🇧 **English (UK)** (`en-GB`)
 * 🇪🇸 **Español** (`es-ES`)
 * 🇫🇷 **Français** (`fr-FR`)
 * 🇮🇹 **Italiano** (`it-IT`)
-* 🇯🇵 **日本語** (`ja-JP`)
-* 🇰🇷 **한국어** (`ko-KR`)
 * 🇳🇱 **Nederlands** (`nl-NL`)
+* 🇳🇴 **Norsk** (`nb-NO`)
 * 🇵🇱 **Polski** (`pl-PL`)
 * 🇧🇷 **Português (BR)** (`pt-BR`)
 * 🇵🇹 **Português (PT)** (`pt-PT`)
-* 🇷🇺 **Русский** (`ru-RU`)
+* 🇷🇴 **Română** (`ro-RO`)
 * 🇫🇮 **Suomi** (`fi-FI`)
 * 🇸🇪 **Svenska** (`sv-SE`)
-* 🇻🇳 **Tiếng Việt** (`vi-VN`)
 * 🇹🇷 **Türkçe** (`tr-TR`)
+* 🇻🇳 **Tiếng Việt** (`vi-VN`)
+* 🇬🇷 **Ελληνικά** (`el-GR`)
+* 🇷🇺 **Русский** (`ru-RU`)
+* 🇺🇦 **Українська** (`uk-UA`)
+* 🇸🇦 **العربية** (`ar-SA` - RTL Compatible)
+* 🇮🇳 **हिन्दी** (`hi-IN`)
+* 🇯🇵 **日本語** (`ja-JP`)
+* 🇰🇷 **한국어** (`ko-KR`)
 * 🇨🇳 **简体中文** (`zh-CN`)
 * 🇹🇼 **繁體中文** (`zh-TW`)
 
 ---
 
-## 🏁 Free vs. PRO Version
+## 🏁 Free vs. PRO Version (Compare Editions)
 
 We believe in **absolute transparency**. The application clearly displays how much space can be recovered so you are always in the loop.
 
-| Feature | Free Edition | PRO Edition |
+| Feature / Module | Free Edition | PRO Edition |
 | :--- | :---: | :---: |
-| Core Windows Junk Removal (Temp, Log files) | ✅ | ✅ |
-| Real-time Selection & Potential Purge Counter | ✅ | ✅ |
-| Multi-language Support & Dynamic Switching | ✅ | ✅ |
-| Integrated Auto-Updates | ✅ | ✅ |
-| Advanced Trash Zones (Browser Cache, System Leftovers) | 🔒 View Only | ✅ |
-| One-Click Total Optimization | ❌ | ✅ |
-| Priority Support & Updates | ❌ | ✅ |
+| Basic System Cleanup | ✅ | ✅ |
+| Real-time Storage Analysis & Counter | ✅ | ✅ |
+| Web Browser Cache Cleanup `[WEB CACHE]` | ✅ | ✅ |
+| Temporary Files & System Logs `[SYSTEM CACHE]` | 🔍 Analysis Only | ✅ |
+| Universal Software AppData Cache `[THIRD-PARTY CACHE]` | 🔍 Analysis Only | ✅ |
+| Leftovers from Uninstalled Software & Telemetry `[SYSTEM MAINTENANCE]` | 🔍 Analysis Only | ✅ |
+| Unrestricted One-Click Deep Cleanup | ❌ | ✅ |
 
 ### 🔑 Get your PRO License & Support
 
@@ -113,5 +118,5 @@ Hunter Disk Cleaner features an autonomous update pipeline:
 ---
 
 <p align="center">
-  <i>Hunter Disk Cleaner is built with continuous improvement (Kaizen) mindsets.</i>
+  <i>Hunter Disk Cleaner is built with continuous improvement mindsets.</i>
 </p>
