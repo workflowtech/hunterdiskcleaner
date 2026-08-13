@@ -113,5 +113,5 @@ Hunter Disk Cleaner features an autonomous update pipeline:
 ---
 
 <p align="center">
-  <i>Hunter Disk Cleaner is built with continuous improvement (Kaizen) mindsets. Safely hunting junk, pixel by pixel.</i>
+  <i>Hunter Disk Cleaner is built with continuous improvement (Kaizen) mindsets.</i>
 </p>
