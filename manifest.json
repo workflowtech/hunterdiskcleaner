@@ -1,7 +1,7 @@
 {
-  "version": "1.0.5",
+  "version": "1.0.6",
   "releaseNotes": "Stable beta version with improvements.",
   "isMandatory": true,
-  "downloadUrl": "https://github.com/workflowtech/hunterdiskcleaner/releases/download/v1.0.5/HunterUpdate.zip",
-  "minRequiredVersion": "1.0.5"
+  "downloadUrl": "https://github.com/workflowtech/hunterdiskcleaner/releases/download/v1.0.6/HunterUpdate.zip",
+  "minRequiredVersion": "1.0.6"
 }
