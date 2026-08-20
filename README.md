@@ -55,6 +55,9 @@ Hunter Disk Cleaner is built for a global audience. The interface adapts instant
 
 * 🇺🇸 **English** (`en-US` - Core Fallback)
 * 🇬🇧 **English (UK)** (`en-GB`)
+* 🇧🇬 **Български** (`bg-BG`)
+* 🇭🇺 **Magyar** (`hu-HU`)
+* 🇹🇭 **ไทย** (`th-TH`)
 * 🇮🇩 **Bahasa Indonesia** (`id-ID`)
 * 🇨🇿 **Čeština** (`cs-CZ`)
 * 🇩🇰 **Dansk** (`da-DK`)
