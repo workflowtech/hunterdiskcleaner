@@ -67,6 +67,47 @@
             color: var(--text-muted);
         }
 
+        /* Estilo dos Badges do Cabeçalho (Atualizado) */
+        .badges-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0 0 0;
+        }
+
+        .badge-item {
+            display: inline-flex;
+            border-radius: 4px;
+            overflow: hidden;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .badge-label {
+            background-color: #555;
+            color: #fff;
+            padding: 6px 10px;
+            letter-spacing: 1px;
+        }
+
+        .badge-val-platform {
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 6px 12px;
+            letter-spacing: 1px;
+        }
+
+        .badge-val-license {
+            background-color: var(--card-bg);
+            color: #fff;
+            border: 1px solid #555;
+            border-left: none;
+            padding: 6px 12px;
+            letter-spacing: 1px;
+        }
+
         /* Grid de Opções de Download */
         .download-grid {
             display: grid;
@@ -222,6 +263,18 @@
     <header>
         <h1>DOWNLOAD OPTIONS</h1>
         <div class="subtitle">Choose your preferred method to install Hunter Disk Cleaner safely</div>
+        
+        <!-- Badges Limpos (Apenas Platform e License) -->
+        <div class="badges-container">
+            <div class="badge-item">
+                <span class="badge-label">PLATFORM</span>
+                <span class="badge-val-platform">WINDOWS</span>
+            </div>
+            <div class="badge-item">
+                <span class="badge-label">LICENSE</span>
+                <span class="badge-val-license">COMMERCIAL / FREEMIUM</span>
+            </div>
+        </div>
     </header>
 
     <div class="download-grid">
