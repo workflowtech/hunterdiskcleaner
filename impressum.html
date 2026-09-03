@@ -4,63 +4,98 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Bloqueio de Indexação para Google e buscadores -->
+  <!-- Bloqueio de Indexação para Google e Buscadores -->
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
 
   <title>Legal Notice (Impressum) - Hunter Disk Cleaner</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <style>
+    :root {
+        --bg-color: #0F1522;
+        --card-bg: #161F32;
+        --accent-color: #2CE4D1;
+        --text-main: #FFFFFF;
+        --text-muted: #8A929E;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
     body {
-      background-color: #0d1117;
-      color: #c9d1d9;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 40px 20px;
-      display: flex;
-      justify-content: center;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        line-height: 1.6;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
     }
+
     .container {
-      max-width: 700px;
-      width: 100%;
-      background-color: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 8px;
-      padding: 32px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        max-width: 750px;
+        width: 100%;
+        background-color: var(--card-bg);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 35px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
+
     h1 {
-      color: #58a6ff;
-      border-bottom: 1px solid #30363d;
-      padding-bottom: 12px;
-      font-size: 24px;
-      margin-top: 0;
+        color: var(--accent-color);
+        border-bottom: 1px solid rgba(44, 228, 209, 0.2);
+        padding-bottom: 12px;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
     }
+
     h2 {
-      color: #f0f6fc;
-      font-size: 16px;
-      margin-top: 24px;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+        color: #E2E8F0;
+        font-size: 1.1rem;
+        margin-top: 24px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
+
     p {
-      margin: 4px 0;
-      font-size: 14px;
+        color: #B2C0D4;
+        margin: 6px 0;
+        font-size: 0.95rem;
     }
+
+    strong {
+        color: var(--text-main);
+    }
+
     a {
-      color: #58a6ff;
-      text-decoration: none;
+        color: var(--accent-color);
+        text-decoration: none;
+        transition: color 0.2s ease;
     }
+
     a:hover {
-      text-decoration: underline;
+        text-decoration: underline;
     }
+
     .footer-return {
-      margin-top: 32px;
-      padding-top: 16px;
-      border-top: 1px solid #30363d;
-      text-align: center;
-      font-size: 13px;
+        margin-top: 35px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .footer-return a {
+        color: var(--text-muted);
+    }
+
+    .footer-return a:hover {
+        color: var(--accent-color);
     }
   </style>
 </head>
@@ -77,19 +112,19 @@
 
     <h2>Contact Information</h2>
     <p><strong>Email:</strong> <a href="mailto:contact@hunterdiskcleaner.com">contact@hunterdiskcleaner.com</a></p>
-    <p><strong>Phone / WhatsApp:</strong> +55 [Seu Telefone/Celular]</p>
-    <p><strong>Support Page:</strong> <a href="/contact.html">Contact Us</a></p>
+    <p><strong>Phone / WhatsApp:</strong> +55 21 99610-7293</p>
+    <p><strong>Support Page:</strong> <a href="contact.html">Contact Us</a></p>
 
     <h2>Legal Status & Representation</h2>
     <p><strong>Legal Structure:</strong> Independent Software Developer (Sole Proprietorship)</p>
     <p><strong>Responsible for Content:</strong> Rafael Anderson Andrade da Silva</p>
 
     <h2>Product & Billing Information</h2>
-    <p>All software license keys offered on this website for <strong>Hunter Disk Cleaner Pro</strong> (including 3 Months, 1 Year, and Lifetime Licenses) are strictly <strong>one-time purchases</strong>.</p>
+    <p>All software license keys offered on this website for <strong>Hunter Disk Cleaner Pro</strong> (including 3-Month, 1-Year, and Permanent Licenses) are strictly <strong>one-time purchases</strong>.</p>
     <p>There are no auto-renewals, hidden fees, or recurring subscriptions unless explicitly selected by the buyer at checkout.</p>
 
     <div class="footer-return">
-      <a href="/">← Return to Main Page</a>
+      <a href="pro.html">← Return to License Options</a>
     </div>
   </div>
 
