@@ -157,61 +157,6 @@
             gap: 8px;
         }
 
-        form, .status-box {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin-top: 40px;
-        }
-
-        .status-box {
-            display: none;
-            text-align: center;
-            padding: 40px 30px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            color: var(--accent-color);
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background-color: rgba(15, 21, 34, 0.6);
-            color: var(--text-main);
-            font-size: 1rem;
-            transition: border-color 0.2s ease;
-            font-family: inherit;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 8px rgba(44, 228, 209, 0.2);
-        }
-
         .btn-submit {
             display: block;
             width: 100%;
@@ -235,16 +180,51 @@
             box-shadow: 0 0 15px rgba(44, 228, 209, 0.4);
         }
 
-        .btn-submit.btn-secondary-card {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--text-muted);
+        .footer-section {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .btn-submit.btn-secondary-card:hover {
-            border-color: var(--accent-color);
+        .footer-section p {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: underline;
+            margin: 0 8px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
             color: var(--accent-color);
-            background-color: transparent;
+        }
+
+        .ds24-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            padding: 6px 14px;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .ds24-badge img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .ds24-badge span {
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.85rem;
         }
 
         .back-link {
@@ -268,14 +248,14 @@
     <header>
         <img src="/App.png" alt="Logótipo do Hunter Disk Cleaner" class="logo">
         <h1>Escolha a sua Licença Hunter PRO</h1>
-        <p class="description">Desbloqueie otimizações completas com um clique e limpeza profunda do sistema. Selecione o pacote ideal para o seu parque de computadores.</p>
+        <p class="description">Desbloqueie otimizações completas com um clique e limpeza profunda do sistema. Selecione o pacote ideal para o seu computador ou frota de equipamentos.</p>
     </header>
 
-    <!-- SECTION 1: SINGLE PACKAGES -->
+    <!-- SECÇÃO 1: PACOTES INDIVIDUAIS -->
     <div class="section-title">Pacotes de Licença Individual</div>
     <div class="pricing-grid">
 
-        <!-- 03 Months Single -->
+        <!-- 03 Meses Single -->
         <div class="price-card">
             <div>
                 <h2>Licença Trimestral</h2>
@@ -291,7 +271,7 @@
             <a href="https://www.checkout-ds24.com/product/728097" target="_blank" rel="noopener noreferrer" class="btn-submit">Obter Licença Trimestral</a>
         </div>
         
-        <!-- Annual Single -->
+        <!-- Anual Single -->
         <div class="price-card featured">
             <div>
                 <h2>Licença Anual</h2>
@@ -307,40 +287,37 @@
             <a href="https://www.checkout-ds24.com/product/726629" target="_blank" rel="noopener noreferrer" class="btn-submit">Obter Licença Anual</a>
         </div>
         
-    <!-- One-Time Purchase -->
-    <div class="price-card">
-        <div>
-            <h2>Licença Permanente</h2>
-            <div class="devices">Até 1 Dispositivo</div>
-            <div class="price">USD$ 29.00 <span>/ pagamento único</span></div>
-            <ul>
-                <li><span>✓</span> Funcionalidades PRO Completas Desbloqueadas</li>
-                <li><span>✓</span> Limpeza profunda do sistema e alvos específicos</li>
-                <li><span>✓</span> Suporte Padrão por E-mail</li>
-                <li><span>✓</span> Pagamento Único, Licença Permanente</li>
-            </ul>
+        <!-- Compra Única -->
+        <div class="price-card">
+            <div>
+                <h2>Licença Permanente</h2>
+                <div class="devices">Até 1 Dispositivo</div>
+                <div class="price">USD$ 29.00 <span>/ pagamento único</span></div>
+                <ul>
+                    <li><span>✓</span> Funcionalidades PRO Completas Desbloqueadas</li>
+                    <li><span>✓</span> Limpeza profunda do sistema e alvos específicos</li>
+                    <li><span>✓</span> Suporte Padrão por E-mail</li>
+                    <li><span>✓</span> Pagamento Único, Licença Permanente</li>
+                </ul>
+            </div>
+            <a href="https://www.checkout-ds24.com/product/728104" target="_blank" rel="noopener noreferrer" class="btn-submit">Obter Licença Permanente</a>
         </div>
-        <a href="https://www.checkout-ds24.com/product/728104" target="_blank" rel="noopener noreferrer" class="btn-submit">Obter Licença Permanente</a>
+
     </div>
 
- </div>
-
- <!-- Footer Requirement -->
-<div style="text-align: center; font-size: 12px; color: #777; margin-top: 30px; padding: 20px 10px; border-top: 1px solid #eee;">
-  <p style="margin-bottom: 8px; font-family: sans-serif;">
-    A <strong>Digistore24 Inc.</strong> é a revendedora autorizada e comerciante oficial dos produtos vendidos neste site.
-  </p>
-  <p style="margin-bottom: 12px; font-family: sans-serif;">
-    <a href="privacy.html" style="color: #555; text-decoration: underline; margin: 0 5px;">Política de Privacidade</a> | 
-    <a href="terms.html" style="color: #555; text-decoration: underline; margin: 0 5px;">Termos de Serviço</a>
-  </p>
-  
-  <!-- Logo / Badge Digistore24 -->
-  <div style="display: inline-flex; align-items: center; justify-content: center; background: #f4f5f7; border: 1px solid #dcdfe6; border-radius: 4px; padding: 4px 12px; gap: 6px;">
-    <img src="https://digistore24.com/ds24-assets/favicon.png" alt="DS24" style="width: 16px; height: 16px; display: block;">
-    <span style="font-weight: bold; color: #1f2d3d; font-family: sans-serif; font-size: 13px;">Digistore24</span>
-  </div>
-</div>
+    <!-- Requisito de Rodapé Digistore24 -->
+    <footer class="footer-section">
+        <p>A <strong>Digistore24 Inc.</strong> é a revendedora autorizada e comerciante oficial dos produtos vendidos neste site.</p>
+        <div class="footer-links">
+            <a href="privacy.html">Política de Privacidade</a> | 
+            <a href="terms.html">Termos de Serviço</a>
+        </div>
+        
+        <div class="ds24-badge">
+            <img src="https://digistore24.com/ds24-assets/favicon.png" alt="DS24">
+            <span>Digistore24</span>
+        </div>
+    </footer>
 
     <a href="index.html" class="back-link">← Voltar à Página Principal</a>
 </div>
