@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <script src="https://www.digistore24-scripts.com/service/digistore.js"></script>
+    <script type="text/javascript">
+    digistorePromocode( { "product_id": 726349, "adjust_domain": true } );
+    digistorePromocode( { "product_id": 726629, "adjust_domain": true } );
+    digistorePromocode( { "product_id": 727046, "adjust_domain": true } );
+    digistorePromocode( { "product_id": 727080, "adjust_domain": true } );
+    digistorePromocode( { "product_id": 728097, "adjust_domain": true } );
+    digistorePromocode( { "product_id": 728104, "adjust_domain": true } );
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate-Ressourcen - Hunter Disk Cleaner</title>
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <style>
+        :root {
+            --bg-color: #0F1522;
+            --card-bg: #161F32;
+            --accent-color: #2CE4D1;
+            --text-main: #FFFFFF;
+            --text-muted: #8A929E;
+            --border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--accent-color);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        /* Banner styling */
+        .banner-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .banner-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Shields / Badges */
+        .badges-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .badges-container img {
+            height: 28px;
+            transition: transform 0.2s;
+        }
+
+        .badges-container img:hover {
+            transform: translateY(-2px);
+        }
+
+        /* General Sections & Cards */
+        .section-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, #111827 100%);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            margin-bottom: 40px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .section-card:hover {
+            border-color: rgba(44, 228, 209, 0.2);
+        }
+
+        .section-card h2 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Partner Signup Box */
+        .partner-signup-box {
+            border: 1px solid rgba(44, 228, 209, 0.3);
+            box-shadow: 0 0 20px rgba(44, 228, 209, 0.05);
+            background: linear-gradient(135deg, #18253b 0%, #111827 100%);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 35px 25px;
+        }
+
+        /* Download Assets Box */
+        .asset-download-box {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 35px 25px;
+        }
+
+        /* Video Embed Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Screenshots Grid */
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        @media (min-width: 650px) {
+            .screenshot-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .screenshot-item {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .screenshot-item h4 {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Feature List & Language List */
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            font-size: 1rem;
+            color: #E2E8F0;
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .lang-tag {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #D1D5DB;
+        }
+
+        /* Tables */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.01);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            white-space: nowrap;
+            font-size: 0.95rem;
+            width: 100%;
+            max-width: 360px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: #000000;
+        }
+
+        .btn-primary:hover {
+            background-color: #24bdaf;
+            box-shadow: 0 0 15px rgba(44, 228, 209, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--text-muted);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* Links */
+        .styled-link {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .styled-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 30px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Zurück zur Startseite
+    </a>
+
+    <header>
+        <h1>AFFILIATE & MEDIA KIT</h1>
+        <div class="subtitle">Werbematerialien, Dokumentation und Videos für Hunter Disk Cleaner</div>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner-container">
+        <img src="banner.png" alt="Hunter Disk Cleaner Banner">
+    </div>
+
+    <!-- Badges / Shields -->
+    <div class="badges-container">
+        <img src="https://img.shields.io/badge/Plattform-Windows-2CE4D1?style=for-the-badge&logo=windows&logoColor=white" alt="Plattform Windows 10/11 x64">
+        <img src="https://img.shields.io/badge/Lizenz-Kommerziell%20%2F%20Freemium-0F1522?style=for-the-badge" alt="Lizenz">
+    </div>
+
+    <!-- Partner Program Signup Section -->
+    <div class="section-card partner-signup-box">
+        <h2>🤝 Partnerprogramm & Affiliate</h2>
+        <p style="color: #E2E8F0; max-width: 650px;">
+            Treten Sie unserem offiziellen Partnerprogramm auf Digistore24 bei und verdienen Sie <strong>50 % Provision</strong> auf jeden Verkauf über alle Lizenzstufen hinweg. Wenn Sie noch keinen aktiven Affiliate-Link haben, klicken Sie unten, um sich direkt zu registrieren und zu starten.
+        </p>
+        <a href="https://www.digistore24.com/signup/726349,727080,726629,728097,728104,727046,728123,728125,728127/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Als Affiliate auf Digistore24 registrieren
+        </a>
+    </div>
+
+    <!-- Asset Download Package Section -->
+    <div class="section-card asset-download-box">
+        <h2>📦 Offizielles Medienpaket</h2>
+        <p style="color: var(--text-muted); max-width: 600px;">Laden Sie das vollständige Affiliate-Kit herunter, das Icons, hochauflösende Screenshots, Software-Boxen, Logos und Werbegrafiken in einem Bundle enthält.</p>
+        <a href="HunterDiskCleaner_Assets.zip" class="btn btn-secondary" download>
+            Medienpaket herunterladen (.ZIP)
+        </a>
+    </div>
+
+    <!-- Video Showcase Section -->
+    <section class="section-card">
+        <h2>🎬 Videomedien & Tutorials</h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <h3>Offizieller Trailer</h3>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/ogPG3z1b17s" title="Hunter Disk Cleaner Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="video-card">
+                <h3>Video-Tutorial</h3>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/iBSvX6MwG2c" title="Hunter Disk Cleaner Tutorial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="section-card">
+        <h2>📖 Übersicht</h2>
+        <p><strong>Hunter Disk Cleaner</strong> ist ein modernes, blitzschnelles und leichtgewichtiges Datenträgerbereinigungsprogramm für Windows. Spüren Sie versteckte Mülldateien sicher auf und entfernen Sie diese, um sofort Speicherplatz auf Ihrem Computer freizugeben und digitalen Abfall (<em>Muda</em>) zu beseitigen.</p>
+        <br>
+        <p>Im Gegensatz zu herkömmlichen, undurchsichtigen Cleanern verfügt Hunter über eine <strong>einheitliche, transparente Benutzeroberfläche</strong>. Sie zeigt Ihnen genau, was analysiert wird, und gibt Ihnen die volle Kontrolle über Ihre Daten, sodass Sie genau wissen, wie viel Speicherplatz Sie ohne böse Überraschungen bereinigen können.</p>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="section-card">
+        <h2>📸 Screenshots der Benutzeroberfläche</h2>
+        <div class="screenshot-grid">
+            <div class="screenshot-item">
+                <img src="screenshot01.png" alt="Haupt-Dashboard (Scan-Übersicht)">
+                <h4>Haupt-Dashboard (Scan-Übersicht)</h4>
+            </div>
+            <div class="screenshot-item">
+                <img src="screenshot02.png" alt="Detaillierte Analyse & Sicherheitsbezeichnungen">
+                <h4>Detaillierte Analyse & Sicherheitsbezeichnungen</h4>
+            </div>
+            <div class="screenshot-item">
+                <img src="screenshot03.png" alt="Pro-Aktivierungsfenster">
+                <h4>Pro-Aktivierungsfenster</h4>
+            </div>
+            <div class="screenshot-item">
+                <img src="screenshot04.png" alt="Status nach abgeschlossener Optimierung">
+                <h4>Status nach abgeschlossener Optimierung</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section-card">
+        <h2>✨ Funktionen</h2>
+        <ul class="feature-list">
+            <li><strong>⚡ Hochgeschwindigkeits-Scan:</strong> Multi-Threaded-Engine, die darauf optimiert ist, kritische Windows-Müllzonen in Sekundenschnelle zu scannen.</li>
+            <li><strong>🌐 Dynamische Lokalisierung:</strong> Vollständige, native Echtzeit-Sprachumschaltung für wichtige internationale Märkte ohne Neustart der App.</li>
+            <li><strong>🔄 Auto-Update-Engine:</strong> Integrierte, nahtlose Updates direkt mit GitHub Releases verknüpft.</li>
+            <li><strong>🛡️ Sicherheit an erster Stelle:</strong> Sorgfältig ausgewählte Bereinigungszonen zur Gewährleistung der Systemstabilität – keine versehentliche Löschung wichtiger persönlicher Dateien.</li>
+            <li><strong>💎 Saubere UI/UX (Benutzeroberfläche / Benutzererfahrung):</strong> Moderne WPF-Oberfläche (Windows Presentation Foundation) im Dark Mode, entwickelt für Klarheit und einfache Bedienung.</li>
+        </ul>
+    </section>
+
+    <!-- Localization Section -->
+    <section class="section-card">
+        <h2>🌐 Unterstützte Sprachen (Lokalisierung)</h2>
+        <p>Hunter Disk Cleaner wurde für ein globales Publikum entwickelt. Die Benutzeroberfläche passt sich sofort an die wichtigsten internationalen Märkte an und kann über das Optionsmenü dynamisch im laufenden Betrieb geändert werden:</p>
+        
+        <div class="languages-grid">
+            <div class="lang-tag">🇺🇸 English (en-US)</div>
+            <div class="lang-tag">🇬🇧 English UK (en-GB)</div>
+            <div class="lang-tag">🇧🇬 Български (bg-BG)</div>
+            <div class="lang-tag">🇮🇩 Bahasa Indonesia (id-ID)</div>
+            <div class="lang-tag">🇨🇿 Čeština (cs-CZ)</div>
+            <div class="lang-tag">🇩🇰 Dansk (da-DK)</div>
+            <div class="lang-tag">🇩🇪 Deutsch (de-DE)</div>
+            <div class="lang-tag">🇪🇸 Español (es-ES)</div>
+            <div class="lang-tag">🇫🇷 Français (fr-FR)</div>
+            <div class="lang-tag">🇮🇹 Italiano (it-IT)</div>
+            <div class="lang-tag">🇭🇺 Magyar (hu-HU)</div>
+            <div class="lang-tag">🇳🇱 Nederlands (nl-NL)</div>
+            <div class="lang-tag">🇳🇴 Norsk (nb-NO)</div>
+            <div class="lang-tag">🇵🇱 Polski (pl-PL)</div>
+            <div class="lang-tag">🇧🇷 Português BR (pt-BR)</div>
+            <div class="lang-tag">🇵🇹 Português PT (pt-PT)</div>
+            <div class="lang-tag">🇷🇴 Română (ro-RO)</div>
+            <div class="lang-tag">🇫🇮 Suomi (fi-FI)</div>
+            <div class="lang-tag">🇸🇪 Svenska (sv-SE)</div>
+            <div class="lang-tag">🇹🇷 Türkçe (tr-TR)</div>
+            <div class="lang-tag">🇻🇳 Tiếng Việt (vi-VN)</div>
+            <div class="lang-tag">🇬🇷 Ελληνικά (el-GR)</div>
+            <div class="lang-tag">🇷🇺 Русский (ru-RU)</div>
+            <div class="lang-tag">🇹🇭 ไทย (th-TH)</div>
+            <div class="lang-tag">🇺🇦 Українська (uk-UA)</div>
+            <div class="lang-tag">🇸🇦 العربية (ar-SA)</div>
+            <div class="lang-tag">🇮🇳 हिन्दी (hi-IN)</div>
+            <div class="lang-tag">🇯🇵 日本語 (ja-JP)</div>
+            <div class="lang-tag">🇰🇷 한국어 (ko-KR)</div>
+            <div class="lang-tag">🇨🇳 简体中文 (zh-CN)</div>
+            <div class="lang-tag">🇹🇼 繁體中文 (zh-TW)</div>
+        </div>
+    </section>
+
+    <!-- Compare Editions Section -->
+    <section class="section-card">
+        <h2>🏁 Free- vs. PRO-Version (Editionsvergleich)</h2>
+        <p>Wir glauben an <strong>absolute Transparenz</strong>. Die Anwendung zeigt Ihnen klar an, wie viel Speicherplatz freigemacht werden kann, damit Sie immer bestens informiert sind.</p>
+        
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Funktion / Modul</th>
+                        <th class="text-center">Free Edition</th>
+                        <th class="text-center">PRO Edition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Basis-Systembereinigung</td>
+                        <td class="text-center">✅</td>
+                        <td class="text-center">✅</td>
+                    </tr>
+                    <tr>
+                        <td>Echtzeit-Speicheranalyse & Zähler</td>
+                        <td class="text-center">✅</td>
+                        <td class="text-center">✅</td>
+                    </tr>
+                    <tr>
+                        <td>Webbrowser-Cache-Bereinigung <code>[WEB CACHE]</code></td>
+                        <td class="text-center">✅</td>
+                        <td class="text-center">✅</td>
+                    </tr>
+                    <tr>
+                        <td>Temporäre Dateien & Systemprotokolle <code>[SYSTEM CACHE]</code></td>
+                        <td class="text-center">🔍 Nur Analyse</td>
+                        <td class="text-center">✅</td>
+                    </tr>
+                    <tr>
+                        <td>Universeller AppData-Cache von Drittanbietern <code>[THIRD-PARTY CACHE]</code></td>
+                        <td class="text-center">🔍 Nur Analyse</td>
+                        <td class="text-center">✅</td>
+                    </tr>
+                    <tr>
+                        <td>Reste deinstallierter Software & Telemetrie <code>[SYSTEM MAINTENANCE]</code></td>
+                        <td class="text-center">🔍 Nur Analyse</td>
+                        <td class="text-center">✅</td>
+                    </tr>
+                    <tr>
+                        <td>Uneingeschränkte Tiefenbereinigung mit einem Klick</td>
+                        <td class="text-center">❌</td>
+                        <td class="text-center">✅</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 style="margin-top: 25px; margin-bottom: 10px; font-size: 1.1rem; color: var(--text-main);">🔑 PRO-Lizenz erhalten & Support</h3>
+       <p>Um das volle Potenzial von Hunter Disk Cleaner freizuschalten, können PRO-Lizenzen direkt über die offizielle PRO-Seite erworben werden. Affiliates: Bitte denken Sie daran, Ihren eindeutigen Affiliate-Link zu verwenden, wenn Sie PRO-Lizenzverkäufe bewerben!</p>
+        <ul class="requirements-list" style="margin-top: 10px;">
+            <li><strong>Offizielle Website:</strong> <a href="https://hunterdiskcleaner.com" target="_blank" rel="noopener noreferrer" class="styled-link">hunterdiskcleaner.com</a></li>
+            <li><strong>PRO-Lizenz holen:</strong> <a href="pro.html" target="_blank" rel="noopener noreferrer" class="styled-link">Kauf über die PRO-Seite</a> <i>(Durch Ihren Affiliate-Link ersetzen)</i></li>
+            <li><strong>Kontakt & Support:</strong> <a href="contact.html" target="_blank" rel="noopener noreferrer" class="styled-link">Support-Ticket öffnen</a> oder kontaktieren Sie uns direkt unter <strong>contact@hunterdiskcleaner.com</strong></li>
+        </ul>
+    </section>
+
+  <!-- Installation & Updates Section -->
+    <section class="section-card">
+        <h2>🚀 Installation & Updates</h2>
+        <p>Hunter Disk Cleaner kann sicher direkt aus dem <a href="https://apps.microsoft.com/detail/9NHQDCSTS58K" target="_blank" rel="noopener noreferrer" class="styled-link">Microsoft Store</a> oder über unsere <a href="https://hunterdiskcleaner.com" target="_blank" rel="noopener noreferrer" class="styled-link">Offizielle Website</a> heruntergeladen werden.</p>
+        <ol style="margin-left: 20px; margin-top: 15px; color: #E2E8F0;">
+            <li style="margin-bottom: 10px;">
+                Sicher aus dem <a href="https://apps.microsoft.com/detail/9NHQDCSTS58K" target="_blank" rel="noopener noreferrer" class="styled-link">Microsoft Store</a> herunterladen oder unsere <a href="https://hunterdiskcleaner.com" target="_blank" rel="noopener noreferrer" class="styled-link">Offizielle Website</a> besuchen.
+            </li>
+            <li style="margin-bottom: 10px;">Führen Sie das Installationsprogramm aus und starten Sie die Anwendung.</li>
+            <li style="margin-bottom: 10px;">Wenn eine neue Version veröffentlicht wird, benachrichtigt Sie die App automatisch und wendet das Update nahtlos an.</li>
+        </ol>
+    </section>
+
+    <!-- License Activation Section -->
+    <section class="section-card">
+        <h2>🔑 So aktivieren Sie Ihre PRO-Lizenz</h2>
+        <p>Befolgen Sie diese kurzen Schritte, um Ihren Lizenzschlüssel zu registrieren und alle Premium-Funktionen freizuschalten:</p>
+        <ol style="margin-left: 20px; margin-top: 15px; color: #E2E8F0;">
+            <li style="margin-bottom: 10px;">
+                Laden Sie <strong>Hunter Disk Cleaner</strong> direkt aus dem <a href="https://apps.microsoft.com/detail/9NHQDCSTS58K" target="_blank" rel="noopener noreferrer" class="styled-link">Microsoft Store</a> oder von der <a href="https://hunterdiskcleaner.com/" target="_blank" rel="noopener noreferrer" class="styled-link">Offiziellen Website</a> herunter und installieren Sie es.
+            </li>
+            <li style="margin-bottom: 10px;">Öffnen Sie <strong>Hunter Disk Cleaner</strong> und klicken Sie auf <strong>Pro registrieren</strong>.</li>
+            <li style="margin-bottom: 10px;">Geben Sie Ihren Lizenzschlüssel in das entsprechende Feld ein (oder fügen Sie ihn ein) und klicken Sie auf <strong>AKTIVIEREN</strong>.</li>
+        </ol>
+    </section>
+
+    <footer>
+        <p><i>Hunter Disk Cleaner wurde mit dem Fokus auf kontinuierliche Verbesserung (Kaizen) entwickelt.</i></p>
+    </footer>
+</div>
+
+</body>
+</html>
