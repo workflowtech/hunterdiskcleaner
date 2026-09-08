@@ -133,11 +133,22 @@
             gap: 10px;
         }
 
-        /* Download Assets Box */
-        .asset-download-box {
-            border: 1px solid rgba(44, 228, 209, 0.2);
+        /* Partner Signup Box */
+        .partner-signup-box {
+            border: 1px solid rgba(44, 228, 209, 0.3);
             box-shadow: 0 0 20px rgba(44, 228, 209, 0.05);
             background: linear-gradient(135deg, #18253b 0%, #111827 100%);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 35px 25px;
+        }
+
+        /* Download Assets Box */
+        .asset-download-box {
+            border: 1px solid rgba(255, 255, 255, 0.05);
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -310,7 +321,7 @@
             white-space: nowrap;
             font-size: 0.95rem;
             width: 100%;
-            max-width: 320px;
+            max-width: 360px;
         }
 
         .btn-primary {
@@ -377,9 +388,18 @@
 
     <!-- Badges / Shields -->
     <div class="badges-container">
-            <img src="https://img.shields.io/badge/Platform-Windows-2CE4D1?style=for-the-badge&logo=windows&logoColor=white" alt="Platform Windows 10/11 x64">
-        </a>
-            <img src="https://img.shields.io/badge/License-Commercial%20%2F%20Freemium-0F1522?style=for-the-badge" alt="License">
+        <img src="https://img.shields.io/badge/Platform-Windows-2CE4D1?style=for-the-badge&logo=windows&logoColor=white" alt="Platform Windows 10/11 x64">
+        <img src="https://img.shields.io/badge/License-Commercial%20%2F%20Freemium-0F1522?style=for-the-badge" alt="License">
+    </div>
+
+    <!-- Partner Program Signup Section -->
+    <div class="section-card partner-signup-box">
+        <h2>🤝 Partner Program & Affiliation</h2>
+        <p style="color: #E2E8F0; max-width: 650px;">
+            Join our official partner program on Digistore24 and earn <strong>50% commission</strong> on every sale across all license tiers. If you do not have an active affiliation link yet, click below to register directly and get started.
+        </p>
+        <a href="https://www.digistore24.com/signup/726349,727080,726629,728097,728104,727046,728123,728125,728127/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Register as an Affiliate on Digistore24
         </a>
     </div>
 
@@ -387,7 +407,7 @@
     <div class="section-card asset-download-box">
         <h2>📦 Official Assets Package</h2>
         <p style="color: var(--text-muted); max-width: 600px;">Download the full affiliate kit containing icons, high-resolution screenshots, software boxes, logos, and promotional graphics in one bundle.</p>
-        <a href="HunterDiskCleaner_Assets.zip" class="btn btn-primary" download>
+        <a href="HunterDiskCleaner_Assets.zip" class="btn btn-secondary" download>
             Download Assets (.ZIP)
         </a>
     </div>
