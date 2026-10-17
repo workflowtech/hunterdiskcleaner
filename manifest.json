@@ -1,6 +1,6 @@
 {
   "version": "1.0.8.1",
-  "releaseNotes": "Stable version with improvements.",
+  "releaseNotes": "Stable version with general improvements and dedicated screen reader support.",
   "isMandatory": false,
   "downloadUrl": "https://github.com/workflowtech/hunterdiskcleaner/releases/download/v1.0.8.1/HunterUpdate.zip",
   "minRequiredVersion": "1.0.6"
