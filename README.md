@@ -46,7 +46,7 @@ Unlike traditional opaque cleaners, Hunter features a **unified transparency int
 ## ✨ Features
 
 - **⚡ High-Speed Scanning:** Multi-threaded engine optimized to scan critical Windows junk zones in seconds.
-- **♿ Screen Readers Compatible:** Full native accessibility support for assistive technologies, including NVDA and Windows Automation peers.
+- **♿ Screen Readers Compatible:** Full native accessibility support for assistive technologies (e.g., NVDA).
 - **🌐 Dynamic Localization:** Full native, real-time language switching supporting key international markets without restarting the app.
 - **🔄 Auto-Update Engine:** Built-in seamless updates directly integrated with GitHub Releases.
 - **🛡️ Safety First:** Carefully curated trash zones to ensure system stability—no accidental deletion of important personal files.
