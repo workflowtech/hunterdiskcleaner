@@ -37,7 +37,7 @@
 
         header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .back-link {
@@ -65,6 +65,70 @@
         .subtitle {
             font-size: 1.1rem;
             color: var(--text-muted);
+        }
+
+        /* Banner de Destaque da Caixa */
+        .product-box-banner {
+            background: linear-gradient(135deg, var(--card-bg) 0%, #111827 100%);
+            border: 1px solid rgba(44, 228, 209, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .product-box-text {
+            flex: 1;
+        }
+
+        .product-box-text h2 {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .product-box-text p {
+            color: #E2E8F0;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .box-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(44, 228, 209, 0.1);
+            color: var(--accent-color);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(44, 228, 209, 0.2);
+        }
+
+        .product-box-img {
+            width: 200px;
+            height: auto;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5)) drop-shadow(0 0 12px rgba(44, 228, 209, 0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .product-box-img:hover {
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 650px) {
+            .product-box-banner {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .product-box-img {
+                width: 170px;
+            }
         }
 
         /* Grid de Opções de Download */
@@ -223,6 +287,16 @@
         <h1>DOWNLOAD OPTIONS</h1>
         <div class="subtitle">Choose your preferred method to install Hunter Disk Cleaner</div>
     </header>
+
+    <!-- Banner de Destaque com Box do Produto -->
+    <div class="product-box-banner">
+        <div class="product-box-text">
+            <h2>Ready to Reclaim Storage Space?</h2>
+            <p>Hunter Disk Cleaner provides transparent, lightning-fast system optimization without risks. Built with native accessibility for all users.</p>
+            <span class="box-badge">♿ NVDA & Screen Reader Ready</span>
+        </div>
+        <img src="BOX_HDC_New-bg.png" alt="Hunter Disk Cleaner Product Box" class="product-box-img">
+    </div>
 
     <div class="download-grid">
         
