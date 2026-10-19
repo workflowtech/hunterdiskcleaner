@@ -54,7 +54,7 @@
 
         header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .back-link {
@@ -88,7 +88,7 @@
         /* Banner styling */
         .banner-container {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .banner-container img {
@@ -96,6 +96,70 @@
             height: auto;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Destaque Box 3D para Afiliados */
+        .affiliate-box-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, #111827 100%);
+            border: 1px solid rgba(44, 228, 209, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .affiliate-box-text {
+            flex: 1;
+        }
+
+        .affiliate-box-text h2 {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .affiliate-box-text p {
+            color: #E2E8F0;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .box-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(44, 228, 209, 0.1);
+            color: var(--accent-color);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(44, 228, 209, 0.2);
+        }
+
+        .affiliate-box-img {
+            width: 200px;
+            height: auto;
+            filter: drop-shadow(0 12px 18px rgba(0,0,0,0.6)) drop-shadow(0 0 12px rgba(44, 228, 209, 0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .affiliate-box-img:hover {
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 650px) {
+            .affiliate-box-card {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .affiliate-box-img {
+                width: 170px;
+            }
         }
 
         /* Shields / Badges */
@@ -392,6 +456,16 @@
         <img src="banner.png" alt="Hunter Disk Cleaner Banner">
     </div>
 
+    <!-- Destaque do Produto Visual (Box 3D) para Afiliados -->
+    <div class="affiliate-box-card">
+        <div class="affiliate-box-text">
+            <h2>High-Converting Digital Assets</h2>
+            <p>Promote a modern, transparent Windows utility engineered with high conversion rates, 3D box graphics, and native screen reader accessibility.</p>
+            <span class="box-badge">♿ Screen Readers Ready</span>
+        </div>
+        <img src="BOX_HDC_New-bg.png" alt="Hunter Disk Cleaner Product Box" class="affiliate-box-img">
+    </div>
+
     <!-- Badges / Shields -->
     <div class="badges-container">
         <img src="https://img.shields.io/badge/Platform-Windows-2CE4D1?style=for-the-badge&logo=windows&logoColor=white" alt="Platform Windows 10/11 x64">
@@ -412,7 +486,7 @@
     <!-- Asset Download Package Section -->
     <div class="section-card asset-download-box">
         <h2>📦 Official Assets Package</h2>
-        <p style="color: var(--text-muted); max-width: 600px;">Download the full affiliate kit containing icons, high-resolution screenshots, software boxes, logos, and promotional graphics in one bundle.</p>
+        <p style="color: var(--text-muted); max-width: 600px;">Download the full affiliate kit containing icons, high-resolution screenshots, 3D software boxes, logos, and promotional graphics in one bundle.</p>
         <a href="HunterDiskCleaner_Assets.zip" class="btn btn-secondary" download>
             Download Assets (.ZIP)
         </a>
@@ -473,10 +547,11 @@
         <h2>✨ Features</h2>
         <ul class="feature-list">
             <li><strong>⚡ High-Speed Scanning:</strong> Multi-threaded engine optimized to scan critical Windows junk zones in seconds.</li>
+            <li><strong>♿ Screen Readers Compatible:</strong> Full native accessibility support for assistive technologies (e.g., NVDA).</li>
             <li><strong>🌐 Dynamic Localization:</strong> Full native, real-time language switching supporting key international markets without restarting the app.</li>
             <li><strong>🔄 Auto-Update Engine:</strong> Built-in seamless updates directly integrated with GitHub Releases.</li>
             <li><strong>🛡️ Safety First:</strong> Carefully curated trash zones to ensure system stability—no accidental deletion of important personal files.</li>
-            <li><strong>💎 Clean UI/UX (User Interface / User Experience):</strong> Dark-themed modern WPF (Windows Presentation Foundation) interface designed for clarity and ease of use.</li>
+            <li><strong>💎 Clean UI/UX:</strong> Dark-themed modern WPF interface designed for clarity and ease of use.</li>
         </ul>
     </section>
 
@@ -575,7 +650,7 @@
         </div>
 
         <h3 style="margin-top: 25px; margin-bottom: 10px; font-size: 1.1rem; color: var(--text-main);">🔑 Get your PRO License & Support</h3>
-       <p>To unlock the full potential of Hunter Disk Cleaner, PRO licenses can be purchased directly through the official PRO page. Affiliates: please remember to use your unique affiliate link when promoting PRO license sales!</p>
+        <p>To unlock the full potential of Hunter Disk Cleaner, PRO licenses can be purchased directly through the official PRO page. Affiliates: please remember to use your unique affiliate link when promoting PRO license sales!</p>
         <ul class="requirements-list" style="margin-top: 10px;">
             <li><strong>Official Website:</strong> <a href="https://hunterdiskcleaner.com" target="_blank" rel="noopener noreferrer" class="styled-link">hunterdiskcleaner.com</a></li>
             <li><strong>Get PRO License:</strong> <a href="pro.html" target="_blank" rel="noopener noreferrer" class="styled-link">Purchase via PRO Page</a> <i>(Replace with your affiliate link)</i></li>
@@ -583,7 +658,7 @@
         </ul>
     </section>
 
-  <!-- Installation & Updates Section -->
+    <!-- Installation & Updates Section -->
     <section class="section-card">
         <h2>🚀 Installation & Updates</h2>
         <p>Hunter Disk Cleaner can be safely downloaded directly from the <a href="https://apps.microsoft.com/detail/9NHQDCSTS58K" target="_blank" rel="noopener noreferrer" class="styled-link">Microsoft Store</a> or through our <a href="https://hunterdiskcleaner.com" target="_blank" rel="noopener noreferrer" class="styled-link">Official Website</a>.</p>
@@ -610,7 +685,7 @@
     </section>
 
     <footer>
-        <p><i>Hunter Disk Cleaner is built with continuous improvement (Kaizen) mindsets.</i></p>
+        <p><i>Hunter Disk Cleaner is built with continuous improvement mindsets.</i></p>
     </footer>
 </div>
 
