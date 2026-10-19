@@ -2,6 +2,10 @@
   <img src="banner.png">
 </p>
 
+<p align="center">
+  <img src="BOX_HDC_New-bg.png" width="500" alt="Hunter Disk Cleaner Product Box">
+</p>
+
 ---
 
 <p align="center">
@@ -41,11 +45,12 @@ Unlike traditional opaque cleaners, Hunter features a **unified transparency int
 
 ## ✨ Features
 
-* **⚡ High-Speed Scanning:** Multi-threaded engine optimized to scan critical Windows junk zones in seconds.
-* **🌐 Dynamic Localization:** Full native, real-time language switching supporting key international markets without restarting the app.
-* **🔄 Auto-Update Engine:** Built-in seamless updates directly integrated with GitHub Releases.
-* **🛡️ Safety First:** Carefully curated trash zones to ensure system stability—no accidental deletion of important personal files.
-* **💎 Clean UI/UX:** Dark-themed modern WPF interface designed for clarity and ease of use.
+- **⚡ High-Speed Scanning:** Multi-threaded engine optimized to scan critical Windows junk zones in seconds.
+- **♿ Screen Readers Compatible:** Full native accessibility support for assistive technologies, including NVDA and Windows Automation peers.
+- **🌐 Dynamic Localization:** Full native, real-time language switching supporting key international markets without restarting the app.
+- **🔄 Auto-Update Engine:** Built-in seamless updates directly integrated with GitHub Releases.
+- **🛡️ Safety First:** Carefully curated trash zones to ensure system stability—no accidental deletion of important personal files.
+- **💎 Clean UI/UX:** Dark-themed modern WPF interface designed for clarity and ease of use.
 
 ---
 
@@ -53,37 +58,37 @@ Unlike traditional opaque cleaners, Hunter features a **unified transparency int
 
 Hunter Disk Cleaner is built for a global audience. The interface adapts instantly to major global markets and can be dynamically changed on the fly through the options menu:
 
-* 🇺🇸 **English** (`en-US` - Core Fallback)
-* 🇬🇧 **English (UK)** (`en-GB`)
-* 🇧🇬 **Български** (`bg-BG`)
-* 🇮🇩 **Bahasa Indonesia** (`id-ID`)
-* 🇨🇿 **Čeština** (`cs-CZ`)
-* 🇩🇰 **Dansk** (`da-DK`)
-* 🇩🇪 **Deutsch** (`de-DE`)
-* 🇪🇸 **Español** (`es-ES`)
-* 🇫🇷 **Français** (`fr-FR`)
-* 🇮🇹 **Italiano** (`it-IT`)
-* 🇭🇺 **Magyar** (`hu-HU`)
-* 🇳🇱 **Nederlands** (`nl-NL`)
-* 🇳🇴 **Norsk** (`nb-NO`)
-* 🇵🇱 **Polski** (`pl-PL`)
-* 🇧🇷 **Português (BR)** (`pt-BR`)
-* 🇵🇹 **Português (PT)** (`pt-PT`)
-* 🇷🇴 **Română** (`ro-RO`)
-* 🇫🇮 **Suomi** (`fi-FI`)
-* 🇸🇪 **Svenska** (`sv-SE`)
-* 🇹🇷 **Türkçe** (`tr-TR`)
-* 🇻🇳 **Tiếng Việt** (`vi-VN`)
-* 🇬🇷 **Ελληνικά** (`el-GR`)
-* 🇷🇺 **Русский** (`ru-RU`)
-* 🇹🇭 **ไทย** (`th-TH`)
-* 🇺🇦 **Українська** (`uk-UA`)
-* 🇸🇦 **العربية** (`ar-SA` - RTL Compatible)
-* 🇮🇳 **हिन्दी** (`hi-IN`)
-* 🇯🇵 **日本語** (`ja-JP`)
-* 🇰🇷 **한국어** (`ko-KR`)
-* 🇨🇳 **简体中文** (`zh-CN`)
-* 🇹🇼 **繁體中文** (`zh-TW`)
+- 🇺🇸 **English** (`en-US` - Core Fallback)
+- 🇬🇧 **English (UK)** (`en-GB`)
+- 🇧🇬 **Български** (`bg-BG`)
+- 🇮🇩 **Bahasa Indonesia** (`id-ID`)
+- 🇨🇿 **Čeština** (`cs-CZ`)
+- 🇩🇰 **Dansk** (`da-DK`)
+- 🇩🇪 **Deutsch** (`de-DE`)
+- 🇪🇸 **Español** (`es-ES`)
+- 🇫🇷 **Français** (`fr-FR`)
+- 🇮🇹 **Italiano** (`it-IT`)
+- 🇭🇺 **Magyar** (`hu-HU`)
+- 🇳🇱 **Nederlands** (`nl-NL`)
+- 🇳🇴 **Norsk** (`nb-NO`)
+- 🇵🇱 **Polski** (`pl-PL`)
+- 🇧🇷 **Português (BR)** (`pt-BR`)
+- 🇵🇹 **Português (PT)** (`pt-PT`)
+- 🇷🇴 **Română** (`ro-RO`)
+- 🇫🇮 **Suomi** (`fi-FI`)
+- 🇸🇪 **Svenska** (`sv-SE`)
+- 🇹🇷 **Türkçe** (`tr-TR`)
+- 🇻🇳 **Tiếng Việt** (`vi-VN`)
+- 🇬🇷 **Ελληνικά** (`el-GR`)
+- 🇷🇺 **Русский** (`ru-RU`)
+- 🇹🇭 **ไทย** (`th-TH`)
+- 🇺🇦 **Українська** (`uk-UA`)
+- 🇸🇦 **العربية** (`ar-SA` - RTL Compatible)
+- 🇮🇳 **हिन्दी** (`hi-IN`)
+- 🇯🇵 **日本語** (`ja-JP`)
+- 🇰🇷 **한국어** (`ko-KR`)
+- 🇨🇳 **简体中文** (`zh-CN`)
+- 🇹🇼 **繁體中文** (`zh-TW`)
 
 ---
 
@@ -105,9 +110,9 @@ We believe in **absolute transparency**. The application clearly displays how mu
 
 To unlock the full potential of Hunter Disk Cleaner, you can request your PRO license activation or get technical assistance through our official channels:
 
-* 🌐 **Official Website:** [hunterdiskcleaner.com](https://hunterdiskcleaner.com)
-* 🔑 **PRO License Request:** [Request via Web Form](https://hunterdiskcleaner.com/pro.html)
-* ✉️ **Contact & Support:** [Open a Support Ticket](https://hunterdiskcleaner.com/contact.html) or contact us directly at **contact@hunterdiskcleaner.com**
+- 🌐 **Official Website:** [hunterdiskcleaner.com](https://hunterdiskcleaner.com)
+- 🔑 **PRO License Request:** [Request via Web Form](https://hunterdiskcleaner.com/pro.html)
+- ✉️ **Contact & Support:** [Open a Support Ticket](https://hunterdiskcleaner.com/contact.html) or contact us directly at **contact@hunterdiskcleaner.com**
 
 ---
 
@@ -117,7 +122,7 @@ Hunter Disk Cleaner features an autonomous update pipeline:
 1. **[Click here to go to the Releases page and download the latest version](https://github.com/workflowtech/hunterdiskcleaner/releases)**
 2. Run the installer and launch the application.
 3. When a new version is published, the app will automatically notify you and seamlessly apply the update.
-    
+
 ---
 
 <p align="center">
