@@ -54,24 +54,73 @@
             margin-bottom: 40px;
         }
 
-        .logo {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 15px;
-            border-radius: 18px;
+        /* Banner de Destaque da Caixa na Página Pro */
+        .pro-hero-banner {
+            background: linear-gradient(135deg, var(--card-bg) 0%, #111827 100%);
+            border: 1px solid rgba(44, 228, 209, 0.2);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
         }
 
-        h1 {
+        .pro-hero-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .pro-hero-text h1 {
             font-size: 2rem;
-            color: var(--text-main);
-            margin-bottom: 10px;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
         }
 
-        p.description {
-            color: var(--text-muted);
+        .pro-hero-text p {
+            color: #E2E8F0;
             font-size: 1rem;
-            max-width: 600px;
-            margin: 0 auto;
+            margin-bottom: 18px;
+        }
+
+        .box-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(44, 228, 209, 0.1);
+            color: var(--accent-color);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(44, 228, 209, 0.2);
+        }
+
+        .pro-box-img {
+            width: 220px;
+            height: auto;
+            filter: drop-shadow(0 15px 20px rgba(0,0,0,0.6)) drop-shadow(0 0 15px rgba(44, 228, 209, 0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .pro-box-img:hover {
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 768px) {
+            .pro-hero-banner {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .pro-hero-text {
+                text-align: center;
+            }
+            .pro-box-img {
+                width: 180px;
+            }
         }
 
         .section-title {
@@ -210,30 +259,20 @@
 
 <div class="container">
     <header>
-        <img src="/App.png" alt="Hunter Disk Cleaner Logo" class="logo">
-        <h1>Choose Your Hunter PRO License</h1>
-        <p class="description">Unlock full one-click optimizations and deep target cleaning. Select the package that best fits your workstation pool.</p>
+        <!-- Banner de Destaque com Box 3D do Produto -->
+        <div class="pro-hero-banner">
+            <div class="pro-hero-text">
+                <h1>Choose Your Hunter PRO License</h1>
+                <p>Unlock full one-click optimizations, deep target cleaning, and lightning-fast cache purging.</p>
+                <span class="box-badge">♿ Screen Readers Ready</span>
+            </div>
+            <img src="BOX_HDC_New-bg.png" alt="Hunter Disk Cleaner PRO Box" class="pro-box-img">
+        </div>
     </header>
 
     <!-- SECTION 1: SINGLE PACKAGES -->
     <div class="section-title">Single License Packages</div>
     <div class="pricing-grid">
-
-        <!-- 03 Months Single 
-        <div class="price-card">
-            <div>
-                <h2>03-Month License Key</h2>
-                <div class="devices">Max 3 Devices</div>
-                <div class="price">USD$ 5.95 <span>/ 3 mos</span></div>
-                <ul>
-                    <li><span>✓</span> Full PRO Features Unlocked</li>
-                    <li><span>✓</span> Deep target & system cleanup</li>
-                    <li><span>✓</span> Standard Email Support</li>
-                    <li><span>✓</span> Valid for 3 full months</li>
-                </ul>
-            </div>
-            <a href="https://www.checkout-ds24.com/product/727080" target="_blank" rel="noopener noreferrer" class="btn-submit">Get 03-Month License</a>
-        </div>-->
         
         <!-- Annual Single -->
         <div class="price-card">
@@ -291,21 +330,12 @@
 
     <!-- Footer Requirement -->
     <div style="text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 30px; padding: 20px 10px; border-top: 1px solid rgba(255, 255, 255, 0.05);">
-      <p style="margin-bottom: 8px;">
-       <!-- <strong>Digistore24 Inc.</strong> is the authorized reseller and merchant of record for products sold on this site.-->
-      </p>
       <p style="margin-bottom: 12px;">
         <a href="privacy.html" style="color: var(--accent-color); text-decoration: underline; margin: 0 5px;">Privacy Policy</a> | 
         <a href="terms.html" style="color: var(--accent-color); text-decoration: underline; margin: 0 5px;">Terms of Service</a> | 
         <a href="impressum.html" style="color: var(--accent-color); text-decoration: underline; margin: 0 5px;">Legal Notice (Impressum)</a> | 
         <a href="contact.html" style="color: var(--accent-color); text-decoration: underline; margin: 0 5px;">Contact Us</a>
       </p>
-      
-      <!-- Logo / Badge Digistore24 
-      <div style="display: inline-flex; align-items: center; justify-content: center; background: #161F32; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 4px; padding: 4px 12px; gap: 6px;">
-        <img src="https://digistore24.com/ds24-assets/favicon.png" alt="DS24" style="width: 16px; height: 16px; display: block;">
-        <span style="font-weight: bold; color: #FFFFFF; font-size: 13px;">Digistore24</span>
-      </div> -->
     </div>
 
     <a href="index.html" class="back-link">← Back to Main Page</a>
