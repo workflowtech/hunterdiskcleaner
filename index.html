@@ -144,7 +144,7 @@
 
         header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .logo {
@@ -170,7 +170,6 @@
         }
 
         .hero {
-            text-align: center;
             background: linear-gradient(135deg, var(--card-bg) 0%, #111827 100%);
             padding: 40px;
             border-radius: 16px;
@@ -178,29 +177,57 @@
             margin-bottom: 40px;
         }
 
-        .hero p {
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .hero-text p {
             font-size: 1.1rem;
             color: #E2E8F0;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
+            margin-bottom: 30px;
+        }
+
+        .hero-box-container {
+            flex: 0 0 340px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-box-img {
+            width: 100%;
+            max-width: 340px;
+            height: auto;
+            filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 15px rgba(44, 228, 209, 0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .hero-box-img:hover {
+            transform: translateY(-5px) scale(1.02);
         }
 
         .cta-buttons {
             display: flex;
             flex-direction: row;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
             gap: 12px;
             width: 100%;
-            margin: 0 auto 30px auto;
-            justify-content: center;
+            margin-bottom: 20px;
         }
 
         .btn {
-            flex: 1;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 14px 10px;
+            padding: 14px 18px;
             border-radius: 8px;
             font-weight: 700;
             text-decoration: none;
@@ -232,15 +259,30 @@
         }
 
         @media (max-width: 860px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-box-container {
+                flex: none;
+                width: 100%;
+                max-width: 280px;
+                margin-bottom: 20px;
+            }
+
             .cta-buttons {
                 flex-direction: column;
-                flex-wrap: wrap;
                 align-items: center;
             }
+
             .btn {
                 width: 100%;
-                max-width: 300px;
-                padding: 14px 20px;
+                max-width: 320px;
             }
         }
 
@@ -346,7 +388,7 @@
 
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
             margin-bottom: 60px;
         }
@@ -471,26 +513,35 @@
     </header>
 
     <section class="hero">
-        <p>A modern, blazing-fast, and lightweight disk cleanup utility for Windows. Safely hunt down and remove hidden temporary files to free up your computer storage instantly without surprises.</p>
-        <div class="cta-buttons">
-            <a href="https://apps.microsoft.com/detail/9NHQDCSTS58K" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="btn btn-primary" 
-               id="msStoreCta"
-               onclick="handleMSStoreDownload(event, '9NHQDCSTS58K')">
-                <svg width="18" height="18" viewBox="0 0 23 23" style="margin-right: 8px; flex-shrink: 0;" fill="currentColor">
-                    <path d="M0 0h11v11H0zM12 0h11v11H12zM0 12h11v11H0zM12 12h11v11H12z"/>
-                </svg>
-                Get it from Microsoft Store
-            </a>
-            <a href="downloads.html" class="btn btn-secondary">All Downloads</a>
-            <a href="pro.html" class="btn btn-secondary">Get PRO License</a>
-            <a href="contact.html" class="btn btn-secondary">Contact & Support</a>
-        </div>
-        
-        <div style="margin-top: 18px; font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.6px;">
-            Compatible with <strong>Windows 10 / 11 (64-bit)</strong>
+        <div class="hero-content">
+            <div class="hero-text">
+                <p>A modern, blazing-fast, and lightweight disk cleanup utility for Windows. Safely hunt down and remove hidden temporary files to free up your computer storage instantly without surprises.</p>
+                
+                <div class="cta-buttons">
+                    <a href="https://apps.microsoft.com/detail/9NHQDCSTS58K" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn btn-primary" 
+                       id="msStoreCta"
+                       onclick="handleMSStoreDownload(event, '9NHQDCSTS58K')">
+                        <svg width="18" height="18" viewBox="0 0 23 23" style="margin-right: 8px; flex-shrink: 0;" fill="currentColor">
+                            <path d="M0 0h11v11H0zM12 0h11v11H12zM0 12h11v11H0zM12 12h11v11H12z"/>
+                        </svg>
+                        Get it from Microsoft Store
+                    </a>
+                    <a href="downloads.html" class="btn btn-secondary">All Downloads</a>
+                    <a href="pro.html" class="btn btn-secondary">Get PRO License</a>
+                    <a href="contact.html" class="btn btn-secondary">Contact & Support</a>
+                </div>
+                
+                <div style="font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.6px;">
+                    Compatible with <strong>Windows 10 / 11 (64-bit)</strong>
+                </div>
+            </div>
+
+            <div class="hero-box-container">
+                <img src="/BOX_HDC_New-bg.png" alt="Hunter Disk Cleaner PRO Box" class="hero-box-img">
+            </div>
         </div>
     </section>
 
@@ -550,6 +601,10 @@
         <div class="feature-card">
             <h3>⚡ High-Speed Scanning</h3>
             <p>Multi-threaded engine optimized to scan critical Windows temporary fields in seconds.</p>
+        </div>
+        <div class="feature-card">
+            <h3>♿ Screen Readers Compatible</h3>
+            <p>Full native accessibility support for assistive technologies (e.g., NVDA).</p>
         </div>
         <div class="feature-card">
             <h3>🌐 Dynamic Localization</h3>
